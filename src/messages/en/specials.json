@@ -49,6 +49,15 @@
       }
     ]
   },
+  "cta": {
+    "eyebrow": "Red Power Garage",
+    "title": "Ready to upgrade your car's care today?",
+    "description": "Ask about active packages and seasonal offers, or book a visit and let the Red Power Garage team shape the right maintenance, diagnosis, or performance plan for your vehicle.",
+    "primaryLabel": "Book Appointment",
+    "secondaryLabel": "Contact Us",
+    "imageAlt": "Specials strip showing workshop tools and performance vehicles at Red Power Garage",
+    "imageSrc": "/images/red-power/specials/service-gallery-strip.png"
+  },
   "requestFlow": {
     "eyebrow": "Current Offers",
     "title": "Ask about active packages, availability, or a custom service request.",
