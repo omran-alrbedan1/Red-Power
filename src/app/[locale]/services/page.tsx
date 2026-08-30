@@ -46,7 +46,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
 
   const typedLocale = locale as SiteLocale;
   const messages = await getServicesMessages(typedLocale);
-  const { hero, catalog, cta, metadata } = messages;
+  const { hero, catalog, metadata } = messages;
 
   return (
     <>
@@ -62,7 +62,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
       <div className="bg-page-deep pb-16 text-white sm:pb-20">
         <ServicesShowcaseHero hero={hero} locale={typedLocale} />
         <ServicesShowcaseGroups catalog={catalog} locale={typedLocale} />
-        <ServicesShowcaseCta cta={cta} locale={typedLocale} />
+        <ServicesShowcaseCta />
       </div>
     </>
   );

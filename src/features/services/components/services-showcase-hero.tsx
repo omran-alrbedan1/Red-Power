@@ -21,7 +21,6 @@ export function ServicesShowcaseHero({
 
   return (
     <section className="relative overflow-hidden border-b border-red-900/30 bg-page-deep">
-      {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <OptimizedImage
           src={images.services.servicesHero}
@@ -29,13 +28,14 @@ export function ServicesShowcaseHero({
           priority
           sizes="100vw"
           className="h-full w-full rounded-none border-0 bg-black shadow-none"
-          imageClassName="h-full w-full object-cover object-center"
+          imageClassName="h-full w-full scale-[1.02] object-cover object-center transition duration-700"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.82)_0%,rgba(5,5,5,0.58)_42%,rgba(5,5,5,0.28)_100%)]" />
+        <div className="services-hero-glow absolute -left-[10%] top-[10%] h-56 w-56 rounded-full bg-red-600/16 blur-3xl" />
+        <div className="services-hero-glow absolute right-[12%] bottom-[8%] h-64 w-64 rounded-full bg-red-700/14 blur-3xl [animation-delay:1.4s]" />
       </div>
 
       <Container className="relative z-10 py-16 sm:py-24 lg:py-32">
-        {/* Alignment Wrapper: Right-aligned for Arabic, Left-aligned for English */}
         <div
           className={`flex ${
             isArabic ? "justify-end text-right" : "justify-start text-left"
@@ -43,15 +43,15 @@ export function ServicesShowcaseHero({
         >
           <RevealPanel
             direction={isArabic ? "right" : "left"}
-            className="max-w-2xl"
+            className="services-scan-sheen max-w-2xl border border-white/10 bg-black/18 px-6 py-8 backdrop-blur-[2px] sm:px-8 sm:py-10"
           >
             <div className="relative">
               <div className="relative z-10 space-y-6">
-                <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl lg:leading-tight">
+                <h1 className="tracking-display-tight text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl lg:leading-tight">
                   {hero.title}
                 </h1>
 
-                <p className="max-w-lg text-sm leading-relaxed text-zinc-300 sm:text-base">
+                <p className="max-w-lg text-sm leading-7 text-zinc-300 sm:text-base">
                   {hero.description}
                 </p>
 
@@ -60,7 +60,7 @@ export function ServicesShowcaseHero({
                     href={`/${locale}/contact`}
                     className={buttonClassName({
                       className:
-                        "inline-flex items-center gap-3 bg-red-600 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-red-700",
+                        "inline-flex items-center gap-3 bg-red-600 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_18px_50px_rgba(225,6,19,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-[0_24px_60px_rgba(225,6,19,0.32)]",
                     })}
                   >
                     <span className="text-sm">{isArabic ? "←" : "→"}</span>

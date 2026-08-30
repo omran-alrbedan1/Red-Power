@@ -42,12 +42,14 @@ export const images = {
     techniciansWithDodge: "/images/red-power/reviews/technicians-with-dodge.png",
   },
   services: {
+    servicesHero: "/images/red-power/services/service-hero.png",
+    prePurchaseInspection: "/images/red-power/services/pre-purchase-inspection-generated.png",
     technicianWorking: "/images/red-power/services/technician-working.png",
-    servicesHero: "/images/red-power/services/services-hero.png",
     mechanicEngineService: "/images/red-power/services/mechanic-engine-service.png",
     brakeAndWheelDetail: "/images/red-power/services/brake-and-wheel-detail.png",
     garageShowcaseCollage: "/images/red-power/services/garage-showcase-collage.png",
     galleryStrip: "/images/red-power/services/service-gallery-strip.png",
+    servicesCta: "/images/red-power/services/services-cta.png",
   },
   serviceDetails: {
     mechanicEngineService: "/images/red-power/service-details/mechanic-engine-service.png",
