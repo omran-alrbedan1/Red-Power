@@ -26,6 +26,38 @@
   "a11y": {
     "skipToContent": "Skip to main content"
   },
+  "seo": {
+    "classification": "Automotive maintenance and performance services",
+    "ogImageAlt": "Red Power Garage social preview",
+    "keywords": {
+      "default": [
+        "Red Power Garage",
+        "auto repair",
+        "car maintenance",
+        "vehicle diagnostics",
+        "performance garage",
+        "American car service",
+        "Mopar service",
+        "brake repair",
+        "electrical diagnostics"
+      ],
+      "routes": {
+        "home": ["performance workshop", "premium garage", "automotive specialists"],
+        "about": ["about Red Power Garage", "garage experts", "automotive workshop team"],
+        "services": ["garage services", "engine diagnostics", "preventive maintenance"],
+        "specials": ["service offers", "garage specials", "seasonal maintenance packages"],
+        "gallery": ["garage gallery", "workshop photos", "performance car workshop"],
+        "reviews": ["customer reviews", "garage reputation", "service quality"],
+        "contact": ["book car service", "contact garage", "request diagnostics"]
+      },
+      "serviceDetails": ["service details", "specialist car service", "professional maintenance"]
+    },
+    "schema": {
+      "websiteDescription": "Professional automotive maintenance, diagnostics, and performance services for American vehicles in Jeddah.",
+      "organizationDescription": "Red Power Garage delivers specialist automotive maintenance, diagnostics, and performance support for individual and business customers.",
+      "automotiveBusinessDescription": "A premium automotive destination for performance-focused service, diagnostics, and specialist requests."
+    }
+  },
   "footer": {
     "description": "Professional vehicle maintenance, diagnostics, performance development, and American/Mopar expertise for individual and business customers.",
     "quickLinksTitle": "Quick Links",

@@ -6,67 +6,15 @@ const LANGUAGE_LABELS: Record<SiteLocale, string> = {
   en: "English",
 };
 
-const DEFAULT_KEYWORDS: Record<SiteLocale, string[]> = {
-  en: [
-    "Red Power Garage",
-    "auto repair",
-    "car maintenance",
-    "vehicle diagnostics",
-    "performance garage",
-    "American car service",
-    "Mopar service",
-    "brake repair",
-    "electrical diagnostics",
-  ],
-  ar: [
-    "ريد باور جراج",
-    "صيانة سيارات",
-    "فحص سيارات",
-    "تشخيص أعطال السيارات",
-    "ورشة سيارات احترافية",
-    "خدمات سيارات أمريكية",
-    "خدمة موبار",
-    "صيانة مكابح",
-    "فحص كهرباء السيارات",
-  ],
+const OPEN_GRAPH_LOCALES: Record<SiteLocale, string> = {
+  ar: "ar_SA",
+  en: "en_US",
 };
 
-const ROUTE_KEYWORDS: Record<string, Record<SiteLocale, string[]>> = {
-  "": {
-    en: ["performance workshop", "premium garage", "automotive specialists"],
-    ar: ["ورشة أداء", "ورشة احترافية", "خبراء السيارات"],
-  },
-  "/about": {
-    en: ["about Red Power Garage", "garage experts", "automotive workshop team"],
-    ar: ["من نحن ريد باور جراج", "فريق الورشة", "خبراء صيانة السيارات"],
-  },
-  "/services": {
-    en: ["garage services", "engine diagnostics", "preventive maintenance"],
-    ar: ["خدمات الورشة", "تشخيص المحرك", "الصيانة الوقائية"],
-  },
-  "/specials": {
-    en: ["service offers", "garage specials", "seasonal maintenance packages"],
-    ar: ["عروض الخدمة", "عروض الورشة", "باقات صيانة موسمية"],
-  },
-  "/gallery": {
-    en: ["garage gallery", "workshop photos", "performance car workshop"],
-    ar: ["معرض الورشة", "صور الورشة", "ورشة سيارات الأداء"],
-  },
-  "/reviews": {
-    en: ["customer reviews", "garage reputation", "service quality"],
-    ar: ["تقييمات العملاء", "سمعة الورشة", "جودة الخدمة"],
-  },
-  "/contact": {
-    en: ["book car service", "contact garage", "request diagnostics"],
-    ar: ["احجز صيانة", "تواصل مع الورشة", "طلب تشخيص"],
-  },
+const LOCALIZED_SITE_NAMES: Record<SiteLocale, string> = {
+  ar: siteConfig.arabicName,
+  en: siteConfig.name,
 };
-
-function getLocalizedDescription(locale: SiteLocale) {
-  return locale === "ar"
-    ? siteConfig.arabicDescription
-    : siteConfig.description;
-}
 
 function normalizeSiteUrl(url: string) {
   return url.endsWith("/") ? url.slice(0, -1) : url;
@@ -90,23 +38,13 @@ export function getLanguageAlternates(path = "") {
 }
 
 export function getMetadataKeywords(
-  locale: SiteLocale,
-  path: string,
+  baseKeywords: string[],
   title: string,
   extraKeywords: string[] = []
 ) {
-  const routeKeywords =
-    ROUTE_KEYWORDS[path]?.[locale] ??
-    (path.startsWith("/services/")
-      ? locale === "ar"
-        ? ["تفاصيل الخدمة", "خدمة متخصصة", "صيانة احترافية"]
-        : ["service details", "specialist car service", "professional maintenance"]
-      : []);
-
   return Array.from(
     new Set([
-      ...DEFAULT_KEYWORDS[locale],
-      ...routeKeywords,
+      ...baseKeywords,
       ...extraKeywords,
       title,
       siteConfig.name,
@@ -115,15 +53,21 @@ export function getMetadataKeywords(
   );
 }
 
-export function buildWebsiteSchema(locale: SiteLocale) {
+type SchemaInput = {
+  locale: SiteLocale;
+  description: string;
+};
+
+export function buildWebsiteSchema({ locale, description }: SchemaInput) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${getSiteUrl(getLocalizedPath(locale))}#website`,
     inLanguage: locale,
-    name: locale === "ar" ? siteConfig.arabicName : siteConfig.name,
-    alternateName: locale === "ar" ? siteConfig.name : siteConfig.arabicName,
-    description: getLocalizedDescription(locale),
+    name: LOCALIZED_SITE_NAMES[locale],
+    alternateName:
+      locale === "ar" ? LOCALIZED_SITE_NAMES.en : LOCALIZED_SITE_NAMES.ar,
+    description,
     url: getSiteUrl(getLocalizedPath(locale)),
     publisher: {
       "@id": `${getSiteUrl(getLocalizedPath(locale, "/contact"))}#organization`,
@@ -131,31 +75,32 @@ export function buildWebsiteSchema(locale: SiteLocale) {
   };
 }
 
-export function buildOrganizationSchema(locale: SiteLocale) {
+export function buildOrganizationSchema({ locale, description }: SchemaInput) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${getSiteUrl(getLocalizedPath(locale, "/contact"))}#organization`,
-    name: locale === "ar" ? siteConfig.arabicName : siteConfig.name,
-    alternateName: locale === "ar" ? siteConfig.name : siteConfig.arabicName,
+    name: LOCALIZED_SITE_NAMES[locale],
+    alternateName:
+      locale === "ar" ? LOCALIZED_SITE_NAMES.en : LOCALIZED_SITE_NAMES.ar,
     url: getSiteUrl(getLocalizedPath(locale)),
-    description: getLocalizedDescription(locale),
+    description,
     email: siteConfig.contactEmail,
     foundingDate: `${siteConfig.foundedYear}`,
     sameAs: [siteConfig.instagramUrl, siteConfig.mapsUrl],
   };
 }
 
-export function buildAutomotiveBusinessSchema(locale: SiteLocale) {
+export function buildAutomotiveBusinessSchema({
+  locale,
+  description,
+}: SchemaInput) {
   return {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "@id": `${getSiteUrl(getLocalizedPath(locale, "/contact"))}#business`,
-    name: locale === "ar" ? siteConfig.arabicName : siteConfig.name,
-    description:
-      locale === "ar"
-        ? "وجهة احترافية لخدمات السيارات عالية الأداء والفحص والخدمات المتخصصة."
-        : "A premium automotive destination for performance-focused service, diagnostics, and specialist requests.",
+    name: LOCALIZED_SITE_NAMES[locale],
+    description,
     url: getSiteUrl(getLocalizedPath(locale)),
     email: siteConfig.contactEmail,
     foundingDate: `${siteConfig.foundedYear}`,

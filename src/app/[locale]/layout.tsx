@@ -8,6 +8,7 @@ import { WebsiteLayout } from "@/components/layout/website-layout";
 import { DocumentLocale } from "@/components/providers/document-locale";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getDirection, isValidLocale } from "@/lib/i18n";
+import { getSeoMessages } from "@/lib/seo-messages";
 import {
   buildAutomotiveBusinessSchema,
   buildOrganizationSchema,
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
 
   const typedLocale = locale as SiteLocale;
   setRequestLocale(typedLocale);
+  const seo = await getSeoMessages(typedLocale);
 
   return (
     <div
@@ -55,9 +57,24 @@ export default async function LocaleLayout({
       className={`${geist.variable} ${notoKufiArabic.variable}`}
     >
       <div className={typedLocale === "ar" ? "font-arabic" : undefined}>
-        <JsonLd data={buildWebsiteSchema(typedLocale)} />
-        <JsonLd data={buildOrganizationSchema(typedLocale)} />
-        <JsonLd data={buildAutomotiveBusinessSchema(typedLocale)} />
+        <JsonLd
+          data={buildWebsiteSchema({
+            locale: typedLocale,
+            description: seo.schema.websiteDescription,
+          })}
+        />
+        <JsonLd
+          data={buildOrganizationSchema({
+            locale: typedLocale,
+            description: seo.schema.organizationDescription,
+          })}
+        />
+        <JsonLd
+          data={buildAutomotiveBusinessSchema({
+            locale: typedLocale,
+            description: seo.schema.automotiveBusinessDescription,
+          })}
+        />
         <NextIntlClientProvider>
           <DocumentLocale />
           <WebsiteLayout>

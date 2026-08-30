@@ -10,6 +10,7 @@ import { ServicesCtaStrip } from "@/features/services/components/services-cta-st
 import { SpecialsRequestSection } from "@/features/specials/components/specials-request-section";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { getSeoMessages } from "@/lib/seo-messages";
 import { buildWebPageSchema } from "@/lib/seo";
 
 type SpecialsPageProps = {
@@ -24,12 +25,16 @@ export async function generateMetadata({ params }: SpecialsPageProps) {
   }
 
   const t = await getTranslations({ locale, namespace: "specials" });
+  const seo = await getSeoMessages(locale);
 
   return buildPageMetadata({
     locale,
     path: "/specials",
     title: t("metadata.title"),
     description: t("metadata.description"),
+    classification: seo.classification,
+    openGraphAlt: seo.ogImageAlt,
+    keywords: [...seo.keywords.default, ...seo.keywords.routes.specials],
   });
 }
 

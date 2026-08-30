@@ -9,6 +9,7 @@ import { ServiceDetailProcessSection } from "@/features/services/components/serv
 import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { getSeoMessages } from "@/lib/seo-messages";
 import { buildServiceSchema, buildWebPageSchema } from "@/lib/seo";
 
 type ServiceDetailsPageProps = {
@@ -84,6 +85,7 @@ export async function generateMetadata({ params }: ServiceDetailsPageProps) {
 
   const service = getServiceBySlug(slug);
   const { entry } = await getServiceEntry(locale, slug as string);
+  const seo = await getSeoMessages(locale);
 
   if (!service || !entry) {
     return {};
@@ -94,6 +96,9 @@ export async function generateMetadata({ params }: ServiceDetailsPageProps) {
     path: `/services/${slug}`,
     title: entry.metadata.title,
     description: entry.metadata.description,
+    classification: seo.classification,
+    openGraphAlt: seo.ogImageAlt,
+    keywords: [...seo.keywords.default, ...seo.keywords.serviceDetails],
   });
 }
 

@@ -8,10 +8,10 @@ export const runtime = "nodejs";
 export const alt = "Red Power Garage social preview image";
 
 const backgroundData = await readFile(
-  join(process.cwd(), "public/images/red-power/brand/og-share-background.png"),
+  join(process.cwd(), "public/images/red-power/brand/og-share-background-og.jpg"),
   "base64"
 );
-const backgroundSrc = `data:image/png;base64,${backgroundData}`;
+const backgroundSrc = `data:image/jpeg;base64,${backgroundData}`;
 
 export const size = {
   width: 1200,

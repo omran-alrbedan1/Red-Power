@@ -8,6 +8,7 @@ import { ServicesOverviewSection } from "@/features/home/components/services-ove
 import { WhyRedPowerSection } from "@/features/home/components/why-red-power-section";
 import { isValidLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/metadata";
+import { getSeoMessages } from "@/lib/seo-messages";
 import { buildWebPageSchema } from "@/lib/seo";
 
 type LocalePageProps = {
@@ -22,10 +23,14 @@ export async function generateMetadata({ params }: LocalePageProps) {
   }
 
   const t = await getTranslations({ locale, namespace: "home" });
+  const seo = await getSeoMessages(locale);
 
   return buildMetadata(locale, {
     title: t("metadata.title"),
     description: t("metadata.description"),
+    classification: seo.classification,
+    openGraphAlt: seo.ogImageAlt,
+    keywords: [...seo.keywords.default, ...seo.keywords.routes.home],
   });
 }
 

@@ -8,11 +8,13 @@ import {
   getSiteUrl,
 } from "@/lib/seo";
 
-const SOCIAL_IMAGE_PATH = "/images/red-power/brand/og-share-card.png";
+const SOCIAL_IMAGE_PATH = "/images/red-power/brand/og-share-background-og.jpg";
 
 type LocalizedMetadata = {
   title: string;
   description: string;
+  classification: string;
+  openGraphAlt: string;
   keywords?: string[];
 };
 
@@ -20,7 +22,8 @@ export function buildMetadata(
   locale: SiteLocale,
   metadata: LocalizedMetadata
 ): Metadata {
-  const { title, description, keywords = [] } = metadata;
+  const { title, description, classification, openGraphAlt, keywords = [] } =
+    metadata;
   const localizedPath = getLocalizedPath(locale);
 
   return {
@@ -32,12 +35,9 @@ export function buildMetadata(
     creator: siteConfig.name,
     publisher: siteConfig.legalName,
     referrer: "origin-when-cross-origin",
-    keywords: getMetadataKeywords(locale, "", title, keywords),
+    keywords: getMetadataKeywords(keywords, title),
     category: "Automotive",
-    classification:
-      locale === "ar"
-        ? "صيانة السيارات وخدمات الأداء"
-        : "Automotive maintenance and performance services",
+    classification,
     robots: {
       index: true,
       follow: true,
@@ -66,10 +66,7 @@ export function buildMetadata(
           url: getSiteUrl(SOCIAL_IMAGE_PATH),
           width: 1200,
           height: 630,
-          alt:
-            locale === "ar"
-              ? "صورة مشاركة لريد باور جراج"
-              : "Red Power Garage social preview",
+          alt: openGraphAlt,
         },
       ],
     },

@@ -4,13 +4,15 @@ import type { SiteLocale } from "@/config/site";
 import { siteConfig } from "@/config/site";
 import { getLanguageAlternates, getMetadataKeywords, getSiteUrl } from "@/lib/seo";
 
-const SOCIAL_IMAGE_PATH = "/images/red-power/brand/og-share-card.png";
+const SOCIAL_IMAGE_PATH = "/images/red-power/brand/og-share-background-og.jpg";
 
 type PageMetadataInput = {
   locale: SiteLocale;
   path: string;
   title: string;
   description: string;
+  classification: string;
+  openGraphAlt: string;
   keywords?: string[];
 };
 
@@ -19,6 +21,8 @@ export function buildPageMetadata({
   path,
   title,
   description,
+  classification,
+  openGraphAlt,
   keywords = [],
 }: PageMetadataInput): Metadata {
   const url = `/${locale}${path}`;
@@ -31,7 +35,8 @@ export function buildPageMetadata({
     creator: siteConfig.name,
     publisher: siteConfig.legalName,
     referrer: "origin-when-cross-origin",
-    keywords: getMetadataKeywords(locale, path, title, keywords),
+    keywords: getMetadataKeywords(keywords, title),
+    classification,
     robots: {
       index: true,
       follow: true,
@@ -60,10 +65,7 @@ export function buildPageMetadata({
           url: getSiteUrl(SOCIAL_IMAGE_PATH),
           width: 1200,
           height: 630,
-          alt:
-            locale === "ar"
-              ? "صورة مشاركة لريد باور جراج"
-              : "Red Power Garage social preview",
+          alt: openGraphAlt,
         },
       ],
     },

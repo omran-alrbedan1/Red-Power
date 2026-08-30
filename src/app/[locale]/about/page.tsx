@@ -9,6 +9,7 @@ import { ServiceDetailProcessSection } from "@/features/services/components/serv
 import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { getSeoMessages } from "@/lib/seo-messages";
 import { buildWebPageSchema } from "@/lib/seo";
 
 type AboutPageProps = {
@@ -23,12 +24,16 @@ export async function generateMetadata({ params }: AboutPageProps) {
   }
 
   const t = await getTranslations({ locale, namespace: "about" });
+  const seo = await getSeoMessages(locale);
 
   return buildPageMetadata({
     locale,
     path: "/about",
     title: t("metadata.title"),
     description: t("metadata.description"),
+    classification: seo.classification,
+    openGraphAlt: seo.ogImageAlt,
+    keywords: [...seo.keywords.default, ...seo.keywords.routes.about],
   });
 }
 
