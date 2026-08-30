@@ -4,84 +4,84 @@
     "description": "Learn about Red Power Garage, our specialist automotive team, and the professional service standards behind our diagnostics, maintenance, and performance work."
   },
   "hero": {
-    "eyebrow": "Red Power Garage",
-    "title": "About Us",
-    "description": "Built for people who expect more from their vehicle service.",
-    "primaryCta": "Book Appointment",
-    "secondaryCta": "Explore Services",
+    "eyebrow": "We are more than just a workshop.",
+    "title": "Our passion is cars and our mission is trust",
+    "description": "At Red Power Garage, we provide professional care for your vehicle that combines technical expertise with genuine passion. Our specialized team ensures maintenance and repair services with the highest quality standards, with full commitment to transparency and reliability in every step.",
+    "primaryCta": "Book your appointment now",
+    "secondaryCta": "Contact Us",
     "imageAlt": "Red Power Garage about page hero with Dodge workshop background"
   },
-  "overview": {
-    "eyebrow": "Performance • Precision • Trust",
-    "title": "Automotive service with a higher standard.",
-    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
-    "cta": "Explore",
+  "passion": {
+    "eyebrow": "Experience built on passion",
+    "title": "Experience built on passion",
+    "description": "Our goal at Red Power Garage is to provide car maintenance and repair services with complete transparency and high reliability. We put customer satisfaction first, and always work to deliver an exceptional service experience that exceeds your expectations.",
     "items": [
       {
-        "title": "Our Mission",
-        "body": "Deliver professional vehicle maintenance and operation with modern technology, clear communication, and dependable execution."
+        "title": "True passion",
+        "body": "Treat every car as if it were our own"
       },
       {
-        "title": "Our Vision",
-        "body": "Build long-term customer trust through transparency, quality standards, safety, and consistent workshop discipline."
+        "title": "Modern techniques",
+        "body": "Latest diagnostic equipment and certified tools"
       },
       {
-        "title": "Our Team",
-        "body": "A specialized technical team focused on diagnostics, service quality, and real automotive problem solving."
+        "title": "Specialized team",
+        "body": "Highly experienced and continuously trained technicians"
       },
       {
-        "title": "Our Standards",
-        "body": "Quality parts, technical review, progress updates, warranty support, and customer-first delivery expectations."
+        "title": "Trusted",
+        "body": "Full transparency in diagnosis and pricing"
       }
     ]
   },
-  "features": {
-    "eyebrow": "Red Power Garage",
-    "cta": "Learn More",
+  "stats": {
+    "eyebrow": "Results we are proud of",
+    "title": "Results we are proud of",
     "items": [
       {
-        "title": "Our Mission",
-        "description": "Founded in 2025 under Qamrah Pioneer, Red Power Garage focuses on professional vehicle maintenance and operation with a high-trust service experience.",
-        "imageAlt": "Technicians standing with a Dodge performance vehicle at Red Power Garage",
-        "imageSrc": "/images/red-power/about/technicians-with-dodge.png"
+        "number": "15+",
+        "label": "Years of experience"
       },
       {
-        "title": "Our Vision",
-        "description": "The workshop direction combines modern technology, technical capability, and transparent service planning to support long-term reliability.",
-        "imageAlt": "Red Power Garage workshop background representing modern tools and technical systems",
-        "imageSrc": "/images/red-power/about/garage-workshop-background.png"
+        "number": "5000+",
+        "label": "Cars serviced"
       },
       {
-        "title": "Our Team",
-        "description": "Our team-focused service model emphasizes reliability, safety, clear diagnosis, and quality delivery for both individual and business customers.",
-        "imageAlt": "Technician working inside Red Power Garage",
-        "imageSrc": "/images/red-power/about/technician-working.png"
+        "number": "100%",
+        "label": "Customer satisfaction"
+      },
+      {
+        "number": "24/7",
+        "label": "Support and follow-up"
       }
     ]
   },
-  "story": {
-    "eyebrow": "How We Work",
-    "title": "An about page built around standards, discipline, and technical confidence.",
-    "description": "This page is prepared to communicate Red Power's process, team mindset, and premium operating standard without falling into generic workshop messaging.",
+  "team": {
+    "eyebrow": "Experience united by one spirit",
+    "title": "Experience united by one spirit",
+    "quote": "Our shared goal is to provide the best service to our customers with the highest levels of quality and professionalism, with full commitment to technical standards and safety in every work we do.",
+    "quoteAuthor": "Red Power Garage Team",
     "items": [
       {
-        "title": "Clear diagnostics",
-        "body": "Explain the issue and the solution in a confident, transparent way."
+        "title": "Certified technicians",
+        "body": "Practical experience and certified qualifications"
       },
       {
-        "title": "Structured execution",
-        "body": "A repeatable process that reinforces trust and service quality."
+        "title": "Continuous training",
+        "body": "We develop our skills to keep up with the latest technologies"
       },
       {
-        "title": "Attention to detail",
-        "body": "A professional tone that supports precision across inspection, work, and handoff."
+        "title": "Team spirit",
+        "body": "We work as one efficient team for you"
       }
     ]
   },
-  "values": {
-    "eyebrow": "Red Power Values",
-    "title": "Core values ready to evolve into a full brand narrative.",
-    "description": "At this stage we are building the right layout and structure for the final content while keeping the right high-performance tone.",
-    "items": ["Trust", "Clarity", "Performance", "Precision"]
+  "cta": {
+    "eyebrow": "Ready to give your car the care it deserves?",
+    "title": "Ready to give your car the care it deserves?",
+    "description": "Contact us today and get the best service from our specialized team. We are here to help you keep your car in its best condition.",
+    "primaryLabel": "Contact Us",
+    "secondaryLabel": "Book your appointment now",
+    "imageAlt": "Red Power Garage about page CTA with Dodge Challenger background"
   }
 }
