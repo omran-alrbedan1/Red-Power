@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "title": "Reviews | Red Power Garage",
+    "description": "A trust-focused page for Red Power Garage built around service quality, professional communication, and customer confidence."
+  },
+  "hero": {
+    "eyebrow": "Red Power Garage",
+    "title": "Reviews",
+    "description": "Trust built through quality work and clear communication.",
+    "primaryCta": "Book Appointment",
+    "secondaryCta": "Explore Services",
+    "imageAlt": "Red Power Garage reviews hero showing performance vehicles inside the workshop"
+  },
+  "overview": {
+    "eyebrow": "Performance • Precision • Trust",
+    "title": "Automotive service with a higher standard.",
+    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
+    "cta": "Explore",
+    "items": [
+      {
+        "title": "Customer Trust",
+        "body": "Trust grows through transparent diagnosis, consistent workshop execution, and communication that keeps the customer informed."
+      },
+      {
+        "title": "Professional Service",
+        "body": "Every interaction should reflect discipline, technical clarity, and a serious approach to vehicle care rather than generic garage messaging."
+      },
+      {
+        "title": "Quality Experience",
+        "body": "This page is prepared to present real reviews later, while already reinforcing the standards that shape a reliable service experience."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Red Power Garage",
+    "cta": "Contact Us",
+    "items": [
+      {
+        "title": "Customer Trust",
+        "description": "The design direction emphasizes confidence, transparency, and long-term relationships without fabricating testimonials that do not yet exist in the application.",
+        "imageAlt": "Technicians speaking beside a performance vehicle in Red Power Garage",
+        "imageSrc": "/images/red-power/reviews/technicians-with-dodge.png"
+      },
+      {
+        "title": "Professional Service",
+        "description": "The supporting layout keeps the focus on service quality and workshop discipline so real customer feedback can be added later without redesigning the page.",
+        "imageAlt": "Technician performing service work inside Red Power Garage",
+        "imageSrc": "/images/red-power/reviews/car-maintenance-workshop.png"
+      }
+    ]
+  }
+}

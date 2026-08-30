@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "title": "Services | Red Power Garage",
+    "description": "Professional vehicle care, diagnostics, maintenance, electrical service, performance development, and specialist support."
+  },
+  "hero": {
+    "eyebrow": "Red Power Garage",
+    "title": "Services",
+    "description": "Professional vehicle care from inspection to performance.",
+    "primaryCta": "Book Appointment",
+    "secondaryCta": "Explore Home",
+    "imageAlt": "Technician working under a vehicle hood at Red Power Garage"
+  },
+  "catalog": {
+    "eyebrow": "Performance • Precision • Trust",
+    "title": "Automotive service with a higher standard.",
+    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
+    "cta": "Book Service",
+    "items": [
+      {
+        "slug": "advanced-diagnostics",
+        "title": "Diagnostics",
+        "body": "Advanced inspection, fault tracing, and technical evaluation with clear reporting."
+      },
+      {
+        "slug": "preventive-maintenance",
+        "title": "Preventive Maintenance",
+        "body": "Periodic maintenance built around reliability, service intervals, and long-term care."
+      },
+      {
+        "slug": "mechanical-maintenance",
+        "title": "Mechanical",
+        "body": "Advanced mechanical service with quality execution and workshop discipline."
+      },
+      {
+        "slug": "electrical-systems",
+        "title": "Electrical",
+        "body": "Electrical and electronic systems support using modern diagnostic methods."
+      },
+      {
+        "slug": "pre-purchase-inspection",
+        "title": "Pre-Purchase Inspection",
+        "body": "Professional evaluation before purchase to reduce hidden risk and improve confidence."
+      },
+      {
+        "slug": "performance-development",
+        "title": "Performance",
+        "body": "Performance-focused service and development for drivers seeking stronger results."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Red Power Garage",
+    "cta": "Learn More",
+    "items": [
+      {
+        "slug": "advanced-diagnostics",
+        "title": "Diagnostics",
+        "description": "Precision service, modern technology, and a team that understands technical inspection from the first check.",
+        "imageAlt": "Engine service inspection inside Red Power Garage"
+      },
+      {
+        "slug": "preventive-maintenance",
+        "title": "Preventive Maintenance",
+        "description": "Clear maintenance planning, consistent quality, and service processes that support long-term vehicle reliability.",
+        "imageAlt": "Brake and wheel components representing preventive maintenance"
+      },
+      {
+        "slug": "mechanical-maintenance",
+        "title": "Mechanical",
+        "description": "Professional mechanical maintenance supported by practical workshop expertise and dependable execution.",
+        "imageAlt": "Technician performing mechanical work at Red Power Garage"
+      },
+      {
+        "slug": "electrical-systems",
+        "title": "Electrical",
+        "description": "Electrical and electronic systems support for modern vehicles, diagnostics, and specialist troubleshooting.",
+        "imageAlt": "Technical service gallery strip showing workshop equipment"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Red Power Garage",
+    "title": "Need a specialist service path for your vehicle or fleet?",
+    "description": "Use the separate service-request flow for tailored work, performance requests, fleet coordination, or advanced workshop inquiries.",
+    "primaryLabel": "Contact Us",
+    "secondaryLabel": "View Specials",
+    "imageAlt": "Service gallery strip showing workshop tools and performance vehicles"
+  }
+}

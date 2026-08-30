@@ -1,0 +1,66 @@
+{
+  "errors": {
+    "required": "This field is required.",
+    "invalid_email": "Enter a valid email address.",
+    "invalid_phone": "Enter a valid phone number.",
+    "min_name": "Please enter at least 2 characters.",
+    "min_message": "Please enter at least 10 characters.",
+    "min_description": "Please enter at least 15 characters.",
+    "invalid_date": "Choose a valid date.",
+    "invalid_file_type": "Upload an image file only.",
+    "file_too_large": "The image must be 5 MB or smaller.",
+    "duplicate_submission": "Please wait before sending the same request again.",
+    "server_error": "Something went wrong. Please try again."
+  },
+  "contactForm": {
+    "eyebrow": "Contact form",
+    "title": "Start the conversation",
+    "description": "A focused contact form for service questions, inspections, and general inquiries.",
+    "fields": {
+      "name": "Name",
+      "phone": "Phone",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "phone": "Your phone number",
+      "message": "Tell us what you need"
+    },
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success": "Your message has been sent successfully.",
+    "error": "We could not send your message."
+  },
+  "serviceRequestForm": {
+    "eyebrow": "Service request",
+    "title": "Request a specialized service",
+    "description": "Prepared for bookings, custom work, diagnostics, or performance-related requests.",
+    "fields": {
+      "fullName": "Full name",
+      "phone": "Phone",
+      "email": "Email",
+      "serviceType": "Service type",
+      "vehicleModel": "Vehicle model",
+      "preferredDate": "Preferred date",
+      "description": "Request details",
+      "referenceImage": "Reference image"
+    },
+    "placeholders": {
+      "fullName": "Your full name",
+      "phone": "Your phone number",
+      "email": "name@example.com",
+      "serviceType": "Diagnostics, performance, maintenance...",
+      "vehicleModel": "Vehicle make and model",
+      "description": "Tell us what you need and any vehicle symptoms"
+    },
+    "fileHint": "Optional. JPG, PNG, or WebP up to 5 MB.",
+    "submit": "Send request",
+    "submitting": "Sending...",
+    "success": "Your request has been submitted successfully.",
+    "error": "We could not submit your request."
+  },
+  "api": {
+    "contactSuccess": "Your message has been received successfully.",
+    "serviceRequestSuccess": "Your request has been received successfully."
+  }
+}

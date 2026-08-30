@@ -1,0 +1,23 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#050505"/>
+  <rect x="54" y="54" width="1092" height="792" rx="36" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <path d="M146 702C292 540.667 436 460 578 460C720 460 861.333 514 1002 622" stroke="#FF2433" stroke-opacity="0.82" stroke-width="18" stroke-linecap="round"/>
+  <path d="M212 739C333.333 633.667 456.667 581 582 581C707.333 581 826 618.333 938 693" stroke="#A1A1AA" stroke-opacity="0.4" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="864" cy="246" r="122" fill="url(#paint0_radial)"/>
+  <circle cx="864" cy="246" r="90" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <circle cx="864" cy="246" r="56" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
+  <path d="M244 248H604" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+  <path d="M244 324H724" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+  <path d="M244 400H538" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+  <rect x="244" y="184" width="176" height="28" rx="14" fill="#FF2433" fill-opacity="0.18"/>
+  <rect x="244" y="184" width="112" height="28" rx="14" fill="#FF2433"/>
+  <rect x="244" y="470" width="712" height="1" fill="rgba(255,255,255,0.08)"/>
+  <rect x="244" y="516" width="626" height="1" fill="rgba(255,255,255,0.08)"/>
+  <rect x="244" y="562" width="534" height="1" fill="rgba(255,255,255,0.08)"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(864 246) rotate(90) scale(122)">
+      <stop stop-color="#FF2433" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FF2433" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

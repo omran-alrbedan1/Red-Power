@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "title": "Specials | Red Power Garage",
+    "description": "Seasonal service packages, brake and safety campaigns, and performance-focused workshop offers from Red Power Garage."
+  },
+  "hero": {
+    "eyebrow": "Red Power Garage",
+    "title": "Specials",
+    "description": "Seasonal service packages and performance opportunities.",
+    "primaryCta": "Book Appointment",
+    "secondaryCta": "Explore Services",
+    "imageAlt": "Red Dodge performance car featured in the Red Power Garage specials hero"
+  },
+  "overview": {
+    "eyebrow": "Performance • Precision • Trust",
+    "title": "Automotive service with a higher standard.",
+    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
+    "cta": "Explore",
+    "items": [
+      {
+        "title": "Maintenance Check",
+        "body": "Seasonal checkups that focus on reliability, fluid condition, belts, filters, and workshop inspection before issues grow."
+      },
+      {
+        "title": "Brake & Safety",
+        "body": "Targeted brake, suspension, tire, and safety review packages designed to keep daily and long-distance driving confident."
+      },
+      {
+        "title": "Performance",
+        "body": "A flexible path for drivers looking for performance-minded service, diagnostics, upgrades, or workshop consultation."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Red Power Garage",
+    "cta": "Ask About Offer",
+    "items": [
+      {
+        "title": "Maintenance Check",
+        "description": "Use this route for seasonal inspection campaigns, preventive maintenance bundles, and workshop checkups that are promoted without inventing prices.",
+        "imageAlt": "Brake and wheel detail representing a Red Power Garage maintenance check offer",
+        "imageSrc": "/images/red-power/specials/brake-and-wheel-detail.png"
+      },
+      {
+        "title": "Brake & Safety",
+        "description": "Ideal for highlighting safety-focused service opportunities, brake inspection support, and current availability through a clear call-to-action.",
+        "imageAlt": "Service gallery strip showing workshop tools and performance vehicles for Red Power Garage specials",
+        "imageSrc": "/images/red-power/specials/service-gallery-strip.png"
+      }
+    ]
+  },
+  "requestFlow": {
+    "eyebrow": "Current Offers",
+    "title": "Ask about active packages, availability, or a custom service request.",
+    "description": "This preserves the existing service-request flow while presenting it inside the dedicated Specials page. Use it for seasonal campaigns, tailored work, or quote-based offers.",
+    "panelTitle": "How to use this page",
+    "items": [
+      "Ask about the current offer list",
+      "Request a quote instead of relying on fake pricing",
+      "Send tailored vehicle or fleet requirements"
+    ]
+  }
+}

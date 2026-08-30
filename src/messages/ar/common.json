@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "ريد باور",
+    "tagline": "أداء • دقة • ثقة",
+    "homeLabel": "الانتقال إلى الصفحة الرئيسية ريد باور"
+  },
+  "navigation": {
+    "ariaLabel": "التنقل الرئيسي",
+    "mobileAriaLabel": "التنقل عبر الجوال",
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "about": "من نحن",
+    "specials": "العروض",
+    "gallery": "المعرض",
+    "reviews": "التقييمات",
+    "contact": "تواصل معنا"
+  },
+  "header": {
+    "bookNow": "احجز الخدمة"
+  },
+  "mobileMenu": {
+    "openLabel": "فتح القائمة",
+    "closeLabel": "إغلاق القائمة",
+    "menuLabel": "القائمة"
+  },
+  "a11y": {
+    "skipToContent": "الانتقال إلى المحتوى الرئيسي"
+  },
+  "footer": {
+    "description": "خدمات صيانة وفحص وتطوير أداء السيارات مع خبرة متخصصة في المركبات الأمريكية واحتياجات الأفراد وقطاع الأعمال.",
+    "quickLinksTitle": "روابط سريعة",
+    "contactTitle": "التواصل",
+    "contact": {
+      "phoneLabel": "الهاتف",
+      "phone": "YOUR_PHONE_NUMBER",
+      "emailLabel": "البريد الإلكتروني",
+      "email": "YOUR_EMAIL",
+      "addressLabel": "الموقع",
+      "address": "YOUR_ADDRESS",
+      "hoursLabel": "ساعات العمل",
+      "hours": "YOUR_WORKING_HOURS"
+    },
+    "services": [
+      "خدمة الأفراد",
+      "دعم الشركات",
+      "حلول الأسطول"
+    ],
+    "companyLine": "تحت مظلة شركة قمرة الرائدة",
+    "copyright": "© 2026 ريد باور. جميع الحقوق محفوظة.",
+    "poweredBy": "مدعوم من",
+    "poweredByAlt": "شعار فيوتشر إكس"
+  },
+  "floatingAction": {
+    "label": "احجز الآن"
+  }
+}

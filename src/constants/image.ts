@@ -1,0 +1,62 @@
+export const images = {
+  brand: {
+    redPowerLogo: "/images/red-power/brand/red-power-logo.png",
+    futurexLogo: "/futurex-logo.svg",
+  },
+  home: {
+    hero: "/images/red-power/home/hero.png",
+    heroGenerated: "/images/red-power/home/hero-generated.png",
+    redDodgeGarageHero: "/images/red-power/home/red-dodge-garage-hero.png",
+    dodgeGarageWide: "/images/red-power/home/dodge-garage-wide.png",
+    techniciansWithDodge: "/images/red-power/home/technicians-with-dodge.png",
+    serviceGalleryStrip: "/images/red-power/home/service-gallery-strip.png",
+    ctaCarFront: "/images/red-power/home/cta-car-front-generated.png",
+    brakeDetail: "/images/red-power/home/brake-detail-generated.png",
+    serviceMoparExpertise: "/images/red-power/home/service-mopar-expertise.png",
+    servicePerformanceIntake: "/images/red-power/home/service-performance-intake.png",
+    serviceMaintenanceOil: "/images/red-power/home/service-maintenance-oil.png",
+    serviceDiagnosticsTablet: "/images/red-power/home/service-diagnostics-tablet.png",
+  },
+  about: {
+    hero: "/images/red-power/about/garage-dodge-hero-background.png",
+    garageWorkshopBackground: "/images/red-power/about/garage-workshop-background.png",
+    technicianWorking: "/images/red-power/about/technician-working.png",
+    techniciansWithDodge: "/images/red-power/about/technicians-with-dodge.png",
+  },
+  contact: {
+    hero: "/images/red-power/contact/garage-dodge-hero-background.png",
+    garageWorkshopBackground: "/images/red-power/contact/garage-workshop-background.png",
+    technicianWorking: "/images/red-power/contact/technician-working.png",
+  },
+  gallery: {
+    dodgeGarageWide: "/images/red-power/gallery/dodge-garage-wide.png",
+    carMaintenanceWorkshop: "/images/red-power/gallery/car-maintenance-workshop.png",
+    garageShowcaseCollage: "/images/red-power/gallery/garage-showcase-collage.png",
+    serviceGalleryStrip: "/images/red-power/gallery/service-gallery-strip.png",
+    eventCarExpo: "/images/red-power/gallery/event-car-expo.png",
+    eventTeamGroup: "/images/red-power/gallery/event-team-group.png",
+  },
+  reviews: {
+    dodgeGarageWide: "/images/red-power/reviews/dodge-garage-wide.png",
+    carMaintenanceWorkshop: "/images/red-power/reviews/car-maintenance-workshop.png",
+    techniciansWithDodge: "/images/red-power/reviews/technicians-with-dodge.png",
+  },
+  services: {
+    technicianWorking: "/images/red-power/services/technician-working.png",
+    mechanicEngineService: "/images/red-power/services/mechanic-engine-service.png",
+    brakeAndWheelDetail: "/images/red-power/services/brake-and-wheel-detail.png",
+    garageShowcaseCollage: "/images/red-power/services/garage-showcase-collage.png",
+    galleryStrip: "/images/red-power/services/service-gallery-strip.png",
+  },
+  serviceDetails: {
+    mechanicEngineService: "/images/red-power/service-details/mechanic-engine-service.png",
+    brakeAndWheelDetail: "/images/red-power/service-details/brake-and-wheel-detail.png",
+    carMaintenanceWorkshop: "/images/red-power/service-details/car-maintenance-workshop.png",
+    redDodgeGarageHero: "/images/red-power/service-details/red-dodge-garage-hero.png",
+  },
+  specials: {
+    hero: "/images/red-power/specials/red-dodge-garage-hero.png",
+    brakeAndWheelDetail: "/images/red-power/specials/brake-and-wheel-detail.png",
+    serviceGalleryStrip: "/images/red-power/specials/service-gallery-strip.png",
+  },
+} as const;

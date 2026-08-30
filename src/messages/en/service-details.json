@@ -1,0 +1,261 @@
+{
+  "shared": {
+    "eyebrow": "Red Power Garage",
+    "processEyebrow": "Performance • Precision • Trust",
+    "processLinkLabel": "Book Service",
+    "secondaryCtaLabel": "Explore Services",
+    "secondaryCtaPath": "/services"
+  },
+  "cta": {
+    "primaryLabel": "Book Appointment",
+    "secondaryLabel": "Explore Services"
+  },
+  "entries": {
+    "advanced-diagnostics": {
+      "metadata": {
+        "title": "Advanced Diagnostics | Red Power Garage",
+        "description": "Advanced inspection, diagnostics, fault tracing, and technical reporting for confident vehicle decisions."
+      },
+      "hero": {
+        "title": "Service Details",
+        "description": "Advanced diagnostics and inspection.",
+        "imageAlt": "Technician diagnosing a vehicle engine at Red Power Garage"
+      },
+      "process": {
+        "title": "Automotive service with a higher standard.",
+        "description": "Professional diagnostics and evaluation with clear communication, specialist inspection, and reliable reporting.",
+        "items": [
+          { "title": "Inspect", "body": "Initial inspection built around symptoms, checks, and visible conditions." },
+          { "title": "Diagnose", "body": "Technical diagnostics using workshop tools and specialist fault tracing." },
+          { "title": "Report", "body": "Clear findings, priorities, and transparent recommendations before work proceeds." },
+          { "title": "Service", "body": "A confirmed service path based on real workshop diagnosis and customer needs." }
+        ]
+      },
+      "featureItems": [
+        {
+          "title": "Inspect",
+          "description": "Precision service, modern technology, and a team that understands technical inspection from the first check.",
+          "imageAlt": "Technician inspecting the engine bay at Red Power Garage",
+          "imageSrc": "/images/red-power/service-details/mechanic-engine-service.png"
+        },
+        {
+          "title": "Diagnose",
+          "description": "Advanced diagnostic work that helps isolate faults, confirm root causes, and reduce wasted repair time.",
+          "imageAlt": "Vehicle diagnostics in a modern workshop",
+          "imageSrc": "/images/red-power/service-details/car-maintenance-workshop.png"
+        },
+        {
+          "title": "Report",
+          "description": "Transparent technical communication so the customer understands the condition, urgency, and next step.",
+          "imageAlt": "Brake and wheel parts used to support technical reporting visuals",
+          "imageSrc": "/images/red-power/service-details/brake-and-wheel-detail.png"
+        }
+      ]
+    },
+    "preventive-maintenance": {
+      "metadata": {
+        "title": "Preventive Maintenance | Red Power Garage",
+        "description": "Preventive maintenance focused on reliability, service intervals, and quality-controlled workshop care."
+      },
+      "hero": {
+        "title": "Service Details",
+        "description": "Preventive maintenance and workshop care.",
+        "imageAlt": "Brake and wheel service detail for preventive maintenance"
+      },
+      "process": {
+        "title": "Automotive service with a higher standard.",
+        "description": "Workshop maintenance built around consistent service intervals, quality parts, and technical review before delivery.",
+        "items": [
+          { "title": "Inspect", "body": "Check service condition, usage pattern, and required maintenance interval." },
+          { "title": "Maintain", "body": "Carry out periodic maintenance with quality-focused workshop standards." },
+          { "title": "Review", "body": "Review completed work, fluids, components, and maintenance priorities." },
+          { "title": "Protect", "body": "Keep the vehicle on a more reliable long-term service path." }
+        ]
+      },
+      "featureItems": [
+        {
+          "title": "Inspect",
+          "description": "Professional service planning begins with the right interval, condition review, and technical priorities.",
+          "imageAlt": "Preventive maintenance inspection in the workshop",
+          "imageSrc": "/images/red-power/service-details/brake-and-wheel-detail.png"
+        },
+        {
+          "title": "Maintain",
+          "description": "Preventive maintenance supports reliability, lower surprise failures, and better long-term operating confidence.",
+          "imageAlt": "Maintenance workshop environment at Red Power Garage",
+          "imageSrc": "/images/red-power/service-details/car-maintenance-workshop.png"
+        },
+        {
+          "title": "Review",
+          "description": "Final review keeps the process transparent and confirms the work is aligned with the vehicle's actual condition.",
+          "imageAlt": "Mechanic engine service close-up at Red Power Garage",
+          "imageSrc": "/images/red-power/service-details/mechanic-engine-service.png"
+        }
+      ]
+    },
+    "mechanical-maintenance": {
+      "metadata": {
+        "title": "Mechanical Maintenance | Red Power Garage",
+        "description": "Advanced mechanical maintenance and repair carried out with technical discipline and workshop precision."
+      },
+      "hero": {
+        "title": "Service Details",
+        "description": "Advanced mechanical maintenance.",
+        "imageAlt": "Mechanical maintenance workshop scene"
+      },
+      "process": {
+        "title": "Automotive service with a higher standard.",
+        "description": "Mechanical service should be based on accurate diagnosis, quality execution, and a clear delivery standard.",
+        "items": [
+          { "title": "Inspect", "body": "Mechanical review of symptoms, wear, function, and related systems." },
+          { "title": "Diagnose", "body": "Confirm the source of the issue before beginning repair work." },
+          { "title": "Repair", "body": "Carry out the recommended mechanical work with proper workshop controls." },
+          { "title": "Verify", "body": "Review the result and confirm the vehicle leaves in the expected condition." }
+        ]
+      },
+      "featureItems": [
+        {
+          "title": "Inspect",
+          "description": "Mechanical work starts with a clear review, not guesswork, so the repair path fits the real problem.",
+          "imageAlt": "Mechanic engine service scene",
+          "imageSrc": "/images/red-power/service-details/mechanic-engine-service.png"
+        },
+        {
+          "title": "Diagnose",
+          "description": "Workshop diagnosis helps connect symptoms with the real component or system requiring attention.",
+          "imageAlt": "Modern mechanical workshop environment",
+          "imageSrc": "/images/red-power/service-details/car-maintenance-workshop.png"
+        },
+        {
+          "title": "Repair",
+          "description": "Execution follows a professional service path with workshop discipline, quality checks, and technical review.",
+          "imageAlt": "Brake and wheel detail for mechanical repair support",
+          "imageSrc": "/images/red-power/service-details/brake-and-wheel-detail.png"
+        }
+      ]
+    },
+    "electrical-systems": {
+      "metadata": {
+        "title": "Electrical Systems | Red Power Garage",
+        "description": "Electrical and electronic system diagnostics, troubleshooting, and repair for modern vehicles."
+      },
+      "hero": {
+        "title": "Service Details",
+        "description": "Electrical systems and specialist troubleshooting.",
+        "imageAlt": "Electrical and engine systems service at Red Power Garage"
+      },
+      "process": {
+        "title": "Automotive service with a higher standard.",
+        "description": "Electrical work requires careful testing, accurate fault tracing, and a technical workflow that avoids unnecessary replacement.",
+        "items": [
+          { "title": "Inspect", "body": "Review symptoms, modules, power delivery, and visible system condition." },
+          { "title": "Diagnose", "body": "Use proper testing and tracing to isolate the electrical fault." },
+          { "title": "Correct", "body": "Apply the recommended fix based on the confirmed cause." },
+          { "title": "Verify", "body": "Retest the system to confirm stable operation and delivery quality." }
+        ]
+      },
+      "featureItems": [
+        {
+          "title": "Inspect",
+          "description": "Electrical work starts with structured observation and system checks rather than assumption.",
+          "imageAlt": "Engine bay inspection related to electrical systems",
+          "imageSrc": "/images/red-power/service-details/mechanic-engine-service.png"
+        },
+        {
+          "title": "Diagnose",
+          "description": "Technical troubleshooting helps isolate the real source of faults across modern electrical systems.",
+          "imageAlt": "Modern workshop used for electrical diagnostics",
+          "imageSrc": "/images/red-power/service-details/car-maintenance-workshop.png"
+        },
+        {
+          "title": "Verify",
+          "description": "Testing after repair helps ensure the system performs correctly and the delivery remains reliable.",
+          "imageAlt": "Brake and wheel detail used as a technical service visual",
+          "imageSrc": "/images/red-power/service-details/brake-and-wheel-detail.png"
+        }
+      ]
+    },
+    "pre-purchase-inspection": {
+      "metadata": {
+        "title": "Pre-Purchase Inspection | Red Power Garage",
+        "description": "Professional pre-purchase inspections that help clarify condition, risks, and service priorities before buying."
+      },
+      "hero": {
+        "title": "Service Details",
+        "description": "Pre-purchase inspection and technical review.",
+        "imageAlt": "Vehicle inspection detail for pre-purchase service"
+      },
+      "process": {
+        "title": "Automotive service with a higher standard.",
+        "description": "Pre-purchase inspection is about reducing uncertainty through structured review, technical checks, and transparent reporting.",
+        "items": [
+          { "title": "Inspect", "body": "Inspect condition, visible wear, and key functional areas before purchase." },
+          { "title": "Diagnose", "body": "Use technical review to identify hidden issues or early warning signs." },
+          { "title": "Report", "body": "Summarize the condition, urgency, and expected service priorities." },
+          { "title": "Decide", "body": "Help the customer move forward with clearer purchase confidence." }
+        ]
+      },
+      "featureItems": [
+        {
+          "title": "Inspect",
+          "description": "A structured pre-purchase inspection helps reveal condition, wear, and likely service priorities.",
+          "imageAlt": "Brake and wheel inspection for pre-purchase review",
+          "imageSrc": "/images/red-power/service-details/brake-and-wheel-detail.png"
+        },
+        {
+          "title": "Diagnose",
+          "description": "Technical evaluation supports better decisions and helps reduce hidden surprises after purchase.",
+          "imageAlt": "Mechanic inspection in the engine bay",
+          "imageSrc": "/images/red-power/service-details/mechanic-engine-service.png"
+        },
+        {
+          "title": "Report",
+          "description": "The result should be clear enough for the customer to understand what is healthy, what is urgent, and what to budget for.",
+          "imageAlt": "Workshop scene used for pre-purchase reporting visuals",
+          "imageSrc": "/images/red-power/service-details/car-maintenance-workshop.png"
+        }
+      ]
+    },
+    "performance-development": {
+      "metadata": {
+        "title": "Performance Development | Red Power Garage",
+        "description": "Performance-focused service and development for drivers who want stronger technical results."
+      },
+      "hero": {
+        "title": "Service Details",
+        "description": "Performance development and specialist planning.",
+        "imageAlt": "Red Dodge performance car for service details hero"
+      },
+      "process": {
+        "title": "Automotive service with a higher standard.",
+        "description": "Performance work should start with the right technical direction, realistic goals, and a service path suited to the vehicle.",
+        "items": [
+          { "title": "Inspect", "body": "Assess the vehicle baseline, condition, and target outcome." },
+          { "title": "Diagnose", "body": "Confirm current system health before making performance decisions." },
+          { "title": "Plan", "body": "Define the recommended path for performance-oriented service or development." },
+          { "title": "Support", "body": "Move forward with a practical, workshop-backed performance direction." }
+        ]
+      },
+      "featureItems": [
+        {
+          "title": "Inspect",
+          "description": "Performance service starts with a realistic assessment of the vehicle, condition, and intended result.",
+          "imageAlt": "Red Dodge hero image for performance development",
+          "imageSrc": "/images/red-power/service-details/red-dodge-garage-hero.png"
+        },
+        {
+          "title": "Diagnose",
+          "description": "Baseline checks help ensure the vehicle is technically ready before any stronger performance path is discussed.",
+          "imageAlt": "Engine service image supporting performance diagnostics",
+          "imageSrc": "/images/red-power/service-details/mechanic-engine-service.png"
+        },
+        {
+          "title": "Plan",
+          "description": "The best performance direction comes from planning, not assumptions, and should fit the vehicle's actual needs.",
+          "imageAlt": "Workshop scene supporting performance planning",
+          "imageSrc": "/images/red-power/service-details/car-maintenance-workshop.png"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+export const designSystem = {
+  colors: {
+    background: "#08090A",
+    backgroundSoft: "#111315",
+    panel: "#151719",
+    foreground: "#F5F5F5",
+    muted: "#25282B",
+    mutedForeground: "#B8BCC1",
+    border: "#2B2F33",
+    brand: "#E10613",
+    brandStrong: "#FF2331",
+    steel: "#73777C",
+  },
+  shadows: {
+    glow: "0 0 42px rgba(225, 6, 19, 0.28)",
+    panel: "0 32px 100px rgba(0, 0, 0, 0.58)",
+  },
+  radius: {
+    sm: "0.65rem",
+    md: "0.9rem",
+    lg: "1.25rem",
+    xl: "1.75rem",
+    pill: "999px",
+  },
+  spacing: {
+    sectionY: "4.5rem",
+    sectionYDesktop: "6.5rem",
+    containerX: "1.5rem",
+  },
+  typography: {
+    hero: "text-5xl sm:text-6xl lg:text-7xl",
+    display: "text-4xl sm:text-5xl lg:text-6xl",
+    heading: "text-3xl sm:text-4xl lg:text-5xl",
+    body: "text-base leading-7 sm:text-lg sm:leading-8",
+    eyebrow: "text-xs uppercase tracking-[0.34em]",
+  },
+  containers: {
+    default: "max-w-7xl",
+    narrow: "max-w-5xl",
+    reading: "max-w-3xl",
+  },
+  breakpoints: {
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px",
+  },
+  motion: {
+    fast: "160ms",
+    base: "260ms",
+    slow: "560ms",
+  },
+} as const;

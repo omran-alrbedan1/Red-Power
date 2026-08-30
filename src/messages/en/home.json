@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "title": "Red Power Garage",
+    "description": "Professional vehicle maintenance, diagnostics, and performance services with American and Mopar expertise."
+  },
+  "hero": {
+    "eyebrow": "Red Power",
+    "title": "American expertise. Power on the road.",
+    "description": "Precision diagnostics, professional maintenance, and performance upgrades for American vehicles.",
+    "primaryCta": "Book Your Slot",
+    "secondaryCta": "Explore Our Services",
+    "highlights": ["Genuine parts and approved quality", "Certified technicians with American expertise", "Advanced diagnostics and precise results"],
+    "imageAlt": "Black muscle car inside Red Power Garage"
+  },
+  "brandIntroduction": {
+    "eyebrow": "Our Services",
+    "title": "Integrated solutions for performance without limits.",
+    "description": "From diagnosis to upgrades, we cover everything needed to keep your vehicle performing at its peak.",
+    "sectionCta": "Explore All Services",
+    "cards": [
+      {
+        "number": "01",
+        "icon": "pulse",
+        "title": "Advanced Electronic Diagnostics",
+        "body": "We use modern diagnostic equipment to identify faults quickly and explain them clearly.",
+        "cta": "Learn More"
+      },
+      {
+        "number": "02",
+        "icon": "tool",
+        "title": "Preventive Maintenance",
+        "body": "Routine service programs that protect reliability and help prevent costly issues before they happen.",
+        "cta": "Learn More"
+      },
+      {
+        "number": "03",
+        "icon": "gauge",
+        "title": "Performance Upgrades",
+        "body": "From more power to sharper control, we help move your car to a higher level of response.",
+        "cta": "Learn More"
+      },
+      {
+        "number": "04",
+        "icon": "mopar",
+        "title": "Mopar and American Expertise",
+        "body": "Specialist experience with Dodge, Jeep, Chrysler, and RAM backed by deep American performance knowledge.",
+        "cta": "Learn More"
+      }
+    ]
+  },
+  "performance": {
+    "eyebrow": "Precision in Every Detail",
+    "primaryCta": "Explore Our Workshop",
+    "points": [
+      "Diagnostics that save time and cost",
+      "Genuine parts and reliable performance",
+      "Support backed by workmanship confidence",
+      "A real passion for performance, proven on the road"
+    ],
+    "heading": {
+      "title": "We do more than repair. We build real performance difference.",
+      "description": "Diagnostic precision, parts quality, and clear execution. Every detail here is designed to deliver stronger results and higher confidence."
+    },
+    "imageAlt": "Red performance brake detail inside the Red Power workshop"
+  },
+  "whyRedPower": {
+    "eyebrow": "Why Choose Red Power?",
+    "title": "Numbers that reflect trust.",
+    "description": "Workshop quality should be visible in both service results and customer confidence, so we surface direct signals of that credibility.",
+    "stats": [
+      {
+        "value": "+1000",
+        "title": "Satisfied Clients",
+        "label": "Trust built through real results"
+      },
+      {
+        "value": "+1500",
+        "title": "Vehicles Serviced",
+        "label": "Hands-on Mopar and American vehicle experience"
+      },
+      {
+        "value": "+10",
+        "title": "Years of Experience",
+        "label": "Technical depth in the performance space"
+      },
+      {
+        "value": "98%",
+        "title": "Customer Satisfaction",
+        "label": "Turning performance into a consistent standard"
+      }
+    ]
+  },
+  "contactCta": {
+    "eyebrow": "Ready for the next step?",
+    "title": "Book now and let us unlock your car's full power.",
+    "description": "Book now and let us unlock your car's full power.",
+    "primaryLabel": "Book Your Slot",
+    "secondaryLabel": "Contact on WhatsApp",
+    "features": [
+      "Fast and clear appointment booking",
+      "Free technical guidance before your visit",
+      "Professional service from a specialist team"
+    ],
+    "imageAlt": "Front view of a Dodge performance car under red lighting"
+  }
+}

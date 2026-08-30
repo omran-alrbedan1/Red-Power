@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "المعرض | ريد باور جراج",
+    "description": "نظرة بصرية داخل ريد باور جراج تشمل الورشة والخدمة وسيارات الأداء والحضور في الفعاليات."
+  },
+  "hero": {
+    "eyebrow": "ريد باور جراج",
+    "title": "المعرض",
+    "description": "نظرة داخل ريد باور جراج.",
+    "primaryCta": "احجز موعدًا",
+    "secondaryCta": "استكشف الخدمات",
+    "imageAlt": "صورة بطل المعرض في ريد باور جراج وتعرض سيارات الأداء داخل الورشة"
+  },
+  "overview": {
+    "eyebrow": "أداء • دقة • ثقة",
+    "title": "خدمات سيارات بمعيار أعلى.",
+    "description": "خدمات احترافية للصيانة والفحص والخدمات الميكانيكية والكهربائية وتطوير الأداء مع معرفة متخصصة في المركبات الأمريكية وMopar."
+  },
+  "grid": {
+    "items": [
+      {
+        "title": "أجواء الورشة",
+        "category": "الورشة",
+        "imageAlt": "ورشة ريد باور داكنة مع سيارة أداء في المشهد",
+        "imageSrc": "/images/red-power/gallery/dodge-garage-wide.png"
+      },
+      {
+        "title": "خدمة أثناء التنفيذ",
+        "category": "الخدمات",
+        "imageAlt": "فني يعمل على مركبة داخل ورشة ريد باور جراج",
+        "imageSrc": "/images/red-power/gallery/car-maintenance-workshop.png"
+      },
+      {
+        "title": "استعراض الهوية",
+        "category": "الأداء",
+        "imageAlt": "كولاج استعراضي لهوية ريد باور جراج وسيارات الأداء",
+        "imageSrc": "/images/red-power/gallery/garage-showcase-collage.png"
+      },
+      {
+        "title": "لقطات تقنية",
+        "category": "الخدمات",
+        "imageAlt": "شريط صور يعرض أدوات الورشة وخدمة المحركات ومشاهد الأداء",
+        "imageSrc": "/images/red-power/gallery/service-gallery-strip.png"
+      },
+      {
+        "title": "حضور الفعاليات",
+        "category": "الفعاليات",
+        "imageAlt": "عرض لمركبة ريد باور جراج في فعالية عامة",
+        "imageSrc": "/images/red-power/gallery/event-car-expo.png"
+      },
+      {
+        "title": "فريق دعم الفعاليات",
+        "category": "الفعاليات",
+        "imageAlt": "صورة جماعية لفريق ريد باور جراج خلال فعالية",
+        "imageSrc": "/images/red-power/gallery/event-team-group.png"
+      }
+    ]
+  }
+}

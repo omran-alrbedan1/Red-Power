@@ -1,0 +1,66 @@
+{
+  "errors": {
+    "required": "هذا الحقل مطلوب.",
+    "invalid_email": "يرجى إدخال بريد إلكتروني صحيح.",
+    "invalid_phone": "يرجى إدخال رقم هاتف صحيح.",
+    "min_name": "يرجى إدخال حرفين على الأقل.",
+    "min_message": "يرجى إدخال 10 أحرف على الأقل.",
+    "min_description": "يرجى إدخال 15 حرفًا على الأقل.",
+    "invalid_date": "يرجى اختيار تاريخ صحيح.",
+    "invalid_file_type": "يرجى رفع ملف صورة فقط.",
+    "file_too_large": "يجب ألا يتجاوز حجم الصورة 5 ميجابايت.",
+    "duplicate_submission": "يرجى الانتظار قليلًا قبل إرسال نفس الطلب مرة أخرى.",
+    "server_error": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+  },
+  "contactForm": {
+    "eyebrow": "نموذج التواصل",
+    "title": "ابدأ التواصل",
+    "description": "نموذج تواصل واضح ومباشر للاستفسارات وطلبات الخدمة والفحص.",
+    "fields": {
+      "name": "الاسم",
+      "phone": "الهاتف",
+      "message": "الرسالة"
+    },
+    "placeholders": {
+      "name": "اسمك",
+      "phone": "رقم هاتفك",
+      "message": "اكتب احتياجك أو استفسارك"
+    },
+    "submit": "إرسال الرسالة",
+    "submitting": "جارٍ الإرسال...",
+    "success": "تم إرسال رسالتك بنجاح.",
+    "error": "تعذر إرسال الرسالة."
+  },
+  "serviceRequestForm": {
+    "eyebrow": "طلب خدمة",
+    "title": "اطلب خدمة متخصصة",
+    "description": "مهيأ للحجوزات وطلبات الأداء والفحص والخدمات الخاصة.",
+    "fields": {
+      "fullName": "الاسم الكامل",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "serviceType": "نوع الخدمة",
+      "vehicleModel": "نوع السيارة",
+      "preferredDate": "التاريخ المفضل",
+      "description": "تفاصيل الطلب",
+      "referenceImage": "صورة مرجعية"
+    },
+    "placeholders": {
+      "fullName": "اسمك الكامل",
+      "phone": "رقم هاتفك",
+      "email": "name@example.com",
+      "serviceType": "فحص، أداء، صيانة...",
+      "vehicleModel": "نوع السيارة والموديل",
+      "description": "اكتب تفاصيل الطلب أو الأعراض أو نوع الخدمة المطلوبة"
+    },
+    "fileHint": "اختياري. JPG أو PNG أو WebP حتى 5 ميجابايت.",
+    "submit": "إرسال الطلب",
+    "submitting": "جارٍ الإرسال...",
+    "success": "تم إرسال طلبك بنجاح.",
+    "error": "تعذر إرسال الطلب."
+  },
+  "api": {
+    "contactSuccess": "تم استلام رسالتك بنجاح.",
+    "serviceRequestSuccess": "تم استلام طلبك بنجاح."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "Red Power",
+    "tagline": "Performance • Precision • Trust",
+    "homeLabel": "Red Power home"
+  },
+  "navigation": {
+    "ariaLabel": "Primary navigation",
+    "mobileAriaLabel": "Mobile navigation",
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "specials": "Specials",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "header": {
+    "bookNow": "Book Service"
+  },
+  "mobileMenu": {
+    "openLabel": "Open navigation menu",
+    "closeLabel": "Close navigation menu",
+    "menuLabel": "Menu"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "footer": {
+    "description": "Professional vehicle maintenance, diagnostics, performance development, and American/Mopar expertise for individual and business customers.",
+    "quickLinksTitle": "Quick Links",
+    "contactTitle": "Contact",
+    "contact": {
+      "phoneLabel": "Phone",
+      "phone": "YOUR_PHONE_NUMBER",
+      "emailLabel": "Email",
+      "email": "YOUR_EMAIL",
+      "addressLabel": "Location",
+      "address": "YOUR_ADDRESS",
+      "hoursLabel": "Working Hours",
+      "hours": "YOUR_WORKING_HOURS"
+    },
+    "services": [
+      "Individual Service",
+      "Corporate Support",
+      "Fleet Solutions"
+    ],
+    "companyLine": "Under the umbrella of Qumrah Al-Raeda Company",
+    "copyright": "© 2026 Red Power Garage. All rights reserved.",
+    "poweredBy": "Powered by",
+    "poweredByAlt": "Future X logo"
+  },
+  "floatingAction": {
+    "label": "Book now"
+  }
+}

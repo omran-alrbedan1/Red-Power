@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "title": "Contact | Red Power Garage",
+    "description": "Book service, send workshop questions, and contact Red Power Garage through the live inquiry form and confirmed email channel."
+  },
+  "hero": {
+    "eyebrow": "Red Power Garage",
+    "title": "Contact",
+    "description": "Let's get your vehicle ready.",
+    "primaryCta": "Book Appointment",
+    "secondaryCta": "Explore Services",
+    "imageAlt": "Red Power Garage contact page hero with Dodge workshop background"
+  },
+  "overview": {
+    "eyebrow": "Performance • Precision • Trust",
+    "title": "Automotive service with a higher standard.",
+    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
+    "cta": "Explore",
+    "items": [
+      {
+        "title": "Book Service",
+        "body": "Use the live contact form to start a booking request, explain the vehicle issue, or prepare the next workshop step."
+      },
+      {
+        "title": "Ask a Question",
+        "body": "Send inspection questions, maintenance concerns, or service inquiries through a structured message flow built into the site."
+      },
+      {
+        "title": "Corporate & Fleet",
+        "body": "Business and fleet inquiries can use the same working contact channel while dedicated corporate details remain aligned to confirmed company data."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Red Power Garage",
+    "cta": "Contact Us",
+    "items": [
+      {
+        "title": "Book Service",
+        "description": "The contact experience now centers the working inquiry form, making it the primary entry point for appointments, repair requests, and maintenance planning.",
+        "imageAlt": "Red Power Garage workshop background representing booking and support",
+        "imageSrc": "/images/red-power/contact/garage-workshop-background.png"
+      },
+      {
+        "title": "Ask a Question",
+        "description": "The supporting section keeps the page visually aligned with the brand while directing service questions into a clean, validated contact flow.",
+        "imageAlt": "Red Power Garage technician working as part of the contact page support section",
+        "imageSrc": "/images/red-power/contact/technician-working.png"
+      }
+    ]
+  },
+  "hub": {
+    "eyebrow": "Contact Hub",
+    "title": "Start the conversation through the live form or confirmed company email.",
+    "description": "This page preserves the working contact flow while avoiding unconfirmed phone numbers, addresses, or opening hours.",
+    "panelTitle": "Confirmed channels",
+    "items": [
+      {
+        "title": "Email",
+        "value": "info@redpowergarage.com"
+      },
+      {
+        "title": "Bookings",
+        "value": "Use the form for service scheduling and workshop questions."
+      },
+      {
+        "title": "Corporate & Fleet",
+        "value": "Business support can start through the same live contact flow."
+      },
+      {
+        "title": "Location Details",
+        "value": "Add the final branch address and hours only after they are confirmed."
+      }
+    ]
+  }
+}

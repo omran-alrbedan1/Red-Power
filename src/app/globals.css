@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+:root {
+  --background: #08090a;
+  --background-soft: #111315;
+  --panel: #151719;
+  --foreground: #f5f5f5;
+  --muted: #25282b;
+  --muted-foreground: #b8bcc1;
+  --border: #2b2f33;
+  --brand: #e10613;
+  --brand-strong: #ff2331;
+  --steel: #73777c;
+  --glow: 0 0 42px rgba(225, 6, 19, 0.28);
+  --motion-fast: 180ms;
+  --motion-base: 320ms;
+  --motion-slow: 720ms;
+  --motion-stagger: 120ms;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-soft: var(--background-soft);
+  --color-panel: var(--panel);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-steel: var(--steel);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body:has(#main-content:focus-visible) {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top center, rgba(225, 6, 19, 0.12), transparent 28%),
+    linear-gradient(180deg, #0b0c0d 0%, #08090a 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--brand-strong);
+  outline-offset: 3px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(255, 36, 51, 0.32);
+  color: white;
+}
+
+.font-arabic {
+  font-family: var(--font-noto-kufi-arabic), Arial, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes panel-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes panel-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ambient-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-18deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.14;
+  }
+
+  55% {
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: translateX(180%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+.motion-reveal-up {
+  animation: panel-in var(--motion-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--motion-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.motion-reveal-left {
+  animation: panel-in-left var(--motion-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--motion-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.motion-reveal-right {
+  animation: panel-in-right var(--motion-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--motion-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.motion-surface {
+  animation: panel-in var(--motion-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition:
+    transform var(--motion-base) ease,
+    border-color var(--motion-base) ease,
+    background-color var(--motion-base) ease,
+    box-shadow var(--motion-base) ease;
+}
+
+.motion-surface:hover {
+  transform: translateY(-4px);
+}
+
+.motion-sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.motion-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    100deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 62%
+  );
+  animation: ambient-sweep 5.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.red-power-divider {
+  position: relative;
+}
+
+.red-power-divider::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--brand) 18%, var(--brand) 82%, transparent 100%);
+}
+
+.home-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-position: center;
+  background-size: 32px 32px;
+}
+
+.home-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    rgba(12, 13, 15, 0.92);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+}
+
+.home-panel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(225, 6, 19, 0.65), transparent);
+}
+
+.home-cut-panel {
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+}
+
+.home-accent-line {
+  position: relative;
+}
+
+.home-accent-line::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0;
+  top: 50%;
+  width: min(18vw, 180px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(225, 6, 19, 0.9), transparent);
+}
