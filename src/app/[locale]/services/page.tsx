@@ -2,12 +2,14 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { MediaPageHero } from "@/components/sections/media-page-hero";
+import { JsonLd } from "@/components/seo/json-ld";
 import { images } from "@/constants/image";
 import { ServiceCatalogSection } from "@/features/services/components/service-catalog-section";
 import { ServiceFeatureGrid } from "@/features/services/components/service-feature-grid";
 import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { buildWebPageSchema } from "@/lib/seo";
 
 type ServicesPageProps = {
   params: Promise<{ locale: string }>;
@@ -38,9 +40,18 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
   }
 
   const t = await getTranslations({ locale, namespace: "services.hero" });
+  const metadataT = await getTranslations({ locale, namespace: "services.metadata" });
 
   return (
     <>
+      <JsonLd
+        data={buildWebPageSchema({
+          locale,
+          path: "/services",
+          title: metadataT("title"),
+          description: metadataT("description"),
+        })}
+      />
       <MediaPageHero
         eyebrow={t("eyebrow")}
         title={t("title")}

@@ -1,10 +1,16 @@
 export const siteConfig = {
   name: "Red Power Garage",
   arabicName: "ريد باور جراج",
+  legalName: "Red Power Garage",
   tagline: "Performance • Precision • Trust",
   companyLine: "تحت مظلة شركة قمرة الرائدة",
+  siteUrl: "https://red-power.vercel.app",
+  foundedYear: 2025,
+  contactEmail: "info@redpowergarage.com",
   description:
     "Professional vehicle maintenance, diagnostics, and performance services for Red Power Garage.",
+  arabicDescription:
+    "خدمات احترافية لصيانة المركبات وتشخيص الأعطال وتطوير الأداء في ريد باور جراج.",
   localeCookie: "red-power-locale",
   locales: ["ar", "en"] as const,
   defaultLocale: "ar" as const,

@@ -19,7 +19,7 @@ const staticRoutes = [
 }>;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-08-26T00:00:00.000Z");
+  const lastModified = new Date("2026-08-29T00:00:00.000Z");
   const serviceRoutes = serviceCatalog.map((service) => ({
     path: `/services/${service.slug}`,
     priority: 0.7,

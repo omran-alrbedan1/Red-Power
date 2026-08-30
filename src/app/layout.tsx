@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/seo";
 import "./globals.css";
 
@@ -14,11 +15,12 @@ export const metadata: Metadata = {
     default: "Red Power Garage",
     template: "%s | Red Power Garage",
   },
+  description: siteConfig.description,
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={siteConfig.defaultLocale} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

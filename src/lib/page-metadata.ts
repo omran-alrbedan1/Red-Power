@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 
 import type { SiteLocale } from "@/config/site";
 import { siteConfig } from "@/config/site";
-import { getLanguageAlternates, getSiteUrl } from "@/lib/seo";
+import { getLanguageAlternates, getMetadataKeywords, getSiteUrl } from "@/lib/seo";
 
 type PageMetadataInput = {
   locale: SiteLocale;
   path: string;
   title: string;
   description: string;
+  keywords?: string[];
 };
 
 export function buildPageMetadata({
@@ -16,6 +17,7 @@ export function buildPageMetadata({
   path,
   title,
   description,
+  keywords = [],
 }: PageMetadataInput): Metadata {
   const url = `/${locale}${path}`;
 
@@ -23,15 +25,22 @@ export function buildPageMetadata({
     metadataBase: new URL(getSiteUrl()),
     title,
     description,
-    keywords: [
-      "Red Power Garage",
-      "automotive performance",
-      "garage services",
-      "custom automotive work",
-    ],
+    authors: [{ name: siteConfig.name }],
+    creator: siteConfig.name,
+    publisher: siteConfig.legalName,
+    referrer: "origin-when-cross-origin",
+    keywords: getMetadataKeywords(locale, path, title, keywords),
     robots: {
       index: true,
       follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     alternates: {
       canonical: url,
@@ -49,7 +58,10 @@ export function buildPageMetadata({
           url: getSiteUrl("/opengraph-image"),
           width: 1200,
           height: 630,
-          alt: "Red Power Garage social preview",
+          alt:
+            locale === "ar"
+              ? "صورة مشاركة لريد باور جراج"
+              : "Red Power Garage social preview",
         },
       ],
     },

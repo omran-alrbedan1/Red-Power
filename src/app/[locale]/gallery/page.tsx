@@ -2,11 +2,13 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { MediaPageHero } from "@/components/sections/media-page-hero";
+import { JsonLd } from "@/components/seo/json-ld";
 import { images } from "@/constants/image";
 import { GalleryGridSection } from "@/features/gallery/components/gallery-grid-section";
 import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { buildWebPageSchema } from "@/lib/seo";
 
 type GalleryPageProps = {
   params: Promise<{ locale: string }>;
@@ -40,6 +42,14 @@ export default async function GalleryPage({ params }: GalleryPageProps) {
 
   return (
     <>
+      <JsonLd
+        data={buildWebPageSchema({
+          locale,
+          path: "/gallery",
+          title: t("metadata.title"),
+          description: t("metadata.description"),
+        })}
+      />
       <MediaPageHero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}

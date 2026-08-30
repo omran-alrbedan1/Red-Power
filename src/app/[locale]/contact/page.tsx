@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { MediaPageHero } from "@/components/sections/media-page-hero";
+import { JsonLd } from "@/components/seo/json-ld";
 import { images } from "@/constants/image";
 import { ContactHubSection } from "@/features/contact/components/contact-hub-section";
 import { ServiceDetailFeatureGrid } from "@/features/services/components/service-detail-feature-grid";
@@ -9,6 +10,7 @@ import { ServiceDetailProcessSection } from "@/features/services/components/serv
 import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { buildWebPageSchema } from "@/lib/seo";
 
 type ContactPageProps = {
   params: Promise<{ locale: string }>;
@@ -42,6 +44,14 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
   return (
     <>
+      <JsonLd
+        data={buildWebPageSchema({
+          locale,
+          path: "/contact",
+          title: t("metadata.title"),
+          description: t("metadata.description"),
+        })}
+      />
       <MediaPageHero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}

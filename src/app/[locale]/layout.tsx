@@ -8,7 +8,11 @@ import { WebsiteLayout } from "@/components/layout/website-layout";
 import { DocumentLocale } from "@/components/providers/document-locale";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getDirection, isValidLocale } from "@/lib/i18n";
-import { buildAutomotiveBusinessSchema, buildWebsiteSchema } from "@/lib/seo";
+import {
+  buildAutomotiveBusinessSchema,
+  buildOrganizationSchema,
+  buildWebsiteSchema,
+} from "@/lib/seo";
 import { siteConfig, type SiteLocale } from "@/config/site";
 
 const geist = Geist({
@@ -52,6 +56,7 @@ export default async function LocaleLayout({
     >
       <div className={typedLocale === "ar" ? "font-arabic" : undefined}>
         <JsonLd data={buildWebsiteSchema(typedLocale)} />
+        <JsonLd data={buildOrganizationSchema(typedLocale)} />
         <JsonLd data={buildAutomotiveBusinessSchema(typedLocale)} />
         <NextIntlClientProvider>
           <DocumentLocale />

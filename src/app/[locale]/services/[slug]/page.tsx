@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { MediaPageHero } from "@/components/sections/media-page-hero";
+import { JsonLd } from "@/components/seo/json-ld";
 import { getServiceBySlug, serviceCatalog } from "@/config/services";
 import { type SiteLocale } from "@/config/site";
 import { ServiceDetailFeatureGrid } from "@/features/services/components/service-detail-feature-grid";
@@ -8,6 +9,7 @@ import { ServiceDetailProcessSection } from "@/features/services/components/serv
 import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { buildServiceSchema, buildWebPageSchema } from "@/lib/seo";
 
 type ServiceDetailsPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -113,6 +115,22 @@ export default async function ServiceDetailsPage({
 
   return (
     <>
+      <JsonLd
+        data={buildWebPageSchema({
+          locale,
+          path: `/services/${slug}`,
+          title: entry.metadata.title,
+          description: entry.metadata.description,
+        })}
+      />
+      <JsonLd
+        data={buildServiceSchema({
+          locale,
+          path: `/services/${slug}`,
+          title: entry.metadata.title,
+          description: entry.metadata.description,
+        })}
+      />
       <MediaPageHero
         eyebrow={messages.shared.eyebrow}
         title={entry.hero.title}

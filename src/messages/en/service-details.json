@@ -13,8 +13,8 @@
   "entries": {
     "advanced-diagnostics": {
       "metadata": {
-        "title": "Advanced Diagnostics | Red Power Garage",
-        "description": "Advanced inspection, diagnostics, fault tracing, and technical reporting for confident vehicle decisions."
+        "title": "Advanced Vehicle Diagnostics",
+        "description": "Advanced vehicle diagnostics, fault tracing, and technical inspection with clear reporting for faster and more confident repair decisions."
       },
       "hero": {
         "title": "Service Details",
@@ -54,8 +54,8 @@
     },
     "preventive-maintenance": {
       "metadata": {
-        "title": "Preventive Maintenance | Red Power Garage",
-        "description": "Preventive maintenance focused on reliability, service intervals, and quality-controlled workshop care."
+        "title": "Preventive Maintenance Service",
+        "description": "Preventive maintenance service focused on reliability, factory service intervals, fluid care, and quality-controlled workshop execution."
       },
       "hero": {
         "title": "Service Details",
@@ -95,8 +95,8 @@
     },
     "mechanical-maintenance": {
       "metadata": {
-        "title": "Mechanical Maintenance | Red Power Garage",
-        "description": "Advanced mechanical maintenance and repair carried out with technical discipline and workshop precision."
+        "title": "Mechanical Repairs & Maintenance",
+        "description": "Professional mechanical repairs and maintenance carried out with accurate diagnosis, workshop discipline, and dependable service quality."
       },
       "hero": {
         "title": "Service Details",
@@ -136,8 +136,8 @@
     },
     "electrical-systems": {
       "metadata": {
-        "title": "Electrical Systems | Red Power Garage",
-        "description": "Electrical and electronic system diagnostics, troubleshooting, and repair for modern vehicles."
+        "title": "Electrical Systems Diagnostics & Repair",
+        "description": "Electrical and electronic diagnostics, troubleshooting, and repair for modern vehicles using structured testing and accurate fault isolation."
       },
       "hero": {
         "title": "Service Details",
@@ -177,8 +177,8 @@
     },
     "pre-purchase-inspection": {
       "metadata": {
-        "title": "Pre-Purchase Inspection | Red Power Garage",
-        "description": "Professional pre-purchase inspections that help clarify condition, risks, and service priorities before buying."
+        "title": "Pre-Purchase Vehicle Inspection",
+        "description": "Professional pre-purchase vehicle inspections that reveal condition, hidden risks, and service priorities before you commit to a purchase."
       },
       "hero": {
         "title": "Service Details",
@@ -218,8 +218,8 @@
     },
     "performance-development": {
       "metadata": {
-        "title": "Performance Development | Red Power Garage",
-        "description": "Performance-focused service and development for drivers who want stronger technical results."
+        "title": "Performance Development & Upgrades",
+        "description": "Performance development, upgrade planning, and specialist service for drivers who want stronger results from their American performance vehicle."
       },
       "hero": {
         "title": "Service Details",

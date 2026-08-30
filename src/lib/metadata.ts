@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
 
 import { siteConfig, type SiteLocale } from "@/config/site";
-import { getLanguageAlternates, getLocalizedPath, getSiteUrl } from "@/lib/seo";
+import {
+  getLanguageAlternates,
+  getLocalizedPath,
+  getMetadataKeywords,
+  getSiteUrl,
+} from "@/lib/seo";
 
 type LocalizedMetadata = {
   title: string;
   description: string;
+  keywords?: string[];
 };
 
 export function buildMetadata(
   locale: SiteLocale,
   metadata: LocalizedMetadata
 ): Metadata {
-  const { title, description } = metadata;
+  const { title, description, keywords = [] } = metadata;
   const localizedPath = getLocalizedPath(locale);
 
   return {
@@ -20,20 +26,27 @@ export function buildMetadata(
     title,
     description,
     applicationName: siteConfig.name,
-    keywords: [
-      "Red Power Garage",
-      "performance garage",
-      "auto repair",
-      "diagnostics",
-      "custom automotive services",
-      "ريد باور جراج",
-      "خدمات سيارات",
-      "فحص سيارات",
-    ],
+    authors: [{ name: siteConfig.name }],
+    creator: siteConfig.name,
+    publisher: siteConfig.legalName,
+    referrer: "origin-when-cross-origin",
+    keywords: getMetadataKeywords(locale, "", title, keywords),
     category: "Automotive",
+    classification:
+      locale === "ar"
+        ? "صيانة السيارات وخدمات الأداء"
+        : "Automotive maintenance and performance services",
     robots: {
       index: true,
       follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     alternates: {
       canonical: localizedPath,
@@ -51,7 +64,10 @@ export function buildMetadata(
           url: getSiteUrl("/opengraph-image"),
           width: 1200,
           height: 630,
-          alt: "Red Power Garage social preview",
+          alt:
+            locale === "ar"
+              ? "صورة مشاركة لريد باور جراج"
+              : "Red Power Garage social preview",
         },
       ],
     },
