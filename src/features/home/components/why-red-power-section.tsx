@@ -36,7 +36,7 @@ export function WhyRedPowerSection() {
       <Container className="max-w-7xl px-4 sm:px-6">
         <motion.div
           dir="ltr"
-          className="relative overflow-hidden rounded-3xl border border-zinc-800/80 bg-[#060709] shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+          className="relative overflow-hidden rounded-3xl border border-zinc-800/80 bg-page-surface shadow-[0_0_50px_rgba(0,0,0,0.8)]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
@@ -64,7 +64,7 @@ export function WhyRedPowerSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <motion.div
               variants={staggerContainer(0.12, 0.08)}
-              className="relative z-10 flex flex-col justify-center bg-[#060709] px-5 py-10 sm:px-8 sm:py-12 lg:col-span-6 lg:py-16 lg:pl-12 lg:pr-10"
+              className="relative z-10 flex flex-col justify-center bg-page-surface px-5 py-10 sm:px-8 sm:py-12 lg:col-span-6 lg:py-16 lg:pl-12 lg:pr-10"
             >
               <div dir="rtl" className="max-w-lg">
                 <motion.div

@@ -26,7 +26,7 @@ export function HeroSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section className="relative min-h-[34rem] overflow-hidden border-b border-red-600/20 bg-[#050505] py-0 text-white sm:min-h-[35rem] lg:h-[70vh] lg:min-h-[38rem]">
+    <Section className="relative min-h-[34rem] overflow-hidden border-b border-red-600/20 bg-page-deep py-0 text-white sm:min-h-[35rem] lg:h-[70vh] lg:min-h-[38rem]">
       <motion.div
         className="absolute inset-0"
         initial={reduceMotion ? false : { scale: 1.08 }}
@@ -41,7 +41,7 @@ export function HeroSection() {
           imageClassName="h-full w-full object-cover object-center"
         />
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/78 to-[#050505]/30 lg:bg-gradient-to-l lg:from-[#050505] lg:via-[#050505]/88 lg:to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-page-deep via-page-deep/78 to-page-deep/30 lg:bg-gradient-to-l lg:from-page-deep lg:via-page-deep/88 lg:to-transparent"
           animate={reduceMotion ? undefined : { opacity: [0.9, 0.75, 0.9] }}
           transition={
             reduceMotion
@@ -54,7 +54,7 @@ export function HeroSection() {
           }
         />
         <motion.div
-          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050505] to-transparent"
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-page-deep to-transparent"
           animate={reduceMotion ? undefined : { opacity: [0.9, 0.7, 0.9] }}
           transition={
             reduceMotion
@@ -143,7 +143,7 @@ export function HeroSection() {
               variants={clipRevealUp(0.02)}
               className="mb-5 flex items-center justify-start gap-3 sm:mb-6"
             >
-              <span className="text-xs font-bold tracking-[0.18em] text-red-500 sm:text-sm">
+              <span className="tracking-ui text-xs font-bold text-red-500 sm:text-sm">
                 {t("eyebrow")}
               </span>
               <motion.span
@@ -166,7 +166,7 @@ export function HeroSection() {
             <div className="overflow-hidden">
               <motion.h1
                 variants={clipRevealUp(0.1)}
-                className="max-w-[12ch] text-4xl font-black leading-[1.02] tracking-[-0.04em] text-white sm:text-5xl lg:text-[4.5rem] xl:text-[4rem]"
+                className="tracking-display-tight max-w-[12ch] text-4xl font-black leading-[1.02] text-white sm:text-5xl lg:text-[4.5rem] xl:text-[4rem]"
               >
                 {t("title")}
               </motion.h1>

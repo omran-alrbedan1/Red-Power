@@ -52,7 +52,7 @@ export function BrandIntroductionSection() {
   };
 
   return (
-    <Section id="services" className="bg-[#08090a] py-16 text-white sm:py-20">
+    <Section id="services" className="bg-background py-16 text-white sm:py-20">
       <Container className="space-y-10 px-4 sm:space-y-12 sm:px-6">
         <RevealPanel>
           <div className="flex flex-col items-start justify-between gap-4 text-right">
@@ -87,7 +87,7 @@ export function BrandIntroductionSection() {
               <motion.article
                 whileHover={reduceMotion ? undefined : { y: -8 }}
                 transition={softSpring}
-                className="group relative flex h-full min-h-[24rem] flex-col rounded-md border border-red-900/30 bg-[#0d0e10] transition-all duration-300 hover:border-red-600/60 sm:min-h-0"
+                className="group relative flex h-full min-h-[24rem] flex-col rounded-md border border-red-900/30 bg-card-deep transition-all duration-300 hover:border-red-600/60 sm:min-h-0"
               >
                 <div className="relative w-full">
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-md">
@@ -104,7 +104,7 @@ export function BrandIntroductionSection() {
                         imageClassName="h-full w-full object-cover"
                       />
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e10] via-transparent to-black/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card-deep via-transparent to-black/30" />
                   </div>
 
                   <motion.div
@@ -125,7 +125,7 @@ export function BrandIntroductionSection() {
                     style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
                   >
                     <div
-                      className="flex h-full w-full items-center justify-center bg-[#0d0e10]"
+                      className="flex h-full w-full items-center justify-center bg-card-deep"
                       style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
                     >
                       {renderLucideIcon(item.icon)}

@@ -1,12 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { MediaPageHero } from "@/components/sections/media-page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
-import { images } from "@/constants/image";
-import { ServiceCatalogSection } from "@/features/services/components/service-catalog-section";
-import { ServiceFeatureGrid } from "@/features/services/components/service-feature-grid";
-import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
+import { type SiteLocale } from "@/config/site";
+import { ServicesShowcaseCta } from "@/features/services/components/services-showcase-cta";
+import { ServicesShowcaseGroups } from "@/features/services/components/services-showcase-groups";
+import { ServicesShowcaseHero } from "@/features/services/components/services-showcase-hero";
+import { getServicesMessages } from "@/features/services/services-page-messages";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";
@@ -44,33 +44,26 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
     notFound();
   }
 
-  const t = await getTranslations({ locale, namespace: "services.hero" });
-  const metadataT = await getTranslations({ locale, namespace: "services.metadata" });
+  const typedLocale = locale as SiteLocale;
+  const messages = await getServicesMessages(typedLocale);
+  const { hero, catalog, cta, metadata } = messages;
 
   return (
     <>
       <JsonLd
         data={buildWebPageSchema({
-          locale,
+          locale: typedLocale,
           path: "/services",
-          title: metadataT("title"),
-          description: metadataT("description"),
+          title: metadata.title,
+          description: metadata.description,
         })}
       />
-      <MediaPageHero
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        description={t("description")}
-        imageSrc={images.services.mechanicEngineService}
-        imageAlt={t("imageAlt")}
-        primaryCtaHref={`/${locale}/contact`}
-        primaryCtaLabel={t("primaryCta")}
-        secondaryCtaHref={`/${locale}`}
-        secondaryCtaLabel={t("secondaryCta")}
-      />
-      <ServiceCatalogSection />
-      <ServiceFeatureGrid />
-      <ServicesCtaStrip />
+
+      <div className="bg-page-deep pb-16 text-white sm:pb-20">
+        <ServicesShowcaseHero hero={hero} locale={typedLocale} />
+        <ServicesShowcaseGroups catalog={catalog} locale={typedLocale} />
+        <ServicesShowcaseCta cta={cta} locale={typedLocale} />
+      </div>
     </>
   );
 }

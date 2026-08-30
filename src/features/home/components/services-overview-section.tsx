@@ -32,7 +32,7 @@ export function ServicesOverviewSection() {
   ];
 
   return (
-    <Section className="relative overflow-hidden bg-[#060708] py-14 text-white sm:py-16">
+    <Section className="relative overflow-hidden bg-page-section py-14 text-white sm:py-16">
       <Container className="relative max-w-7xl px-4 sm:px-6">
         <div className="relative grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-24">
           <RevealPanel
@@ -41,7 +41,7 @@ export function ServicesOverviewSection() {
             className="relative order-1 h-full min-h-[18rem] w-full sm:min-h-[24rem] lg:order-1 lg:col-span-6 lg:min-h-[520px]"
           >
             <motion.div
-              className="relative h-full w-full overflow-hidden bg-[#060708] lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0%_100%)]"
+              className="relative h-full w-full overflow-hidden bg-page-section lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0%_100%)]"
               initial={reduceMotion ? false : { scale: 1.06, x: 20 }}
               whileInView={reduceMotion ? undefined : { scale: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}

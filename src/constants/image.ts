@@ -43,6 +43,7 @@ export const images = {
   },
   services: {
     technicianWorking: "/images/red-power/services/technician-working.png",
+    servicesHero: "/images/red-power/services/services-hero.png",
     mechanicEngineService: "/images/red-power/services/mechanic-engine-service.png",
     brakeAndWheelDetail: "/images/red-power/services/brake-and-wheel-detail.png",
     garageShowcaseCollage: "/images/red-power/services/garage-showcase-collage.png",

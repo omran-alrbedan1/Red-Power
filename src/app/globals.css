@@ -4,6 +4,12 @@
   --background: #08090a;
   --background-soft: #111315;
   --panel: #151719;
+  --page-deep: #050505;
+  --page-section: #060708;
+  --page-surface: #060709;
+  --panel-solid: #111111;
+  --panel-strong: #121212;
+  --card-deep: #0d0e10;
   --foreground: #f5f5f5;
   --muted: #25282b;
   --muted-foreground: #b8bcc1;
@@ -22,6 +28,12 @@
   --color-background: var(--background);
   --color-background-soft: var(--background-soft);
   --color-panel: var(--panel);
+  --color-page-deep: var(--page-deep);
+  --color-page-section: var(--page-section);
+  --color-page-surface: var(--page-surface);
+  --color-panel-solid: var(--panel-solid);
+  --color-panel-strong: var(--panel-strong);
+  --color-card-deep: var(--card-deep);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -29,6 +41,22 @@
   --color-brand: var(--brand);
   --color-brand-strong: var(--brand-strong);
   --color-steel: var(--steel);
+}
+
+@utility tracking-ui {
+  letter-spacing: 0.18em;
+}
+
+@utility tracking-section {
+  letter-spacing: 0.24em;
+}
+
+@utility tracking-kicker {
+  letter-spacing: 0.28em;
+}
+
+@utility tracking-display-tight {
+  letter-spacing: -0.04em;
 }
 
 *,

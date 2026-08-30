@@ -31,7 +31,7 @@ export function PerformanceSection() {
   ];
 
   return (
-    <Section className="bg-[#08090a] py-14 text-white sm:py-16">
+    <Section className="bg-background py-14 text-white sm:py-16">
       <Container className="max-w-7xl space-y-8 px-4 sm:space-y-10 sm:px-6">
         <RevealPanel>
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">

@@ -5,47 +5,65 @@
   },
   "hero": {
     "eyebrow": "Red Power Garage",
-    "title": "Services",
-    "description": "Professional vehicle care from inspection to performance.",
-    "primaryCta": "Book Appointment",
+    "sectionLabel": "01 / SERVICES",
+    "title": "Professional services for your vehicle",
+    "description": "Red Power Garage delivers a complete set of workshop services using modern diagnostic tools, specialist American-car knowledge, disciplined maintenance, and performance-minded support.",
+    "primaryCta": "Book Your Slot",
     "secondaryCta": "Explore Home",
     "imageAlt": "Technician working under a vehicle hood at Red Power Garage"
   },
   "catalog": {
     "eyebrow": "Performance • Precision • Trust",
-    "title": "Automotive service with a higher standard.",
-    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
-    "cta": "Book Service",
+    "title": "Specialist American-vehicle service from diagnosis to performance.",
+    "description": "The page is now structured around the same rhythm as the new concept: precise diagnostics, informed maintenance, and stronger performance development.",
+    "cta": "Learn more",
+    "groups": [
+      {
+        "label": "DIAGNOSE",
+        "heading": "Accurate diagnosis for better solutions",
+        "itemSlugs": ["advanced-diagnostics", "pre-purchase-inspection"]
+      },
+      {
+        "label": "MAINTAIN",
+        "heading": "Maintenance that understands the details",
+        "itemSlugs": ["preventive-maintenance", "mechanical-maintenance", "electrical-systems"]
+      },
+      {
+        "label": "PERFORM",
+        "heading": "Stronger performance for a better drive",
+        "itemSlugs": ["performance-development"]
+      }
+    ],
     "items": [
       {
         "slug": "advanced-diagnostics",
         "title": "Diagnostics",
-        "body": "Advanced inspection, fault tracing, and technical evaluation with clear reporting."
+        "body": "Modern scan tools and technical analysis to find the real cause of faults and define a clear repair path."
       },
       {
         "slug": "preventive-maintenance",
         "title": "Preventive Maintenance",
-        "body": "Periodic maintenance built around reliability, service intervals, and long-term care."
+        "body": "A structured maintenance plan focused on reliability, fewer surprise issues, and better day-to-day vehicle performance."
       },
       {
         "slug": "mechanical-maintenance",
         "title": "Mechanical",
-        "body": "Advanced mechanical service with quality execution and workshop discipline."
+        "body": "Professional mechanical repair and workshop execution across core vehicle systems with dependable technical standards."
       },
       {
         "slug": "electrical-systems",
         "title": "Electrical",
-        "body": "Electrical and electronic systems support using modern diagnostic methods."
+        "body": "Electrical and electronic troubleshooting handled with modern tools and practical workshop experience."
       },
       {
         "slug": "pre-purchase-inspection",
         "title": "Pre-Purchase Inspection",
-        "body": "Professional evaluation before purchase to reduce hidden risk and improve confidence."
+        "body": "A complete pre-purchase check that exposes vehicle condition clearly before you commit to the deal."
       },
       {
         "slug": "performance-development",
         "title": "Performance",
-        "body": "Performance-focused service and development for drivers seeking stronger results."
+        "body": "Performance-focused support for drivers who want sharper response, stronger output, and a more intentional setup."
       }
     ]
   },
@@ -81,10 +99,10 @@
   },
   "cta": {
     "eyebrow": "Red Power Garage",
-    "title": "Need a specialist service path for your vehicle or fleet?",
-    "description": "Use the separate service-request flow for tailored work, performance requests, fleet coordination, or advanced workshop inquiries.",
-    "primaryLabel": "Contact Us",
-    "secondaryLabel": "View Specials",
+    "title": "Ready to give your car the attention it deserves?",
+    "description": "Book your visit now and let the Red Power Garage team shape the right path for maintenance, diagnostics, or performance work based on your vehicle's needs.",
+    "primaryLabel": "Book Appointment",
+    "secondaryLabel": "Contact Us",
     "imageAlt": "Service gallery strip showing workshop tools and performance vehicles"
   }
 }
