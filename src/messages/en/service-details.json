@@ -17,7 +17,7 @@
         "description": "Advanced vehicle diagnostics, fault tracing, and technical inspection with clear reporting for faster and more confident repair decisions."
       },
       "hero": {
-        "title": "Service Details",
+        "title": "Advanced Vehicle Diagnostics",
         "description": "Advanced diagnostics and inspection.",
         "imageAlt": "Technician diagnosing a vehicle engine at Red Power Garage"
       },
@@ -58,7 +58,7 @@
         "description": "Preventive maintenance service focused on reliability, factory service intervals, fluid care, and quality-controlled workshop execution."
       },
       "hero": {
-        "title": "Service Details",
+        "title": "Preventive Maintenance Service",
         "description": "Preventive maintenance and workshop care.",
         "imageAlt": "Brake and wheel service detail for preventive maintenance"
       },
@@ -99,7 +99,7 @@
         "description": "Professional mechanical repairs and maintenance carried out with accurate diagnosis, workshop discipline, and dependable service quality."
       },
       "hero": {
-        "title": "Service Details",
+        "title": "Mechanical Repairs & Maintenance",
         "description": "Advanced mechanical maintenance.",
         "imageAlt": "Mechanical maintenance workshop scene"
       },
@@ -140,7 +140,7 @@
         "description": "Electrical and electronic diagnostics, troubleshooting, and repair for modern vehicles using structured testing and accurate fault isolation."
       },
       "hero": {
-        "title": "Service Details",
+        "title": "Electrical Systems Diagnostics & Repair",
         "description": "Electrical systems and specialist troubleshooting.",
         "imageAlt": "Electrical and engine systems service at Red Power Garage"
       },
@@ -181,7 +181,7 @@
         "description": "Professional pre-purchase vehicle inspections that reveal condition, hidden risks, and service priorities before you commit to a purchase."
       },
       "hero": {
-        "title": "Service Details",
+        "title": "Pre-Purchase Vehicle Inspection",
         "description": "Pre-purchase inspection and technical review.",
         "imageAlt": "Vehicle inspection detail for pre-purchase service"
       },
@@ -222,7 +222,7 @@
         "description": "Performance development, upgrade planning, and specialist service for drivers who want stronger results from their American performance vehicle."
       },
       "hero": {
-        "title": "Service Details",
+        "title": "Performance Development & Upgrades",
         "description": "Performance development and specialist planning.",
         "imageAlt": "Red Dodge performance car for service details hero"
       },

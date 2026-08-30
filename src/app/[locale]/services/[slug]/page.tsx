@@ -1,12 +1,10 @@
 import { notFound } from "next/navigation";
 
-import { MediaPageHero } from "@/components/sections/media-page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getServiceBySlug, serviceCatalog } from "@/config/services";
 import { type SiteLocale } from "@/config/site";
-import { ServiceDetailFeatureGrid } from "@/features/services/components/service-detail-feature-grid";
-import { ServiceDetailProcessSection } from "@/features/services/components/service-detail-process-section";
-import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
+import { ServiceDetailPage } from "@/features/services/components/service-detail-page";
+import { type ServiceDetailMessages } from "@/features/services/service-detail-content";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";
@@ -14,48 +12,6 @@ import { buildServiceSchema, buildWebPageSchema } from "@/lib/seo";
 
 type ServiceDetailsPageProps = {
   params: Promise<{ locale: string; slug: string }>;
-};
-
-type ServiceDetailsMessages = {
-  cta: {
-    primaryLabel: string;
-    secondaryLabel: string;
-  };
-  entries: Record<
-    string,
-    {
-      featureItems: Array<{
-        description: string;
-        imageAlt: string;
-        imageSrc: string;
-        title: string;
-      }>;
-      hero: {
-        description: string;
-        imageAlt: string;
-        title: string;
-      };
-      metadata: {
-        description: string;
-        title: string;
-      };
-      process: {
-        description: string;
-        items: Array<{
-          body: string;
-          title: string;
-        }>;
-        title: string;
-      };
-    }
-  >;
-  shared: {
-    eyebrow: string;
-    processEyebrow: string;
-    processLinkLabel: string;
-    secondaryCtaLabel: string;
-    secondaryCtaPath: string;
-  };
 };
 
 export function generateStaticParams() {
@@ -68,8 +24,8 @@ export function generateStaticParams() {
 async function getServiceEntry(locale: SiteLocale, slug: string) {
   const messages =
     locale === "ar"
-      ? ((await import("@/messages/ar/service-details.json")).default as ServiceDetailsMessages)
-      : ((await import("@/messages/en/service-details.json")).default as ServiceDetailsMessages);
+      ? ((await import("@/messages/ar/service-details.json")).default as ServiceDetailMessages)
+      : ((await import("@/messages/en/service-details.json")).default as ServiceDetailMessages);
   return {
     messages,
     entry: messages.entries[slug],
@@ -136,30 +92,14 @@ export default async function ServiceDetailsPage({
           description: entry.metadata.description,
         })}
       />
-      <MediaPageHero
-        eyebrow={messages.shared.eyebrow}
-        title={entry.hero.title}
-        description={entry.hero.description}
-        imageSrc={service.detailImageSrc}
-        imageAlt={entry.hero.imageAlt}
-        primaryCtaHref={`/${locale}/contact`}
-        primaryCtaLabel={messages.cta.primaryLabel}
-        secondaryCtaHref={`/${locale}${messages.shared.secondaryCtaPath}`}
-        secondaryCtaLabel={messages.shared.secondaryCtaLabel}
+      <ServiceDetailPage
+        entry={entry}
+        heroImageSrc={service.detailImageSrc}
+        locale={locale}
+        messages={messages}
+        slug={service.slug}
       />
-      <ServiceDetailProcessSection
-        eyebrow={messages.shared.processEyebrow}
-        title={entry.process.title}
-        description={entry.process.description}
-        ctaLabel={messages.shared.processLinkLabel}
-        items={entry.process.items}
-      />
-      <ServiceDetailFeatureGrid
-        eyebrow={messages.shared.eyebrow}
-        ctaLabel={messages.shared.processLinkLabel}
-        items={entry.featureItems}
-      />
-      <ServicesCtaStrip />
+      
     </>
   );
 }
