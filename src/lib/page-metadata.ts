@@ -4,6 +4,8 @@ import type { SiteLocale } from "@/config/site";
 import { siteConfig } from "@/config/site";
 import { getLanguageAlternates, getMetadataKeywords, getSiteUrl } from "@/lib/seo";
 
+const SOCIAL_IMAGE_PATH = "/images/red-power/brand/og-share-card.png";
+
 type PageMetadataInput = {
   locale: SiteLocale;
   path: string;
@@ -55,7 +57,7 @@ export function buildPageMetadata({
       locale: locale === "ar" ? "ar_SA" : "en_US",
       images: [
         {
-          url: getSiteUrl("/opengraph-image"),
+          url: getSiteUrl(SOCIAL_IMAGE_PATH),
           width: 1200,
           height: 630,
           alt:
@@ -69,7 +71,7 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [getSiteUrl("/twitter-image")],
+      images: [getSiteUrl(SOCIAL_IMAGE_PATH)],
     },
   };
 }

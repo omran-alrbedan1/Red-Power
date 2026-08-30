@@ -51,25 +51,33 @@
   },
   "hub": {
     "eyebrow": "Contact Hub",
-    "title": "Start the conversation through the live form or confirmed company email.",
-    "description": "This page preserves the working contact flow while avoiding unconfirmed phone numbers, addresses, or opening hours.",
+    "title": "Reach Red Power Garage through the confirmed service channels.",
+    "description": "Use the booking form, direct phone lines, email, Instagram, and map location shown here for customer and company inquiries.",
     "panelTitle": "Confirmed channels",
     "items": [
       {
+        "title": "Individuals",
+        "value": "+966504773142"
+      },
+      {
+        "title": "Companies",
+        "value": "+9665011006551"
+      },
+      {
         "title": "Email",
-        "value": "info@redpowergarage.com"
+        "value": "info@qamrah-pioneer.com"
       },
       {
-        "title": "Bookings",
-        "value": "Use the form for service scheduling and workshop questions."
+        "title": "Instagram",
+        "value": "@red_power_carage"
       },
       {
-        "title": "Corporate & Fleet",
-        "value": "Business support can start through the same live contact flow."
+        "title": "Location",
+        "value": "285, Asfan Industrial Area, Jeddah, Saudi Arabia"
       },
       {
-        "title": "Location Details",
-        "value": "Add the final branch address and hours only after they are confirmed."
+        "title": "Working Hours",
+        "value": "Sat-Wed: 9:00 AM - 7:00 PM | Thu: 9:00 AM - 4:00 PM | Fri: Closed"
       }
     ]
   }

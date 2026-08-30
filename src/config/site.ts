@@ -6,7 +6,9 @@ export const siteConfig = {
   companyLine: "تحت مظلة شركة قمرة الرائدة",
   siteUrl: "https://red-power.vercel.app",
   foundedYear: 2025,
-  contactEmail: "info@redpowergarage.com",
+  contactEmail: "info@qamrah-pioneer.com",
+  instagramUrl: "https://www.instagram.com/red_power_carage/",
+  mapsUrl: "https://maps.app.goo.gl/XzxTbW7bU86WPg679?g_st=ic",
   description:
     "Professional vehicle maintenance, diagnostics, and performance services for Red Power Garage.",
   arabicDescription:

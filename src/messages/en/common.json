@@ -30,15 +30,48 @@
     "description": "Professional vehicle maintenance, diagnostics, performance development, and American/Mopar expertise for individual and business customers.",
     "quickLinksTitle": "Quick Links",
     "contactTitle": "Contact",
+    "social": {
+      "instagramHref": "https://www.instagram.com/red_power_carage/",
+      "instagramLabel": "Red Power Garage on Instagram"
+    },
     "contact": {
-      "phoneLabel": "Phone",
-      "phone": "YOUR_PHONE_NUMBER",
-      "emailLabel": "Email",
-      "email": "YOUR_EMAIL",
-      "addressLabel": "Location",
-      "address": "YOUR_ADDRESS",
-      "hoursLabel": "Working Hours",
-      "hours": "YOUR_WORKING_HOURS"
+      "items": [
+        {
+          "kind": "phone",
+          "label": "Individuals",
+          "value": "+966504773142",
+          "href": "tel:+966504773142"
+        },
+        {
+          "kind": "phone",
+          "label": "Companies",
+          "value": "+9665011006551",
+          "href": "tel:+9665011006551"
+        },
+        {
+          "kind": "email",
+          "label": "Email",
+          "value": "info@qamrah-pioneer.com",
+          "href": "mailto:info@qamrah-pioneer.com"
+        },
+        {
+          "kind": "location",
+          "label": "Location",
+          "value": "285, Asfan Industrial Area, Jeddah, Saudi Arabia",
+          "href": "https://maps.app.goo.gl/XzxTbW7bU86WPg679?g_st=ic"
+        },
+        {
+          "kind": "hours",
+          "label": "Working Hours",
+          "value": "Sat-Wed: 9:00 AM - 7:00 PM\nThu: 9:00 AM - 4:00 PM\nFri: Closed"
+        },
+        {
+          "kind": "instagram",
+          "label": "Instagram",
+          "value": "@red_power_carage",
+          "href": "https://www.instagram.com/red_power_carage/"
+        }
+      ]
     },
     "services": [
       "Individual Service",

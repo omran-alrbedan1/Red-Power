@@ -9,6 +9,12 @@ import { Container } from "@/components/layout/container";
 export function SiteFooter() {
   const locale = useLocale();
   const t = useTranslations("common");
+  const contactItems = t.raw("footer.contact.items") as Array<{
+    href?: string;
+    kind: "phone" | "email" | "location" | "hours" | "instagram";
+    label: string;
+    value: string;
+  }>;
 
   const quickLinks = [
     { label: t("navigation.home"), href: `/${locale}` },
@@ -70,19 +76,14 @@ export function SiteFooter() {
 
             <div className="mt-7 flex justify-start gap-3">
               <a
-                href="https://instagram.com"
+                href={t("footer.social.instagramHref")}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram"
+                aria-label={t("footer.social.instagramLabel")}
                 className="group flex h-11 w-11 items-center justify-center border border-white/10 bg-white/[0.02] text-zinc-400 transition-all duration-300 hover:border-red-600 hover:bg-red-600 hover:text-white"
-              />
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="group flex h-11 w-11 items-center justify-center border border-white/10 bg-white/[0.02] text-zinc-400 transition-all duration-300 hover:border-red-600 hover:bg-red-600 hover:text-white"
-              />
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
               <Link
                 href={`/${locale}`}
                 aria-label={t("brand.homeLabel")}
@@ -97,28 +98,15 @@ export function SiteFooter() {
             <FooterHeading>{t("footer.contactTitle")}</FooterHeading>
 
             <div className="mt-8 space-y-0">
-              <ContactItem
-                icon={<Phone className="h-5 w-5" />}
-                label={t("footer.contact.phoneLabel")}
-                value={t("footer.contact.phone")}
-                href={`tel:${t("footer.contact.phone")}`}
-              />
-              <ContactItem
-                icon={<Mail className="h-5 w-5" />}
-                label={t("footer.contact.emailLabel")}
-                value={t("footer.contact.email")}
-                href={`mailto:${t("footer.contact.email")}`}
-              />
-              <ContactItem
-                icon={<MapPin className="h-5 w-5" />}
-                label={t("footer.contact.addressLabel")}
-                value={t("footer.contact.address")}
-              />
-              <ContactItem
-                icon={<Clock3 className="h-5 w-5" />}
-                label={t("footer.contact.hoursLabel")}
-                value={t("footer.contact.hours")}
-              />
+              {contactItems.map((item) => (
+                <ContactItem
+                  key={`${item.kind}-${item.label}`}
+                  icon={getContactIcon(item.kind)}
+                  label={item.label}
+                  value={item.value}
+                  href={item.href}
+                />
+              ))}
             </div>
           </div>
 
@@ -166,6 +154,45 @@ export function SiteFooter() {
   );
 }
 
+function getContactIcon(kind: "phone" | "email" | "location" | "hours" | "instagram") {
+  switch (kind) {
+    case "phone":
+      return <Phone className="h-5 w-5" />;
+    case "email":
+      return <Mail className="h-5 w-5" />;
+    case "location":
+      return <MapPin className="h-5 w-5" />;
+    case "hours":
+      return <Clock3 className="h-5 w-5" />;
+    case "instagram":
+      return <InstagramIcon className="h-5 w-5" />;
+  }
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        height="16"
+        rx="4"
+        stroke="currentColor"
+        strokeWidth="2"
+        width="16"
+        x="4"
+        y="4"
+      />
+      <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" fill="currentColor" r="1.2" />
+    </svg>
+  );
+}
+
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
     <div className="ml-auto">
@@ -198,7 +225,7 @@ function ContactItem({
       </div>
       <div className="min-w-0">
         <p className="text-xs font-semibold text-zinc-500">{label}</p>
-        <p className="mt-1 break-words text-sm leading-6 text-zinc-200 transition-colors group-hover:text-white">
+        <p className="mt-1 break-words whitespace-pre-line text-sm leading-6 text-zinc-200 transition-colors group-hover:text-white">
           {value}
         </p>
       </div>

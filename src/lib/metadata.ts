@@ -8,6 +8,8 @@ import {
   getSiteUrl,
 } from "@/lib/seo";
 
+const SOCIAL_IMAGE_PATH = "/images/red-power/brand/og-share-card.png";
+
 type LocalizedMetadata = {
   title: string;
   description: string;
@@ -61,7 +63,7 @@ export function buildMetadata(
       siteName: siteConfig.name,
       images: [
         {
-          url: getSiteUrl("/opengraph-image"),
+          url: getSiteUrl(SOCIAL_IMAGE_PATH),
           width: 1200,
           height: 630,
           alt:
@@ -75,7 +77,7 @@ export function buildMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: [getSiteUrl("/twitter-image")],
+      images: [getSiteUrl(SOCIAL_IMAGE_PATH)],
     },
   };
 }

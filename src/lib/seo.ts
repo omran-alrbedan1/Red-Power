@@ -142,6 +142,7 @@ export function buildOrganizationSchema(locale: SiteLocale) {
     description: getLocalizedDescription(locale),
     email: siteConfig.contactEmail,
     foundingDate: `${siteConfig.foundedYear}`,
+    sameAs: [siteConfig.instagramUrl, siteConfig.mapsUrl],
   };
 }
 
@@ -158,6 +159,7 @@ export function buildAutomotiveBusinessSchema(locale: SiteLocale) {
     url: getSiteUrl(getLocalizedPath(locale)),
     email: siteConfig.contactEmail,
     foundingDate: `${siteConfig.foundedYear}`,
+    sameAs: [siteConfig.instagramUrl, siteConfig.mapsUrl],
     parentOrganization: {
       "@id": `${getSiteUrl(getLocalizedPath(locale, "/contact"))}#organization`,
     },
