@@ -47,7 +47,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const t = await getTranslations({ locale, namespace: "about" });
 
   return (
-    <>
+    <div>
       <JsonLd
         data={buildWebPageSchema({
           locale,
@@ -61,6 +61,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
       <AboutStats />
       <AboutTeam />
       <AboutCta />
-    </>
+    </div>
   );
 }

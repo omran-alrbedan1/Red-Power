@@ -387,3 +387,7 @@ select {
   height: 1px;
   background: linear-gradient(90deg, rgba(225, 6, 19, 0.9), transparent);
 }
+
+.screwdriver-cursor {
+  cursor: url("/cursors/wrench-red.svg") 15 15, pointer;
+}

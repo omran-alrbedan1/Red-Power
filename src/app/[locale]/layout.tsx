@@ -54,7 +54,7 @@ export default async function LocaleLayout({
     <div
       lang={typedLocale}
       dir={getDirection(typedLocale)}
-      className={`${geist.variable} ${notoKufiArabic.variable}`}
+      className={`${geist.variable} ${notoKufiArabic.variable} screwdriver-cursor`}
     >
       <div className={typedLocale === "ar" ? "font-arabic" : undefined}>
         <JsonLd

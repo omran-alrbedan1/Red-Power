@@ -22,6 +22,9 @@ export const images = {
     garageWorkshopBackground: "/images/red-power/about/garage-workshop-background.png",
     technicianWorking: "/images/red-power/about/technician-working.png",
     techniciansWithDodge: "/images/red-power/about/technicians-with-dodge.png",
+    statsBackground: "/images/red-power/about/statsBackground.png",
+    experts: "/images/red-power/about/experts.png",
+    team: "/images/red-power/gallery/event-team-group.png",
   },
   contact: {
     hero: "/images/red-power/contact/garage-dodge-hero-background.png",
