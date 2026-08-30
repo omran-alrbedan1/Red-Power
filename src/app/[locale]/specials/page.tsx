@@ -2,11 +2,10 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { SpecialsCtaStrip } from "@/features/specials/components/specials-cta-strip";
-import { SpecialsFeatureGrid } from "@/features/specials/components/specials-feature-grid";
 import { SpecialsHero } from "@/features/specials/components/specials-hero";
-import { SpecialsOverviewSection } from "@/features/specials/components/specials-overview-section";
-import { SpecialsRequestSection } from "@/features/specials/components/specials-request-section";
+import { SpecialsSelectedOffers } from "@/features/specials/components/specials-selected-offers";
+import { SpecialsMainOffers } from "@/features/specials/components/specials-main-offers";
+import { SpecialsInquirySection } from "@/features/specials/components/specials-inquiry-section";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";
@@ -57,10 +56,9 @@ export default async function SpecialsPage({ params }: SpecialsPageProps) {
         })}
       />
       <SpecialsHero />
-      <SpecialsOverviewSection />
-      <SpecialsFeatureGrid />
-      <SpecialsRequestSection />
-      <SpecialsCtaStrip />
+      <SpecialsSelectedOffers />
+      <SpecialsMainOffers />
+      <SpecialsInquirySection />
     </>
   );
 }

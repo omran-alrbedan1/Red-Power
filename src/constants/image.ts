@@ -61,7 +61,7 @@ export const images = {
     redDodgeGarageHero: "/images/red-power/service-details/red-dodge-garage-hero.png",
   },
   specials: {
-    hero: "/images/red-power/specials/red-dodge-garage-hero.png",
+    hero: "/images/red-power/specials/special-hero.png",
     brakeAndWheelDetail: "/images/red-power/specials/brake-and-wheel-detail.png",
     serviceGalleryStrip: "/images/red-power/specials/service-gallery-strip.png",
   },

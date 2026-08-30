@@ -4,69 +4,83 @@
     "description": "Discover seasonal workshop offers, brake and safety services, maintenance packages, and custom service requests from Red Power Garage."
   },
   "hero": {
-    "eyebrow": "Red Power Garage",
-    "title": "Specials",
-    "description": "Seasonal service packages and performance opportunities.",
-    "primaryCta": "Book Appointment",
+    "eyebrow": "Best offers for stronger performance and a better experience",
+    "title": "Best offers for stronger performance and a better experience",
+    "description": "Carefully selected offers for maintenance, safety, and performance services. Request your offer today and benefit from Red Power's expertise.",
+    "primaryCta": "Book an appointment",
     "secondaryCta": "Explore Services",
-    "imageAlt": "Red Dodge performance car featured in the Red Power Garage specials hero"
-  },
-  "overview": {
-    "eyebrow": "Performance • Precision • Trust",
-    "title": "Automotive service with a higher standard.",
-    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
-    "cta": "Explore",
-    "items": [
+    "imageAlt": "Red Dodge performance car featured in the Red Power Garage specials hero",
+    "tagline": "PERFORMANCE • PRECISION • TRUST",
+    "features": [
       {
-        "title": "Maintenance Check",
-        "body": "Seasonal checkups that focus on reliability, fluid condition, belts, filters, and workshop inspection before issues grow."
+        "title": "Custom service",
+        "icon": "wrench"
       },
       {
-        "title": "Brake & Safety",
-        "body": "Targeted brake, suspension, tire, and safety review packages designed to keep daily and long-distance driving confident."
+        "title": "Highest quality",
+        "icon": "star"
+      },
+      {
+        "title": "Integrated cooperation",
+        "icon": "users"
+      }
+    ]
+  },
+  "selectedOffers": {
+    "eyebrow": "Selected offers for you",
+    "title": "Selected offers for you",
+    "items": [
+      {
+        "title": "Maintenance Inspection",
+        "description": "Comprehensive inspection of all systems to ensure optimal performance and reduce future breakdowns.",
+        "icon": "wrench",
+        "cta": "Learn More"
+      },
+      {
+        "title": "Brakes and Safety",
+        "description": "Special offers on brake inspection and maintenance and safety systems for safe driving.",
+        "icon": "shield",
+        "cta": "Learn More"
       },
       {
         "title": "Performance",
-        "body": "A flexible path for drivers looking for performance-minded service, diagnostics, upgrades, or workshop consultation."
+        "description": "Offers to improve engine performance and torque using the best technologies.",
+        "icon": "zap",
+        "cta": "Learn More"
       }
     ]
   },
-  "features": {
-    "eyebrow": "Red Power Garage",
-    "cta": "Ask About Offer",
+  "mainOffers": {
+    "eyebrow": "Main Offers",
+    "title": "Main Offers",
     "items": [
       {
-        "title": "Maintenance Check",
-        "description": "Use this route for seasonal inspection campaigns, preventive maintenance bundles, and workshop checkups that are promoted without inventing prices.",
-        "imageAlt": "Brake and wheel detail representing a Red Power Garage maintenance check offer",
-        "imageSrc": "/images/red-power/specials/brake-and-wheel-detail.png"
+        "title": "Brake System Inspection",
+        "subtitle": "Your safety is our priority",
+        "description": "Comprehensive inspection of the brake system including discs, pads, and fluid to ensure the highest level of safety.",
+        "cta": "Ask about the offer",
+        "imageAlt": "Car brake system with red caliper"
       },
       {
-        "title": "Brake & Safety",
-        "description": "Ideal for highlighting safety-focused service opportunities, brake inspection support, and current availability through a clear call-to-action.",
-        "imageAlt": "Service gallery strip showing workshop tools and performance vehicles for Red Power Garage specials",
-        "imageSrc": "/images/red-power/specials/service-gallery-strip.png"
+        "title": "Engine Performance Improvement",
+        "subtitle": "More power... higher efficiency",
+        "description": "Offers on engine programming, air purification, and exhaust for stronger performance and better response.",
+        "cta": "Ask about the offer",
+        "imageAlt": "Car engine with Red Power branding"
       }
     ]
   },
-  "cta": {
-    "eyebrow": "Red Power Garage",
-    "title": "Ready to upgrade your car's care today?",
-    "description": "Ask about active packages and seasonal offers, or book a visit and let the Red Power Garage team shape the right maintenance, diagnosis, or performance plan for your vehicle.",
-    "primaryLabel": "Book Appointment",
-    "secondaryLabel": "Contact Us",
-    "imageAlt": "Specials strip showing workshop tools and performance vehicles at Red Power Garage",
-    "imageSrc": "/images/red-power/specials/service-gallery-strip.png"
+  "inquiry": {
+    "eyebrow": "Ask about current offers",
+    "title": "Ask about current offers",
+    "description": "We have integrated offers and packages tailored to your car's needs.",
+    "primaryCta": "Ask about packages",
+    "secondaryCta": "Request a quote"
   },
-  "requestFlow": {
-    "eyebrow": "Current Offers",
-    "title": "Ask about active packages, availability, or a custom service request.",
-    "description": "This preserves the existing service-request flow while presenting it inside the dedicated Specials page. Use it for seasonal campaigns, tailored work, or quote-based offers.",
-    "panelTitle": "How to use this page",
-    "items": [
-      "Ask about the current offer list",
-      "Request a quote instead of relying on fake pricing",
-      "Send tailored vehicle or fleet requirements"
-    ]
+  "customService": {
+    "eyebrow": "Request a custom service",
+    "title": "Request a custom service",
+    "description": "Tell us what you need and our team will contact you with the best solutions.",
+    "cta": "Contact Us"
   }
 }
