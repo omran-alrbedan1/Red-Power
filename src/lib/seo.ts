@@ -6,11 +6,6 @@ const LANGUAGE_LABELS: Record<SiteLocale, string> = {
   en: "English",
 };
 
-const OPEN_GRAPH_LOCALES: Record<SiteLocale, string> = {
-  ar: "ar_SA",
-  en: "en_US",
-};
-
 const LOCALIZED_SITE_NAMES: Record<SiteLocale, string> = {
   ar: siteConfig.arabicName,
   en: siteConfig.name,

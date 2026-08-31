@@ -23,48 +23,6 @@ Current status:
 - Build/typegen repeatedly warn that `@next/swc-win32-x64-msvc` is not a valid Win32 application, but Next falls back to WASM and completes.
 
 
-## P1 - Fix Lint Errors
-
-### 3. Escape the inline quote in `AboutTeam`
-
-File:
-
-- `src/features/about/components/about-team.tsx`
-
-Lint errors:
-
-- `react/no-unescaped-entities` at line 56.
-
-Recommended change:
-
-- Replace literal quote characters in JSX text with semantic markup or escaped entities.
-- Prefer translation-driven quotes without wrapping raw `"` inside JSX.
-
-Example direction:
-
-```tsx
-<q>{t("quote")}</q>
-```
-
-### 4. Remove render-time mutation in services showcase
-
-File:
-
-- `src/features/services/components/services-showcase-groups.tsx`
-
-Lint error:
-
-- `displayIndex += 1` mutates a local variable during render.
-
-Recommended change:
-
-- Precompute flattened groups with stable indexes before JSX.
-- Or compute the index from previous group lengths instead of mutating during render.
-
-Why this matters:
-
-- React Compiler / hooks lint correctly flags this because mutation during render can become unstable across future render optimizations.
-
 ## P1 - Restore Formatting Discipline
 
 ### 5. Run Prettier once and keep it enforced

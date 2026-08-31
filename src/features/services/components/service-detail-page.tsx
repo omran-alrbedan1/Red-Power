@@ -32,7 +32,6 @@ export function ServiceDetailPage({
     <div className=" text-white">
       <ServiceDetailHero
         entry={entry}
-        eyebrow={messages.shared.eyebrow}
         heroImageSrc={heroImageSrc}
         locale={locale}
         primaryCtaLabel={messages.cta.primaryLabel}

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Grid2x2, Search, SlidersHorizontal } from "lucide-react";
+import { ChevronDown, Search, SlidersHorizontal } from "lucide-react";
 import { useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 

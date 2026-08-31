@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Calendar, Phone } from "lucide-react";
 
-import { Container } from "@/components/layout/container";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { cn } from "@/lib/utils";
 import {
@@ -11,7 +10,6 @@ import {
 
 type ServiceDetailHeroProps = {
   entry: ServiceDetailEntry;
-  eyebrow: string;
   heroImageSrc: string;
   locale: "ar" | "en";
   primaryCtaLabel: string;
@@ -31,7 +29,6 @@ const heroImagePositionByVariant: Record<ServiceVisualVariant, string> = {
 
 export function ServiceDetailHero({
   entry,
-  eyebrow,
   heroImageSrc,
   locale,
   primaryCtaLabel,

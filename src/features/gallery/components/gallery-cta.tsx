@@ -1,17 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useLocale, useMessages, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { buttonClassName } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { RevealPanel } from "@/components/ui/reveal-panel";
-import {
-  GALLERY_CTA_IMAGE,
-  type GalleryItemId,
-} from "@/features/gallery/constants";
+import { GALLERY_CTA_IMAGE } from "@/features/gallery/constants";
 import { cn } from "@/lib/utils";
 
 export function GalleryCta() {
