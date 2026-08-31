@@ -5,7 +5,6 @@ import { useState } from "react";
 
 import { buttonClassName } from "@/components/ui/button";
 import { FormStatus } from "@/components/forms/form-status";
-import { submitContactForm } from "@/lib/api/public-forms";
 import { validateContactForm } from "@/lib/forms/validation";
 import { cn } from "@/lib/utils";
 import type {
@@ -34,7 +33,6 @@ export function ContactForm() {
     tone: "success" | "error";
     message: string;
   } | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function updateField<K extends keyof ContactFormValues>(
     field: K,
@@ -45,7 +43,7 @@ export function ContactForm() {
     setStatus(null);
   }
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const nextErrors = validateContactForm(values);
@@ -58,35 +56,8 @@ export function ContactForm() {
       return;
     }
 
-    setIsSubmitting(true);
+    setFieldErrors({});
     setStatus(null);
-
-    try {
-      const result = await submitContactForm(values);
-
-      if (!result.ok) {
-        setFieldErrors(result.fieldErrors ?? {});
-        setStatus({
-          tone: "error",
-          message: result.message,
-        });
-        return;
-      }
-
-      setValues(initialValues(locale));
-      setFieldErrors({});
-      setStatus({
-        tone: "success",
-        message: result.message,
-      });
-    } catch {
-      setStatus({
-        tone: "error",
-        message: errorsT("server_error"),
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
   }
 
   return (
@@ -187,15 +158,12 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={isSubmitting}
-        aria-busy={isSubmitting}
-        aria-disabled={isSubmitting}
         className={buttonClassName({
           className:
-            "w-full rounded-[8px] py-3.5 text-base disabled:cursor-not-allowed disabled:opacity-60",
+            "w-full rounded-[8px] py-3.5 text-base",
         })}
       >
-        {isSubmitting ? t("submitting") : t("submit")}
+        {t("submit")}
       </button>
 
       <p className={cn("text-xs text-zinc-500", locale === "ar" ? "text-right" : "text-left")}>

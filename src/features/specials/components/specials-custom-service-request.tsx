@@ -22,7 +22,6 @@ import {
   softSpring,
   staggerContainer,
 } from "@/components/ui/motion-presets";
-import { submitContactForm } from "@/lib/api/public-forms";
 import { cn } from "@/lib/utils";
 import type { ValidationCode } from "@/types/forms";
 import { Container } from "@/components/layout/container";
@@ -74,7 +73,6 @@ export function SpecialsCustomServiceRequest() {
     tone: "success" | "error";
     message: string;
   } | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactItems = (
     tCommon.raw("contact.items") as ContactPanelItem[]
@@ -94,7 +92,7 @@ export function SpecialsCustomServiceRequest() {
     setStatus(null);
   }
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const nextErrors: Partial<Record<CustomRequestField, ValidationCode>> = {};
@@ -136,46 +134,8 @@ export function SpecialsCustomServiceRequest() {
       return;
     }
 
-    setIsSubmitting(true);
+    setFieldErrors({});
     setStatus(null);
-
-    try {
-      const formattedMessage = [
-        `${tForms("fields.serviceType")}: ${values.serviceType}`,
-        `${tForms("fields.email")}: ${values.email}`,
-        `${tForms("fields.description")}: ${values.message}`,
-      ].join("\n");
-
-      const result = await submitContactForm({
-        locale,
-        name: values.name,
-        phone: values.phone,
-        message: formattedMessage,
-        website: values.website,
-      });
-
-      if (!result.ok) {
-        setStatus({
-          tone: "error",
-          message: result.message,
-        });
-        return;
-      }
-
-      setValues(initialValues);
-      setFieldErrors({});
-      setStatus({
-        tone: "success",
-        message: result.message,
-      });
-    } catch {
-      setStatus({
-        tone: "error",
-        message: errorsT("server_error"),
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
   }
 
   function renderContactIcon(kind: ContactPanelItem["kind"]) {
@@ -461,16 +421,14 @@ export function SpecialsCustomServiceRequest() {
               >
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  aria-busy={isSubmitting}
                   className={buttonClassName({
                     className:
-                      "w-full justify-center rounded-[4px] px-5 py-3 text-xs tracking-[0.14em] shadow-[0_10px_28px_rgba(220,38,38,0.2)] transition-shadow hover:shadow-[0_12px_34px_rgba(220,38,38,0.32)] disabled:cursor-not-allowed disabled:opacity-60",
+                      "w-full justify-center rounded-[4px] px-5 py-3 text-xs tracking-[0.14em] shadow-[0_10px_28px_rgba(220,38,38,0.2)] transition-shadow hover:shadow-[0_12px_34px_rgba(220,38,38,0.32)]",
                   })}
                 >
                   <span className="flex items-center gap-2">
                     <Wrench className="size-4" />
-                    {isSubmitting ? tForms("submitting") : tForms("submit")}
+                    {tForms("submit")}
                   </span>
                 </button>
               </motion.div>
