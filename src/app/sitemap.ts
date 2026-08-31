@@ -19,7 +19,6 @@ const staticRoutes = [
 }>;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-08-29T00:00:00.000Z");
   const serviceRoutes = serviceCatalog.map((service) => ({
     path: `/services/${service.slug}`,
     priority: 0.7,
@@ -30,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return siteConfig.locales.flatMap((locale) =>
     routes.map((route) => ({
       url: getSiteUrl(getLocalizedPath(locale, route.path)),
-      lastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
       alternates: {
