@@ -2,14 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import {
-  ReviewsBottomMetrics,
-  ReviewsCta,
-  ReviewsGrid,
-  ReviewsHero,
-  ReviewsSummary,
-  ReviewsTrustStrip,
-} from "@/features/reviews/components";
+import { ReviewsShowcase } from "@/features/reviews/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";
@@ -59,12 +52,7 @@ export default async function ReviewsPage({ params }: ReviewsPageProps) {
           description: t("metadata.description"),
         })}
       />
-      <ReviewsHero />
-      <ReviewsSummary />
-      <ReviewsTrustStrip />
-      <ReviewsGrid />
-      <ReviewsCta />
-      <ReviewsBottomMetrics />
+      <ReviewsShowcase />
     </>
   );
 }
