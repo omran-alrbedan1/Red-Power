@@ -4,9 +4,10 @@
     "description": "Browse the Red Power Garage gallery for workshop scenes, service projects, performance vehicles, and branded automotive event moments."
   },
   "hero": {
-    "eyebrow": "Red Power Garage",
-    "title": "Gallery",
-    "description": "A look inside Red Power Garage.",
+    "eyebrow": "Gallery",
+    "title": "Project Gallery",
+    "description": "A visual tour through our daily work inside the workshop. Every image reflects the level of care and attention to detail we bring to each vehicle that enters Red Power Garage.",
+    "highlights": ["Relentless Passion", "Precision In Every Detail", "Real Performance"],
     "primaryCta": "Book Appointment",
     "secondaryCta": "Explore Services",
     "imageAlt": "Red Power Garage gallery hero showing performance vehicles inside the workshop"
@@ -16,44 +17,50 @@
     "title": "Automotive service with a higher standard.",
     "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles."
   },
+  "actions": {
+    "all": "All",
+    "gridView": "Grid View",
+    "loadMore": "Load More",
+    "preview": "Preview image",
+    "closePreview": "Close preview"
+  },
   "grid": {
-    "items": [
-      {
+    "items": {
+      "workshopAtmosphere": {
         "title": "Workshop Atmosphere",
         "category": "Garage",
-        "imageAlt": "Dark Red Power Garage workshop with a performance car in view",
-        "imageSrc": "/images/red-power/gallery/dodge-garage-wide.png"
+        "imageAlt": "Dark Red Power Garage workshop with a performance car in view"
       },
-      {
+      "serviceInProgress": {
         "title": "Service In Progress",
         "category": "Services",
-        "imageAlt": "Technician working on a vehicle in the Red Power Garage workshop",
-        "imageSrc": "/images/red-power/gallery/car-maintenance-workshop.png"
+        "imageAlt": "Technician working on a vehicle in the Red Power Garage workshop"
       },
-      {
+      "brandShowcase": {
         "title": "Brand Showcase",
         "category": "Performance",
-        "imageAlt": "Red Power Garage showcase collage with branded performance visuals",
-        "imageSrc": "/images/red-power/gallery/garage-showcase-collage.png"
+        "imageAlt": "Red Power Garage showcase collage with branded performance visuals"
       },
-      {
+      "technicalHighlights": {
         "title": "Technical Highlights",
         "category": "Services",
-        "imageAlt": "Gallery strip of workshop tools, engine work, and performance service scenes",
-        "imageSrc": "/images/red-power/gallery/service-gallery-strip.png"
+        "imageAlt": "Gallery strip of workshop tools, engine work, and performance service scenes"
       },
-      {
+      "eventPresence": {
         "title": "Event Presence",
         "category": "Events",
-        "imageAlt": "Red Power Garage performance vehicle display at a public event",
-        "imageSrc": "/images/red-power/gallery/event-car-expo.png"
+        "imageAlt": "Red Power Garage performance vehicle display at a public event"
       },
-      {
+      "eventSupportTeam": {
         "title": "Event Support Team",
         "category": "Events",
-        "imageAlt": "Red Power Garage team group photo during an event activation",
-        "imageSrc": "/images/red-power/gallery/event-team-group.png"
+        "imageAlt": "Red Power Garage team group photo during an event activation"
       }
-    ]
+    }
+  },
+  "cta": {
+    "eyebrow": "Plan your next visit",
+    "title": "Book your service or explore the workshop in more detail.",
+    "description": "Move from inspiration to action with a direct path into diagnostics, maintenance, and performance support."
   }
 }

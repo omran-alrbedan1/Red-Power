@@ -37,6 +37,7 @@ export const images = {
     serviceGalleryStrip: "/images/red-power/gallery/service-gallery-strip.png",
     eventCarExpo: "/images/red-power/gallery/event-car-expo.png",
     eventTeamGroup: "/images/red-power/gallery/event-team-group.png",
+    galleryHero: "/images/red-power/gallery/gallery-hero.png",
   },
   reviews: {
     dodgeGarageWide: "/images/red-power/reviews/dodge-garage-wide.png",

@@ -43,7 +43,7 @@ export function ServicesShowcaseHero({
         >
           <RevealPanel
             direction={isArabic ? "right" : "left"}
-            className="services-scan-sheen max-w-2xl border border-white/10 bg-black/24 px-5 py-7 backdrop-blur-[2px] sm:px-8 sm:py-10"
+            className="services-scan-sheen max-w-2xl  bg-black/24 px-5 py-7 backdrop-blur-[2px] sm:px-8 sm:py-10"
           >
             <div className="relative">
               <div className="relative z-10 space-y-6">

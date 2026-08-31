@@ -7,6 +7,9 @@
   --page-deep: #050505;
   --page-section: #060708;
   --page-surface: #060709;
+  --gallery-page: #060606;
+  --gallery-panel: #0d0d0d;
+  --gallery-surface: #101112;
   --panel-solid: #111111;
   --panel-strong: #121212;
   --card-deep: #0d0e10;
@@ -31,6 +34,9 @@
   --color-page-deep: var(--page-deep);
   --color-page-section: var(--page-section);
   --color-page-surface: var(--page-surface);
+  --color-gallery-page: var(--gallery-page);
+  --color-gallery-panel: var(--gallery-panel);
+  --color-gallery-surface: var(--gallery-surface);
   --color-panel-solid: var(--panel-solid);
   --color-panel-strong: var(--panel-strong);
   --color-card-deep: var(--card-deep);

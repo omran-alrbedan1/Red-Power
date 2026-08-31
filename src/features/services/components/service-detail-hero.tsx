@@ -58,11 +58,6 @@ export function ServiceDetailHero({
               isArabic ? "text-right lg:pl-6" : "text-left lg:pr-6"
             )}
           >
-            {/* Kicker / Eyebrow */}
-            <p className="text-xs font-bold uppercase tracking-widest text-red-500 sm:text-sm">
-              {eyebrow}
-            </p>
-
             {/* Dynamic Two-Tone Title */}
             <h1 className="mt-4 text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
               {titlePart1}{" "}

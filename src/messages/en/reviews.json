@@ -11,6 +11,9 @@
     "secondaryCta": "Explore Services",
     "imageAlt": "Red Power Garage reviews hero showing performance vehicles inside the workshop"
   },
+  "actions": {
+    "loadMore": "Show More Reviews"
+  },
   "overview": {
     "eyebrow": "Performance • Precision • Trust",
     "title": "Automotive service with a higher standard.",
@@ -48,5 +51,10 @@
         "imageSrc": "/images/red-power/reviews/car-maintenance-workshop.png"
       }
     ]
+  },
+  "cta": {
+    "eyebrow": "Start your Red Power experience",
+    "title": "Ready for the same level of professional care?",
+    "description": "Book your next appointment and let the Red Power team handle your vehicle with the same discipline and clarity that build customer trust."
   }
 }

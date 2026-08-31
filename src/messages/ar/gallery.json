@@ -4,9 +4,10 @@
     "description": "تصفح معرض ريد باور جراج لمشاهدة أجواء الورشة ومشاريع الخدمة وسيارات الأداء والظهور في الفعاليات."
   },
   "hero": {
-    "eyebrow": "ريد باور جراج",
-    "title": "المعرض",
-    "description": "نظرة داخل ريد باور جراج.",
+    "eyebrow": "المعرض",
+    "title": "معرض الأعمال",
+    "description": "جولة بصرية في أعمالنا اليومية داخل الورشة. كل صورة تعكس مستوى الاهتمام بالتفاصيل الذي نقدمه لكل سيارة تدخل ريد باور جراج.",
+    "highlights": ["شغف لا يتوقف", "دقة في كل تفصيل", "أداء حقيقي"],
     "primaryCta": "احجز موعدًا",
     "secondaryCta": "استكشف الخدمات",
     "imageAlt": "صورة بطل المعرض في ريد باور جراج وتعرض سيارات الأداء داخل الورشة"
@@ -16,44 +17,50 @@
     "title": "خدمات سيارات بمعيار أعلى.",
     "description": "خدمات احترافية للصيانة والفحص والخدمات الميكانيكية والكهربائية وتطوير الأداء مع معرفة متخصصة في المركبات الأمريكية وMopar."
   },
+  "actions": {
+    "all": "الكل",
+    "gridView": "عرض الشبكة",
+    "loadMore": "تحميل المزيد",
+    "preview": "عرض الصورة",
+    "closePreview": "إغلاق المعاينة"
+  },
   "grid": {
-    "items": [
-      {
+    "items": {
+      "workshopAtmosphere": {
         "title": "أجواء الورشة",
         "category": "الورشة",
-        "imageAlt": "ورشة ريد باور داكنة مع سيارة أداء في المشهد",
-        "imageSrc": "/images/red-power/gallery/dodge-garage-wide.png"
+        "imageAlt": "ورشة ريد باور داكنة مع سيارة أداء في المشهد"
       },
-      {
+      "serviceInProgress": {
         "title": "خدمة أثناء التنفيذ",
         "category": "الخدمات",
-        "imageAlt": "فني يعمل على مركبة داخل ورشة ريد باور جراج",
-        "imageSrc": "/images/red-power/gallery/car-maintenance-workshop.png"
+        "imageAlt": "فني يعمل على مركبة داخل ورشة ريد باور جراج"
       },
-      {
+      "brandShowcase": {
         "title": "استعراض الهوية",
         "category": "الأداء",
-        "imageAlt": "كولاج استعراضي لهوية ريد باور جراج وسيارات الأداء",
-        "imageSrc": "/images/red-power/gallery/garage-showcase-collage.png"
+        "imageAlt": "كولاج استعراضي لهوية ريد باور جراج وسيارات الأداء"
       },
-      {
+      "technicalHighlights": {
         "title": "لقطات تقنية",
         "category": "الخدمات",
-        "imageAlt": "شريط صور يعرض أدوات الورشة وخدمة المحركات ومشاهد الأداء",
-        "imageSrc": "/images/red-power/gallery/service-gallery-strip.png"
+        "imageAlt": "شريط صور يعرض أدوات الورشة وخدمة المحركات ومشاهد الأداء"
       },
-      {
+      "eventPresence": {
         "title": "حضور الفعاليات",
         "category": "الفعاليات",
-        "imageAlt": "عرض لمركبة ريد باور جراج في فعالية عامة",
-        "imageSrc": "/images/red-power/gallery/event-car-expo.png"
+        "imageAlt": "عرض لمركبة ريد باور جراج في فعالية عامة"
       },
-      {
+      "eventSupportTeam": {
         "title": "فريق دعم الفعاليات",
         "category": "الفعاليات",
-        "imageAlt": "صورة جماعية لفريق ريد باور جراج خلال فعالية",
-        "imageSrc": "/images/red-power/gallery/event-team-group.png"
+        "imageAlt": "صورة جماعية لفريق ريد باور جراج خلال فعالية"
       }
-    ]
+    }
+  },
+  "cta": {
+    "eyebrow": "ابدأ خطوتك التالية",
+    "title": "احجز خدمتك أو استكشف تفاصيل الورشة.",
+    "description": "من المعرض إلى الحجز الفعلي، نسهّل عليك الانتقال من الإلهام إلى خدمة دقيقة تناسب سيارتك."
   }
 }

@@ -20,8 +20,6 @@ export function SiteHeader() {
           href={`/${locale}`}
           homeLabel={t("brand.homeLabel")}
           name={t("brand.name")}
-          tagline={t("brand.tagline")}
-          showText={false}
           className="shrink-0"
         />
         <DesktopNav />

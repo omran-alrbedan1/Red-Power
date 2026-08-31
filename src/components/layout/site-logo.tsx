@@ -8,20 +8,16 @@ type SiteLogoProps = {
   homeLabel: string;
   href: string;
   name: string;
-  tagline?: string;
   className?: string;
   compact?: boolean;
-  showText?: boolean;
 };
 
 export function SiteLogo({
   homeLabel,
   href,
   name,
-  tagline,
   className,
   compact = false,
-  showText = true,
 }: SiteLogoProps) {
   return (
     <Link
@@ -40,21 +36,9 @@ export function SiteLogo({
         priority
         className={cn(
           "h-auto object-contain",
-          compact ? "w-20 sm:w-24" : "w-36 sm:w-44"
+          compact ? "w-20 sm:w-24" : "w-32 sm:w-40"
         )}
       />
-      {showText ? (
-        <span className="space-y-1">
-          <span className="block text-sm font-semibold uppercase tracking-[0.22em] text-white sm:text-base">
-            {name}
-          </span>
-          {tagline ? (
-            <span className="block text-[10px] uppercase tracking-[0.28em] text-zinc-500 sm:text-[11px]">
-              {tagline}
-            </span>
-          ) : null}
-        </span>
-      ) : null}
     </Link>
   );
 }
