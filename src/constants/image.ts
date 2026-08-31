@@ -5,7 +5,6 @@ export const images = {
   },
   home: {
     hero: "/images/red-power/home/hero.png",
-    heroGenerated: "/images/red-power/home/hero-generated.png",
     redDodgeGarageHero: "/images/red-power/home/red-dodge-garage-hero.png",
     dodgeGarageWide: "/images/red-power/home/dodge-garage-wide.png",
     techniciansWithDodge: "/images/red-power/home/technicians-with-dodge.png",

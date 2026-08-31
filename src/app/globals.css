@@ -389,5 +389,5 @@ select {
 }
 
 .screwdriver-cursor {
-  cursor: url("/cursors/wrench-red.svg") 14 14, pointer;
+  cursor: url("/cursors/wrench-red.svg") 8 8, pointer;
 }
