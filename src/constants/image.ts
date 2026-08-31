@@ -6,9 +6,6 @@ export const images = {
   home: {
     hero: "/images/red-power/home/hero.png",
     redDodgeGarageHero: "/images/red-power/home/red-dodge-garage-hero.png",
-    dodgeGarageWide: "/images/red-power/home/dodge-garage-wide.png",
-    techniciansWithDodge: "/images/red-power/home/technicians-with-dodge.png",
-    serviceGalleryStrip: "/images/red-power/home/service-gallery-strip.png",
     ctaCarFront: "/images/red-power/home/cta-car-front-generated.png",
     brakeDetail: "/images/red-power/home/brake-detail-generated.png",
     serviceMoparExpertise: "/images/red-power/home/service-mopar-expertise.png",
@@ -19,7 +16,6 @@ export const images = {
   about: {
     hero: "/images/red-power/about/garage-dodge-hero-background.png",
     garageWorkshopBackground: "/images/red-power/about/garage-workshop-background.png",
-    technicianWorking: "/images/red-power/about/technician-working.png",
     techniciansWithDodge: "/images/red-power/about/technicians-with-dodge.png",
     statsBackground: "/images/red-power/about/statsBackground.png",
     experts: "/images/red-power/about/experts.png",
@@ -27,7 +23,6 @@ export const images = {
   },
   contact: {
     hero: "/images/red-power/contact/contact-hero.png",
-    garageWorkshopBackground: "/images/red-power/contact/garage-workshop-background.png",
     technicianWorking: "/images/red-power/contact/technician-working.png",
   },
   gallery: {
@@ -41,8 +36,6 @@ export const images = {
   },
   reviews: {
     dodgeGarageWide: "/images/red-power/reviews/dodge-garage-wide.png",
-    carMaintenanceWorkshop: "/images/red-power/reviews/car-maintenance-workshop.png",
-    techniciansWithDodge: "/images/red-power/reviews/technicians-with-dodge.png",
   },
   services: {
     servicesHero: "/images/red-power/services/service-hero.png",
@@ -63,6 +56,5 @@ export const images = {
   specials: {
     hero: "/images/red-power/specials/special-hero.png",
     brakeAndWheelDetail: "/images/red-power/specials/brake-and-wheel-detail.png",
-    serviceGalleryStrip: "/images/red-power/specials/service-gallery-strip.png",
   },
 } as const;

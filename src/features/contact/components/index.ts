@@ -1,4 +1,3 @@
-export { ContactCta } from "./contact-cta";
-export { ContactFeatures } from "./contact-features";
 export { ContactHero } from "./contact-hero";
+export { ContactLocation } from "./contact-location";
 export { ContactHubSection } from "./contact-hub-section";

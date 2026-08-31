@@ -135,17 +135,21 @@ export function SiteFooter() {
           <div className="flex flex-col items-center justify-between gap-4 py-6 text-sm md:flex-row">
             <p className="text-zinc-500">{t("footer.copyright")}</p>
 
-            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:gap-4">
+            <div className="flex flex-col cursor-pointer items-center gap-3 text-center sm:flex-row sm:gap-4">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 {t("footer.poweredBy")}
               </span>
-              <Image
-                src={images.brand.futurexLogo}
-                alt={t("footer.poweredByAlt")}
-                width={132}
-                height={28}
-                className="h-auto w-28 object-contain sm:w-32"
-              />
+              <Link
+                href={'https://futxtech.com/en/home'}
+              >
+                <Image
+                  src={images.brand.futurexLogo}
+                  alt={t("footer.poweredByAlt")}
+                  width={132}
+                  height={28}
+                  className="h-auto w-28 object-contain sm:w-32"
+                />
+              </Link>
             </div>
           </div>
         </div>

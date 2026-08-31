@@ -1,10 +1,8 @@
 import { Headset, Settings2, Zap } from "lucide-react";
 import { useLocale, useMessages, useTranslations } from "next-intl";
-import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { buttonClassName } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { RevealPanel } from "@/components/ui/reveal-panel";
 import { images } from "@/constants/image";

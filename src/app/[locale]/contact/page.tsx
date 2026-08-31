@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import {
   ContactHero,
   ContactHubSection,
+  ContactLocation,
 } from "@/features/contact/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
@@ -57,6 +58,8 @@ export default async function ContactPage({ params }: ContactPageProps) {
       />
       <ContactHero />
       <ContactHubSection />
+      <ContactLocation/>
     </>
   );
 }
+  
