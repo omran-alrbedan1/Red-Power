@@ -4,6 +4,9 @@ type LeadPayload = Record<string, unknown>;
 
 const DEDUPE_WINDOW_MS = 30_000;
 
+// This is only a best-effort duplicate guard for a single process. Enforce
+// production rate limits at the CDN/WAF or with a shared backing store.
+
 declare global {
   var __redPowerLeadCache: Map<string, number> | undefined;
 }

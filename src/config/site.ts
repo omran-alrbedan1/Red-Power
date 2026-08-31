@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Red Power Garage",
-  arabicName: "ريد باور جراج",
+  arabicName: "ريد باور",
   legalName: "Red Power Garage",
   tagline: "Performance • Precision • Trust",
   companyLine: "تحت مظلة شركة قمرة الرائدة",
@@ -14,7 +14,7 @@ export const siteConfig = {
   description:
     "Professional vehicle maintenance, diagnostics, and performance services for Red Power Garage.",
   arabicDescription:
-    "خدمات احترافية لصيانة المركبات وتشخيص الأعطال وتطوير الأداء في ريد باور جراج.",
+    "خدمات احترافية لصيانة المركبات وتشخيص الأعطال وتطوير الأداء في ريد باور.",
   localeCookie: "red-power-locale",
   locales: ["ar", "en"] as const,
   defaultLocale: "ar" as const,

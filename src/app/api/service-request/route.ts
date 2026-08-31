@@ -5,8 +5,76 @@ import { validateServiceRequestForm } from "@/lib/forms/validation";
 import { deliverLead, isDuplicateLead } from "@/lib/server/lead-delivery";
 import type { ServiceRequestValues } from "@/types/forms";
 
+const MAX_MULTIPART_BODY_BYTES = 6 * 1024 * 1024;
+
+class RequestBodyTooLargeError extends Error {}
+
+async function readMultipartFormData(request: Request) {
+  const contentLength = Number(request.headers.get("content-length"));
+  if (Number.isFinite(contentLength) && contentLength > MAX_MULTIPART_BODY_BYTES) {
+    throw new RequestBodyTooLargeError();
+  }
+
+  if (!request.headers.get("content-type")?.includes("multipart/form-data")) {
+    throw new Error("Expected multipart form data");
+  }
+
+  const reader = request.body?.getReader();
+  if (!reader) {
+    throw new Error("Request body is missing");
+  }
+
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) {
+      break;
+    }
+
+    size += value.byteLength;
+    if (size > MAX_MULTIPART_BODY_BYTES) {
+      await reader.cancel();
+      throw new RequestBodyTooLargeError();
+    }
+
+    chunks.push(value);
+  }
+
+  const body = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+
+  return new Request(request.url, {
+    body,
+    headers: request.headers,
+    method: request.method,
+  }).formData();
+}
+
 export async function POST(request: Request) {
-  const formData = await request.formData();
+  let formData: FormData;
+
+  try {
+    formData = await readMultipartFormData(request);
+  } catch (error) {
+    const status = error instanceof RequestBodyTooLargeError ? 413 : 400;
+    const event = status === 413 ? "body too large" : "invalid multipart body";
+    console.warn(`Service request rejected: ${event}`);
+
+    return NextResponse.json(
+      {
+        ok: false,
+        message: await getValidationMessage("ar", "server_error"),
+      },
+      { status }
+    );
+  }
+
   const locale = formData.get("locale") === "en" ? "en" : "ar";
   const successMessage = await getFormApiMessage(
     locale,
@@ -90,7 +158,11 @@ export async function POST(request: Request) {
       ok: true,
       message: successMessage,
     });
-  } catch {
+  } catch (error) {
+    console.error("Service request delivery failed", {
+      error: error instanceof Error ? error.message : "unknown error",
+    });
+
     return NextResponse.json(
       {
         ok: false,
