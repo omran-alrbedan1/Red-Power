@@ -2,10 +2,12 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { HeroSection } from "@/components/sections/hero-section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { BrandIntroductionSection } from "@/features/home/components/brand-introduction-section";
-import { PerformanceSection } from "@/features/home/components/performance-section";
-import { ServicesOverviewSection } from "@/features/home/components/services-overview-section";
-import { WhyRedPowerSection } from "@/features/home/components/why-red-power-section";
+import {
+  BrandIntroductionSection,
+  PerformanceSection,
+  ServicesOverviewSection,
+  WhyRedPowerSection,
+} from "@/features/home/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/metadata";
 import { getSeoMessages } from "@/lib/seo-messages";

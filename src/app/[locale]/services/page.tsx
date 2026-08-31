@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
 import { type SiteLocale } from "@/config/site";
-import { ServicesShowcaseCta } from "@/features/services/components/services-showcase-cta";
-import { ServicesShowcaseGroups } from "@/features/services/components/services-showcase-groups";
-import { ServicesShowcaseHero } from "@/features/services/components/services-showcase-hero";
+import {
+  ServicesShowcaseCta,
+  ServicesShowcaseGroups,
+  ServicesShowcaseHero,
+} from "@/features/services/components";
 import { getServicesMessages } from "@/features/services/services-page-messages";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { TicketPercent } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/container";
@@ -12,29 +13,43 @@ import { cn } from "@/lib/utils";
 export function SpecialsInquirySection() {
   const locale = useLocale();
   const t = useTranslations("specials.inquiry");
-  const tCustom = useTranslations("specials.customService");
   const isArabic = locale === "ar";
 
   return (
-    <Section className="bg-[#0a0b0c]">
-      <Container className="space-y-12">
-        {/* Inquiry Section */}
-        <RevealPanel className="border border-white/8 bg-[#101214] p-8 sm:p-12">
-          <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-red-500">
-              {t("eyebrow")}
-            </p>
-            <h2 className="text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl">
-              {t("title")}
-            </h2>
-            <p className="max-w-2xl text-base leading-7 text-zinc-400">
-              {t("description")}
-            </p>
-            <div className="flex flex-wrap gap-4">
+    <Section className="bg-[#090909] py-12 sm:py-14">
+      <Container className="space-y-4">
+        <RevealPanel className="relative overflow-hidden rounded-[12px] border border-red-600/35 bg-[linear-gradient(90deg,#151515_0%,#101010_45%,#0b0b0b_100%)] px-4 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.35)] sm:px-6">
+          <div className="absolute inset-y-0 left-0 w-32 bg-[radial-gradient(circle_at_left,rgba(220,38,38,0.2),transparent_72%)]" />
+          <div
+            className={cn(
+              "relative grid gap-5 lg:grid-cols-[84px_minmax(0,1fr)_220px] lg:items-center",
+              isArabic && "lg:grid-cols-[84px_minmax(0,1fr)_220px]"
+            )}
+          >
+            <div className="flex justify-center lg:justify-start">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/35 bg-red-600/10 text-red-500 shadow-[0_0_30px_rgba(220,38,38,0.28)]">
+                <TicketPercent className="size-7" strokeWidth={1.9} />
+              </div>
+            </div>
+
+            <div className={cn("space-y-2", isArabic ? "text-right" : "text-left")}>
+              <p className="text-xs font-semibold tracking-[0.24em] text-red-500">
+                {t("eyebrow")}
+              </p>
+              <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+                {t("title")}
+              </h2>
+              <p className="max-w-2xl text-sm leading-6 text-zinc-300/85">
+                {t("description")}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2 lg:w-full">
               <Link
                 href={`/${locale}/contact`}
                 className={buttonClassName({
-                  className: "rounded-md px-6 py-3 text-xs uppercase tracking-[0.18em]",
+                  className:
+                    "w-full justify-center rounded-[4px] px-5 py-3 text-xs tracking-[0.14em]",
                 })}
               >
                 {t("primaryCta")}
@@ -43,7 +58,8 @@ export function SpecialsInquirySection() {
                 href={`/${locale}/contact`}
                 className={buttonClassName({
                   variant: "secondary",
-                  className: "rounded-md px-6 py-3 text-xs uppercase tracking-[0.18em]",
+                  className:
+                    "w-full justify-center rounded-[4px] border-white/20 bg-transparent px-5 py-3 text-xs tracking-[0.14em] text-white hover:border-red-500/60 hover:bg-white/5",
                 })}
               >
                 {t("secondaryCta")}
@@ -52,29 +68,6 @@ export function SpecialsInquirySection() {
           </div>
         </RevealPanel>
 
-        {/* Custom Service Section */}
-        <RevealPanel className="border border-white/8 bg-[#101214] p-8 sm:p-12">
-          <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-red-500">
-              {tCustom("eyebrow")}
-            </p>
-            <h2 className="text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl">
-              {tCustom("title")}
-            </h2>
-            <p className="max-w-2xl text-base leading-7 text-zinc-400">
-              {tCustom("description")}
-            </p>
-            <Link
-              href={`/${locale}/contact`}
-              className={cn(
-                "inline-flex items-center rounded-md bg-red-600 px-6 py-3 text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors hover:bg-red-500",
-                isArabic ? "mr-auto" : "ml-auto"
-              )}
-            >
-              {tCustom("cta")}
-            </Link>
-          </div>
-        </RevealPanel>
       </Container>
     </Section>
   );

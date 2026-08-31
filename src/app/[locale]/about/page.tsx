@@ -2,11 +2,13 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { AboutHero } from "@/features/about/components/about-hero";
-import { AboutPassion } from "@/features/about/components/about-passion";
-import { AboutStats } from "@/features/about/components/about-stats";
-import { AboutTeam } from "@/features/about/components/about-team";
-import { AboutCta } from "@/features/about/components/about-cta";
+import {
+  AboutCta,
+  AboutHero,
+  AboutPassion,
+  AboutStats,
+  AboutTeam,
+} from "@/features/about/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";

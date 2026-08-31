@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getServiceBySlug, serviceCatalog } from "@/config/services";
 import { type SiteLocale } from "@/config/site";
-import { ServiceDetailPage } from "@/features/services/components/service-detail-page";
+import { ServiceDetailPage } from "@/features/services/components";
 import { type ServiceDetailMessages } from "@/features/services/service-detail-content";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";

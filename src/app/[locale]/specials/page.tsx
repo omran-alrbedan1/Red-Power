@@ -2,10 +2,12 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { SpecialsHero } from "@/features/specials/components/specials-hero";
-import { SpecialsSelectedOffers } from "@/features/specials/components/specials-selected-offers";
-import { SpecialsMainOffers } from "@/features/specials/components/specials-main-offers";
-import { SpecialsInquirySection } from "@/features/specials/components/specials-inquiry-section";
+import {
+  SpecialsHero,
+  SpecialsInquirySection,
+  SpecialsMainOffers,
+  SpecialsSelectedOffers,
+} from "@/features/specials/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";

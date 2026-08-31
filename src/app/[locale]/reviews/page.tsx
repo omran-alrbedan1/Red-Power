@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { MediaPageHero } from "@/components/sections/media-page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
 import { images } from "@/constants/image";
-import { ServiceDetailFeatureGrid } from "@/features/services/components/service-detail-feature-grid";
-import { ServiceDetailProcessSection } from "@/features/services/components/service-detail-process-section";
-import { ServicesCtaStrip } from "@/features/services/components/services-cta-strip";
+import {
+  ServiceDetailFeatureGrid,
+  ServiceDetailProcessSection,
+  ServicesCtaStrip,
+} from "@/features/services/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";

@@ -81,6 +81,14 @@
     "eyebrow": "Request a custom service",
     "title": "Request a custom service",
     "description": "Tell us what you need and our team will contact you with the best solutions.",
-    "cta": "Contact Us"
+    "cta": "Contact Us",
+    "panelTitle": "Contact us",
+    "panelDescription": "Our team is ready to review your request and help with bookings, offers, and custom service needs.",
+    "serviceTypePlaceholder": "Select service type",
+    "serviceTypes": {
+      "inspection": "Inspection and maintenance",
+      "diagnostics": "Diagnostics",
+      "performance": "Performance upgrade"
+    }
   }
 }
