@@ -26,14 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang={siteConfig.defaultLocale} suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/icon" type="image/png" sizes="256x256" />
-        <link rel="apple-touch-icon" href="/apple-icon" />
-      </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

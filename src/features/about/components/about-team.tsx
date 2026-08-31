@@ -52,9 +52,9 @@ export function AboutTeam() {
           <RevealPanel className="relative flex flex-col justify-between rounded-xl border border-white/10 bg-[#0a0a0a] p-6 sm:p-8 shadow-lg">
             <div className="space-y-4">
               <Quote className="size-8 text-red-600 fill-red-600/20" />
-              <p className="text-sm font-medium leading-relaxed text-zinc-300 sm:text-base">
-                "{t("quote")}"
-              </p>
+              <q className="block text-sm font-medium leading-relaxed text-zinc-300 not-italic sm:text-base">
+                {t("quote")}
+              </q>
             </div>
 
             <footer className="mt-8 pt-4 border-t border-white/5">

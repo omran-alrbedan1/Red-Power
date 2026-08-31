@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: siteConfig.name,
+    short_name: "Red Power",
     description: siteConfig.description,
     start_url: "/",
     display: "standalone",
@@ -12,14 +12,16 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#e10613",
     icons: [
       {
-        src: "/images/red-power/brand/red-power-logo.png",
+        src: "/icons/red-power-icon-192.png",
         sizes: "192x192",
         type: "image/png",
+        purpose: "any",
       },
       {
-        src: "/images/red-power/brand/red-power-logo.png",
+        src: "/icons/red-power-icon-512.png",
         sizes: "512x512",
         type: "image/png",
+        purpose: "any",
       },
     ],
   };

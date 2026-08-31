@@ -19,26 +19,36 @@ export function ServicesShowcaseGroups({
   const itemsBySlug = new Map(
     catalog.items.map((item) => [item.slug, item]),
   );
-
   const isArabic = locale === "ar";
-  let displayIndex = 0;
+  const groupsWithItems = catalog.groups.map((group, groupIndex) => {
+    const itemOffset = catalog.groups
+      .slice(0, groupIndex)
+      .reduce((total, previousGroup) => total + previousGroup.itemSlugs.length, 0);
+
+    const items = group.itemSlugs
+      .map((slug) => itemsBySlug.get(slug))
+      .filter(
+        (item): item is ServiceItem => Boolean(item),
+      );
+
+    return {
+      ...group,
+      delay: itemOffset * 70,
+      items: items.map((item, itemIndex) => ({
+        item,
+        displayIndex: itemOffset + itemIndex,
+      })),
+    };
+  });
 
   return (
     <section dir="ltr">
       <Container className="py-0">
         <div className="space-y-3 bg-page-deep">
-          {catalog.groups.map((group) => {
-            const groupDelay = displayIndex * 70;
-            const groupItems = group.itemSlugs
-              .map((slug) => itemsBySlug.get(slug))
-              .filter(
-                (item): item is ServiceItem => Boolean(item),
-              );
-
-            return (
+          {groupsWithItems.map((group) => (
               <RevealPanel
                 key={group.label}
-                delay={groupDelay}
+                delay={group.delay}
                 direction="right"
                 className="grid gap-px bg-white/8 xl:grid-cols-[220px_minmax(0,1fr)]"
               >
@@ -57,25 +67,19 @@ export function ServicesShowcaseGroups({
 
                 {/* Services */}
                 <div className="space-y-px">
-                  {groupItems.map((item) => {
-                    const currentIndex = displayIndex;
-                    displayIndex += 1;
-
-                    return (
+                  {group.items.map(({ item, displayIndex }) => (
                       <ServicesShowcaseRow
                         key={item.slug}
                         ctaLabel={catalog.cta}
-                        index={currentIndex}
+                        index={displayIndex}
                         isArabic={isArabic}
                         item={item}
                         locale={locale}
                       />
-                    );
-                  })}
+                    ))}
                 </div>
               </RevealPanel>
-            );
-          })}
+            ))}
         </div>
       </Container>
     </section>
