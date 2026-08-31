@@ -141,10 +141,7 @@ export function clipRevealUp(delay = 0): Variants {
   };
 }
 
-export function lineDrawIn(
-  axis: "x" | "y" = "x",
-  delay = 0
-): Variants {
+export function lineDrawIn(axis: "x" | "y" = "x", delay = 0): Variants {
   return {
     hidden: {
       opacity: 0,
@@ -216,3 +213,136 @@ export const subtleScaleIn: Variants = {
     transition: smoothTransition,
   },
 };
+
+/**
+ * Depth entrance for offer cards: rise, settle, then tighten to its
+ * final, precise resting state. Feels like a part locking into place.
+ */
+export function depthCardIn(delay = 0): Variants {
+  return {
+    hidden: {
+      opacity: 0,
+      y: 34,
+      scale: 0.96,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        opacity: { duration: 0.4, ease: "easeOut", delay: delay + 0.02 },
+        y: { duration: 0.62, ease: motionEasing, delay },
+        scale: { duration: 0.7, ease: motionEasing, delay },
+      },
+    },
+  };
+}
+
+/**
+ * Oversized background numerals/accents enter on their own register,
+ * deliberately after the primary content, so hierarchy reads clearly.
+ */
+export function lateAccentIn(delay = 0): Variants {
+  return {
+    hidden: {
+      opacity: 0,
+      y: 24,
+      scale: 1.04,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        opacity: { duration: 0.5, ease: "easeOut", delay: delay + 0.12 },
+        y: { duration: 0.7, ease: motionEasing, delay: delay + 0.08 },
+        scale: { duration: 0.9, ease: motionEasing, delay: delay + 0.1 },
+      },
+    },
+  };
+}
+
+/**
+ * Clipboard-style reveal with slight upward travel — used for editorial
+ * panels so the image/content feel like a printed plate sliding in.
+ */
+export function editorialRevealIn(
+  direction: "left" | "right" = "left",
+  delay = 0
+): Variants {
+  const fromX = direction === "left" ? -44 : 44;
+  return {
+    hidden: {
+      opacity: 0,
+      x: fromX,
+      scale: 1.02,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        opacity: { duration: 0.5, ease: "easeOut", delay },
+        x: { duration: 0.85, ease: motionEasing, delay },
+        scale: { duration: 0.9, ease: motionEasing, delay },
+      },
+    },
+  };
+}
+
+/**
+ * Restrained ambient pulse for red glow accents. Lower amplitude than
+ * `glowPulse` — it should feel like respiration, not a strobe.
+ */
+export function ambientPulse(duration = 7): TargetAndTransition {
+  return {
+    opacity: [0.18, 0.42, 0.18],
+    scale: [1, 1.035, 1],
+    transition: {
+      duration,
+      repeat: Number.POSITIVE_INFINITY,
+      ease: "easeInOut",
+    },
+  };
+}
+
+/**
+ * Smooth traversal of a hairline light sweep across a panel. Slow,
+ * cinematic, and periodic rather than constant.
+ */
+export function lightSweep(): TargetAndTransition {
+  return {
+    x: ["-130%", "130%"],
+    transition: {
+      duration: 5.4,
+      repeat: Number.POSITIVE_INFINITY,
+      repeatDelay: 2.8,
+      ease: "easeInOut",
+    },
+  };
+}
+
+/**
+ * Occluded clip reveal used for the inquiry icon when the panel enters —
+ * a sharp, mechanical pop-in scaled to the icon slot.
+ */
+export function badgeSnapIn(delay = 0): Variants {
+  return {
+    hidden: {
+      opacity: 0,
+      scale: 0.6,
+      rotate: -8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 220,
+        damping: 16,
+        delay,
+      },
+    },
+  };
+}

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
 import {
+  SpecialsCustomServiceRequest,
   SpecialsHero,
   SpecialsInquirySection,
   SpecialsMainOffers,
@@ -61,6 +62,7 @@ export default async function SpecialsPage({ params }: SpecialsPageProps) {
       <SpecialsSelectedOffers />
       <SpecialsMainOffers />
       <SpecialsInquirySection />
+        <SpecialsCustomServiceRequest/>
     </>
   );
 }

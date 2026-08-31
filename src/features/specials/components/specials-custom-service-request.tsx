@@ -9,14 +9,23 @@ import {
   UserRound,
   Wrench,
 } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { FormStatus } from "@/components/forms/form-status";
 import { buttonClassName } from "@/components/ui/button";
+import {
+  ambientPulse,
+  clipRevealUp,
+  editorialRevealIn,
+  softSpring,
+  staggerContainer,
+} from "@/components/ui/motion-presets";
 import { submitContactForm } from "@/lib/api/public-forms";
 import { cn } from "@/lib/utils";
 import type { ValidationCode } from "@/types/forms";
+import { Container } from "@/components/layout/container";
 
 type CustomRequestValues = {
   name: string;
@@ -28,11 +37,7 @@ type CustomRequestValues = {
 };
 
 type CustomRequestField =
-  | "name"
-  | "phone"
-  | "email"
-  | "serviceType"
-  | "message";
+  "name" | "phone" | "email" | "serviceType" | "message";
 
 type ContactPanelItem = {
   href?: string;
@@ -60,6 +65,7 @@ export function SpecialsCustomServiceRequest() {
   const tForms = useTranslations("forms.serviceRequestForm");
   const errorsT = useTranslations("forms.errors");
   const isArabic = locale === "ar";
+  const reduceMotion = useReducedMotion();
   const [values, setValues] = useState<CustomRequestValues>(initialValues);
   const [fieldErrors, setFieldErrors] = useState<
     Partial<Record<CustomRequestField, ValidationCode>>
@@ -70,8 +76,11 @@ export function SpecialsCustomServiceRequest() {
   } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const contactItems = (tCommon.raw("contact.items") as ContactPanelItem[]).filter(
-    (item) => item.kind === "phone" || item.kind === "email" || item.kind === "hours"
+  const contactItems = (
+    tCommon.raw("contact.items") as ContactPanelItem[]
+  ).filter(
+    (item) =>
+      item.kind === "phone" || item.kind === "email" || item.kind === "hours"
   );
 
   function updateField<K extends keyof CustomRequestValues>(
@@ -182,226 +191,293 @@ export function SpecialsCustomServiceRequest() {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-[12px] border border-white/10 bg-[linear-gradient(180deg,#111111_0%,#0b0b0b_100%)] p-3 shadow-[0_22px_52px_rgba(0,0,0,0.36)] sm:p-4">
-      <div className="absolute inset-x-0 top-0 h-px bg-red-600/40" />
-      <div className="grid gap-4 lg:grid-cols-[0.26fr_0.74fr]">
-        <aside className="rounded-[10px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.015))] p-4 sm:p-5">
-          <div className={cn("space-y-2", isArabic ? "text-right" : "text-left")}>
-            <h3 className="text-xl font-semibold text-white">
-              {tCustom("panelTitle")}
-            </h3>
-            <p className="text-xs leading-6 text-zinc-400">
-              {tCustom("panelDescription")}
-            </p>
-          </div>
-
-          <div className="mt-5 space-y-4">
-            {contactItems.map((item) => {
-              const Icon = renderContactIcon(item.kind);
-
-              return (
-                <div
-                  key={`${item.kind}-${item.label}`}
-                  className={cn(
-                    "flex items-start gap-3 text-sm text-zinc-200",
-                    isArabic && "flex-row-reverse text-right"
-                  )}
-                >
-                  <span className="mt-0.5 text-red-500">
-                    <Icon className="size-4" strokeWidth={2} />
-                  </span>
-                  <div className="space-y-1">
-                    <p className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500">
-                      {item.label}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-sm leading-6 text-zinc-200 transition-colors hover:text-red-400"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="whitespace-pre-line text-sm leading-6 text-zinc-200">
-                        {item.value}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </aside>
-
-        <div className="rounded-[10px] border border-white/6 bg-[#0f0f0f] p-4 sm:p-5">
-          <div className={cn("mb-5 space-y-2", isArabic ? "text-center" : "text-left")}>
-            <h2 className="text-2xl font-semibold text-white">
-              {tCustom("title")}
-            </h2>
-            <p className="text-sm leading-6 text-zinc-400">
-              {tCustom("description")}
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <label className="grid gap-2">
-                <span className="text-xs font-medium text-white">
-                  {tForms("fields.fullName")}
-                  <span className="text-red-500"> *</span>
-                </span>
-                <div className="relative">
-                  <input
-                    value={values.name}
-                    onChange={(event) => updateField("name", event.target.value)}
-                    placeholder={tForms("placeholders.fullName")}
-                    autoComplete="name"
-                    className="min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition focus:border-red-500"
-                    aria-invalid={Boolean(fieldErrors.name)}
-                  />
-                  <UserRound className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
-                </div>
-                {fieldErrors.name ? (
-                  <span className="text-xs text-red-300">{errorsT(fieldErrors.name)}</span>
-                ) : null}
-              </label>
-
-              <label className="grid gap-2">
-                <span className="text-xs font-medium text-white">
-                  {tForms("fields.phone")}
-                  <span className="text-red-500"> *</span>
-                </span>
-                <div className="relative">
-                  <input
-                    value={values.phone}
-                    onChange={(event) => updateField("phone", event.target.value)}
-                    placeholder={tForms("placeholders.phone")}
-                    autoComplete="tel"
-                    type="tel"
-                    className="min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition focus:border-red-500"
-                    aria-invalid={Boolean(fieldErrors.phone)}
-                  />
-                  <PhoneCall className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
-                </div>
-                {fieldErrors.phone ? (
-                  <span className="text-xs text-red-300">{errorsT(fieldErrors.phone)}</span>
-                ) : null}
-              </label>
-
-              <label className="grid gap-2">
-                <span className="text-xs font-medium text-white">
-                  {tForms("fields.serviceType")}
-                  <span className="text-red-500"> *</span>
-                </span>
-                <div className="relative">
-                  <select
-                    value={values.serviceType}
-                    onChange={(event) => updateField("serviceType", event.target.value)}
-                    className="min-w-0 w-full appearance-none rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition focus:border-red-500"
-                    aria-invalid={Boolean(fieldErrors.serviceType)}
-                  >
-                    <option value="" className="bg-[#101010] text-zinc-400">
-                      {tCustom("serviceTypePlaceholder")}
-                    </option>
-                    <option
-                      value={tCustom("serviceTypes.inspection")}
-                      className="bg-[#101010]"
-                    >
-                      {tCustom("serviceTypes.inspection")}
-                    </option>
-                    <option
-                      value={tCustom("serviceTypes.diagnostics")}
-                      className="bg-[#101010]"
-                    >
-                      {tCustom("serviceTypes.diagnostics")}
-                    </option>
-                    <option
-                      value={tCustom("serviceTypes.performance")}
-                      className="bg-[#101010]"
-                    >
-                      {tCustom("serviceTypes.performance")}
-                    </option>
-                  </select>
-                  <ChevronDown className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
-                </div>
-                {fieldErrors.serviceType ? (
-                  <span className="text-xs text-red-300">
-                    {errorsT(fieldErrors.serviceType)}
-                  </span>
-                ) : null}
-              </label>
-
-              <label className="grid gap-2">
-                <span className="text-xs font-medium text-white">
-                  {tForms("fields.email")}
-                  <span className="text-red-500"> *</span>
-                </span>
-                <div className="relative">
-                  <input
-                    value={values.email}
-                    onChange={(event) => updateField("email", event.target.value)}
-                    placeholder={tForms("placeholders.email")}
-                    autoComplete="email"
-                    type="email"
-                    className="min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition focus:border-red-500"
-                    aria-invalid={Boolean(fieldErrors.email)}
-                  />
-                  <Mail className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
-                </div>
-                {fieldErrors.email ? (
-                  <span className="text-xs text-red-300">{errorsT(fieldErrors.email)}</span>
-                ) : null}
-              </label>
+    <Container>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={reduceMotion ? undefined : staggerContainer(0.12, 0.05)}
+        className="relative overflow-hidden rounded-[12px] border border-white/10 bg-[linear-gradient(180deg,#111111_0%,#0b0b0b_100%)] p-3 shadow-[0_22px_52px_rgba(0,0,0,0.36)] sm:p-4"
+      >
+        <div className="absolute inset-x-0 top-0 h-px bg-red-600/40" />
+        <div className="grid gap-4 lg:grid-cols-[0.26fr_0.74fr]">
+          <motion.aside
+            variants={
+              reduceMotion
+                ? undefined
+                : editorialRevealIn(isArabic ? "right" : "left", 0.05)
+            }
+            className="relative rounded-[10px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.015))] p-4 sm:p-5"
+          >
+            <motion.div
+              className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-red-600/10 blur-3xl"
+              animate={reduceMotion ? undefined : ambientPulse(8)}
+            />
+            <div
+              className={cn(
+                "relative space-y-2",
+                isArabic ? "text-right" : "text-left"
+              )}
+            >
+              <h3 className="text-xl font-semibold text-white">
+                {tCustom("panelTitle")}
+              </h3>
+              <p className="text-xs leading-6 text-zinc-400">
+                {tCustom("panelDescription")}
+              </p>
             </div>
 
-            <label className="grid gap-2">
-              <span className="text-xs font-medium text-white">
-                {tForms("fields.description")}
-                <span className="text-red-500"> *</span>
-              </span>
-              <div className="relative">
-                <textarea
-                  value={values.message}
-                  onChange={(event) => updateField("message", event.target.value)}
-                  placeholder={tForms("placeholders.description")}
-                  className="min-h-28 min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition focus:border-red-500"
-                  aria-invalid={Boolean(fieldErrors.message)}
-                />
-                <MessageSquareText className="pointer-events-none absolute end-3 top-3 size-4 text-zinc-500" />
-              </div>
-              {fieldErrors.message ? (
-                <span className="text-xs text-red-300">{errorsT(fieldErrors.message)}</span>
-              ) : null}
-            </label>
+            <div className="relative mt-5 space-y-4">
+              {contactItems.map((item) => {
+                const Icon = renderContactIcon(item.kind);
 
-            <input
-              tabIndex={-1}
-              autoComplete="off"
-              className="hidden"
-              value={values.website}
-              onChange={(event) => updateField("website", event.target.value)}
-              aria-hidden="true"
-            />
-
-            {status ? <FormStatus tone={status.tone} message={status.message} /> : null}
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              aria-busy={isSubmitting}
-              className={buttonClassName({
-                className:
-                  "w-full justify-center rounded-[4px] px-5 py-3 text-xs tracking-[0.14em] disabled:cursor-not-allowed disabled:opacity-60",
+                return (
+                  <motion.div
+                    key={`${item.kind}-${item.label}`}
+                    variants={reduceMotion ? undefined : clipRevealUp(0.1)}
+                    className={cn(
+                      "flex items-start gap-3 text-sm text-zinc-200",
+                      isArabic && "flex-row-reverse text-right"
+                    )}
+                  >
+                    <motion.span
+                      className="mt-0.5 text-red-500"
+                      whileHover={
+                        reduceMotion ? undefined : { x: isArabic ? -3 : 3 }
+                      }
+                      transition={softSpring}
+                    >
+                      <Icon className="size-4" strokeWidth={2} />
+                    </motion.span>
+                    <div className="space-y-1">
+                      <p className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500">
+                        {item.label}
+                      </p>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-sm leading-6 text-zinc-200 transition-colors hover:text-red-400"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="whitespace-pre-line text-sm leading-6 text-zinc-200">
+                          {item.value}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                );
               })}
+            </div>
+          </motion.aside>
+
+          <motion.div
+            variants={
+              reduceMotion
+                ? undefined
+                : editorialRevealIn(isArabic ? "left" : "right", 0.12)
+            }
+            className="rounded-[10px] border border-white/6 bg-[#0f0f0f] p-4 sm:p-5"
+          >
+            <div
+              className={cn(
+                "mb-5 space-y-2",
+                isArabic ? "text-center" : "text-left"
+              )}
             >
-              <span className="flex items-center gap-2">
-                <Wrench className="size-4" />
-                {isSubmitting ? tForms("submitting") : tForms("submit")}
-              </span>
-            </button>
-          </form>
+              <h2 className="text-2xl font-semibold text-white">
+                {tCustom("title")}
+              </h2>
+              <p className="text-sm leading-6 text-zinc-400">
+                {tCustom("description")}
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <label className="grid gap-2">
+                  <span className="text-xs font-medium text-white">
+                    {tForms("fields.fullName")}
+                    <span className="text-red-500"> *</span>
+                  </span>
+                  <div className="relative">
+                    <input
+                      value={values.name}
+                      onChange={(event) =>
+                        updateField("name", event.target.value)
+                      }
+                      placeholder={tForms("placeholders.fullName")}
+                      autoComplete="name"
+                      className="min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition duration-300 focus:border-red-500 focus:shadow-[0_0_0_1px_rgba(220,38,38,0.35),0_0_18px_rgba(220,38,38,0.18)]"
+                      aria-invalid={Boolean(fieldErrors.name)}
+                    />
+                    <UserRound className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
+                  </div>
+                  {fieldErrors.name ? (
+                    <span className="text-xs text-red-300">
+                      {errorsT(fieldErrors.name)}
+                    </span>
+                  ) : null}
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="text-xs font-medium text-white">
+                    {tForms("fields.phone")}
+                    <span className="text-red-500"> *</span>
+                  </span>
+                  <div className="relative">
+                    <input
+                      value={values.phone}
+                      onChange={(event) =>
+                        updateField("phone", event.target.value)
+                      }
+                      placeholder={tForms("placeholders.phone")}
+                      autoComplete="tel"
+                      type="tel"
+                      className="min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 pl-12 text-sm text-white outline-none transition duration-300 focus:border-red-500 focus:shadow-[0_0_0_1px_rgba(220,38,38,0.35),0_0_18px_rgba(220,38,38,0.18)]"
+                      aria-invalid={Boolean(fieldErrors.phone)}
+                    />
+                    <PhoneCall className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
+                  </div>
+                  {fieldErrors.phone ? (
+                    <span className="text-xs text-red-300">
+                      {errorsT(fieldErrors.phone)}
+                    </span>
+                  ) : null}
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="text-xs font-medium text-white">
+                    {tForms("fields.serviceType")}
+                    <span className="text-red-500"> *</span>
+                  </span>
+                  <div className="relative">
+                    <select
+                      value={values.serviceType}
+                      onChange={(event) =>
+                        updateField("serviceType", event.target.value)
+                      }
+                      className="min-w-0 w-full appearance-none rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition duration-300 focus:border-red-500 focus:shadow-[0_0_0_1px_rgba(220,38,38,0.35),0_0_18px_rgba(220,38,38,0.18)]"
+                      aria-invalid={Boolean(fieldErrors.serviceType)}
+                    >
+                      <option value="" className="bg-[#101010] text-zinc-400">
+                        {tCustom("serviceTypePlaceholder")}
+                      </option>
+                      <option
+                        value={tCustom("serviceTypes.inspection")}
+                        className="bg-[#101010]"
+                      >
+                        {tCustom("serviceTypes.inspection")}
+                      </option>
+                      <option
+                        value={tCustom("serviceTypes.diagnostics")}
+                        className="bg-[#101010]"
+                      >
+                        {tCustom("serviceTypes.diagnostics")}
+                      </option>
+                      <option
+                        value={tCustom("serviceTypes.performance")}
+                        className="bg-[#101010]"
+                      >
+                        {tCustom("serviceTypes.performance")}
+                      </option>
+                    </select>
+                    <ChevronDown className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
+                  </div>
+                  {fieldErrors.serviceType ? (
+                    <span className="text-xs text-red-300">
+                      {errorsT(fieldErrors.serviceType)}
+                    </span>
+                  ) : null}
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="text-xs font-medium text-white">
+                    {tForms("fields.email")}
+                    <span className="text-red-500"> *</span>
+                  </span>
+                  <div className="relative">
+                    <input
+                      value={values.email}
+                      onChange={(event) =>
+                        updateField("email", event.target.value)
+                      }
+                      placeholder={tForms("placeholders.email")}
+                      autoComplete="email"
+                      type="email"
+                      className="min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition duration-300 focus:border-red-500 focus:shadow-[0_0_0_1px_rgba(220,38,38,0.35),0_0_18px_rgba(220,38,38,0.18)]"
+                      aria-invalid={Boolean(fieldErrors.email)}
+                    />
+                    <Mail className="pointer-events-none absolute inset-y-0 end-3 my-auto size-4 text-zinc-500" />
+                  </div>
+                  {fieldErrors.email ? (
+                    <span className="text-xs text-red-300">
+                      {errorsT(fieldErrors.email)}
+                    </span>
+                  ) : null}
+                </label>
+              </div>
+
+              <label className="grid gap-2">
+                <span className="text-xs font-medium text-white">
+                  {tForms("fields.description")}
+                  <span className="text-red-500"> *</span>
+                </span>
+                <div className="relative">
+                  <textarea
+                    value={values.message}
+                    onChange={(event) =>
+                      updateField("message", event.target.value)
+                    }
+                    placeholder={tForms("placeholders.description")}
+                    className="min-h-28 min-w-0 w-full rounded-[4px] border border-white/10 bg-white/[0.03] px-4 py-3 pe-11 text-sm text-white outline-none transition duration-300 focus:border-red-500 focus:shadow-[0_0_0_1px_rgba(220,38,38,0.35),0_0_18px_rgba(220,38,38,0.18)]"
+                    aria-invalid={Boolean(fieldErrors.message)}
+                  />
+                  <MessageSquareText className="pointer-events-none absolute end-3 top-3 size-4 text-zinc-500" />
+                </div>
+                {fieldErrors.message ? (
+                  <span className="text-xs text-red-300">
+                    {errorsT(fieldErrors.message)}
+                  </span>
+                ) : null}
+              </label>
+
+              <input
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                value={values.website}
+                onChange={(event) => updateField("website", event.target.value)}
+                aria-hidden="true"
+              />
+
+              {status ? (
+                <FormStatus tone={status.tone} message={status.message} />
+              ) : null}
+
+              <motion.div
+                variants={reduceMotion ? undefined : clipRevealUp(0.1)}
+              >
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
+                  className={buttonClassName({
+                    className:
+                      "w-full justify-center rounded-[4px] px-5 py-3 text-xs tracking-[0.14em] shadow-[0_10px_28px_rgba(220,38,38,0.2)] transition-shadow hover:shadow-[0_12px_34px_rgba(220,38,38,0.32)] disabled:cursor-not-allowed disabled:opacity-60",
+                  })}
+                >
+                  <span className="flex items-center gap-2">
+                    <Wrench className="size-4" />
+                    {isSubmitting ? tForms("submitting") : tForms("submit")}
+                  </span>
+                </button>
+              </motion.div>
+            </form>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </Container>
   );
 }
