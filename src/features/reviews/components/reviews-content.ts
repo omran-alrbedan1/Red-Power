@@ -1,40 +1,26 @@
-import { BadgeCheck, Headset, ShieldCheck, Users, Wrench } from "lucide-react";
+export type ReviewsDistributionItem = {
+  label: string;
+  percentage: number;
+};
 
-export type ReviewsOverviewItem = {
+export type ReviewsFeatureItem = {
   body: string;
   title: string;
 };
 
-export type ReviewsFeatureItem = {
-  description: string;
-  imageAlt: string;
-  imageSrc: string;
-  title: string;
-};
-
-export type ReviewsHighlight = {
-  icon: typeof BadgeCheck;
+export type ReviewsStatCard = {
   label: string;
+  value: string;
 };
 
-const highlightIcons = [ShieldCheck, Users, BadgeCheck, Headset] as const;
+export type ReviewsSummaryMetric = {
+  label: string;
+  value: string;
+};
 
-export function buildReviewsHighlights(items: ReviewsOverviewItem[]) {
-  return items.map((item, index) => ({
-    icon: highlightIcons[index] ?? Wrench,
-    label: item.title,
-  }));
-}
-
-export function buildEditorialReviews(
-  overviewItems: ReviewsOverviewItem[],
-  featureItems: ReviewsFeatureItem[]
-) {
-  return overviewItems.map((item, index) => ({
-    body: item.body,
-    imageAlt: featureItems[index % featureItems.length]?.imageAlt,
-    imageSrc: featureItems[index % featureItems.length]?.imageSrc,
-    kind: index === 0 ? ("featured" as const) : ("standard" as const),
-    title: item.title,
-  }));
-}
+export type ReviewsTestimonialItem = {
+  body: string;
+  name: string;
+  time: string;
+  vehicle: string;
+};

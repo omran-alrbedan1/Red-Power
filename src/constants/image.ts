@@ -26,7 +26,7 @@ export const images = {
     team: "/images/red-power/gallery/event-team-group.png",
   },
   contact: {
-    hero: "/images/red-power/contact/garage-dodge-hero-background.png",
+    hero: "/images/red-power/contact/contact-hero.png",
     garageWorkshopBackground: "/images/red-power/contact/garage-workshop-background.png",
     technicianWorking: "/images/red-power/contact/technician-working.png",
   },

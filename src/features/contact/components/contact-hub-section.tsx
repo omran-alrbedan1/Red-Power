@@ -1,58 +1,87 @@
-import { useTranslations } from "next-intl";
+import {
+  Clock3,
+  Headset,
+  MapPin,
+  PhoneCall,
+} from "lucide-react";
+import { useMessages, useTranslations } from "next-intl";
 
 import { ContactForm } from "@/components/forms/contact-form";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { RevealPanel } from "@/components/ui/reveal-panel";
+import { cn } from "@/lib/utils";
 
 type ContactHubItem = {
+  kind: "phone" | "location" | "hours" | "support";
+  note: string;
   title: string;
   value: string;
 };
 
+const iconMap = {
+  hours: Clock3,
+  location: MapPin,
+  phone: PhoneCall,
+  support: Headset,
+} as const;
+
 export function ContactHubSection() {
   const t = useTranslations("contact.hub");
-  const items = t.raw("items") as ContactHubItem[];
+  const messages = useMessages() as {
+    contact: {
+      hub: {
+        items: ContactHubItem[];
+      };
+    };
+  };
+  const items = messages.contact.hub.items;
 
   return (
-    <Section className="bg-[#0d0f11]">
-      <Container className="grid gap-8 lg:grid-cols-[1.06fr_0.94fr] lg:items-start">
-        <RevealPanel className="border border-white/10 bg-white/5 p-6 sm:p-8">
-          <ContactForm />
-        </RevealPanel>
-        <RevealPanel
-          delay={120}
-          direction="right"
-          className="space-y-6 border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-6 sm:p-8"
-        >
-          <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-red-500">
-              {t("eyebrow")}
-            </p>
-            <h2 className="text-4xl font-semibold uppercase tracking-tight text-white sm:text-5xl">
-              {t("title")}
+    <Section className="bg-gallery-page pt-10">
+      <Container>
+        <div className="grid gap-6 lg:grid-cols-[0.45fr_0.55fr]">
+          <RevealPanel className="overflow-hidden rounded-[22px] border border-red-700/35 bg-gallery-panel p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] sm:p-8">
+            <h2 className="text-center text-4xl font-semibold tracking-[-0.04em] text-white">
+              {t("infoTitle")}
             </h2>
-            <p className="max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
-              {t("description")}
-            </p>
-          </div>
+            <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-red-600" />
 
-          <div className="border border-white/8 bg-[#111315] p-5 sm:p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white">
-              {t("panelTitle")}
-            </p>
-            <div className="mt-5 grid gap-4">
-              {items.map((item) => (
-                <div key={item.title} className="border border-white/8 bg-black/20 p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-red-400">
-                    {item.title}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-zinc-300">{item.value}</p>
-                </div>
-              ))}
+            <div className="mt-8 space-y-5">
+              {items.map((item) => {
+                const Icon = iconMap[item.kind];
+
+                return (
+                  <div
+                    key={item.title}
+                    className="flex items-start gap-4 border-b border-red-950/60 pb-5 last:border-b-0 last:pb-0"
+                  >
+                    <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-red-700/35 bg-[radial-gradient(circle,rgba(225,6,19,0.22),rgba(0,0,0,0.12))] text-red-500">
+                      <Icon className="size-7" strokeWidth={1.8} />
+                    </span>
+                    <div className="text-right">
+                      <p className="text-xl font-semibold text-white">{item.title}</p>
+                      <p className="mt-2 text-lg leading-8 text-zinc-200">{item.value}</p>
+                      {item.note ? (
+                        <p className="mt-2 text-sm text-red-400">{item.note}</p>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          </div>
-        </RevealPanel>
+          </RevealPanel>
+
+          <RevealPanel
+            delay={120}
+            direction="left"
+            className="overflow-hidden rounded-[22px] border border-red-700/35 bg-gallery-panel p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] sm:p-8"
+          >
+            <div className={cn("mx-auto max-w-2xl")}>
+              <ContactForm />
+            </div>
+          </RevealPanel>
+        </div>
       </Container>
     </Section>
   );

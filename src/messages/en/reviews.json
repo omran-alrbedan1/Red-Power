@@ -1,60 +1,120 @@
 {
   "metadata": {
     "title": "Customer Trust, Service Quality & Workshop Reputation",
-    "description": "See how Red Power Garage presents service quality, professional communication, workshop standards, and customer trust across its automotive experience."
+    "description": "Discover how Red Power Garage showcases service quality, clear communication, workshop standards, and the professional reputation that build customer trust."
   },
   "hero": {
-    "eyebrow": "Red Power Garage",
-    "title": "Reviews",
-    "description": "Trust built through quality work and clear communication.",
+    "eyebrow": "Reviews",
+    "title": "What our customers say",
+    "titleAccent": "reflects their trust in us",
+    "description": "Our customers' trust is what drives us to always deliver the best. We are proud to provide services to high standards with results that speak for themselves.",
+    "highlights": ["Unmatched Passion", "Precision in Every Detail", "Real Performance"],
     "primaryCta": "Book Appointment",
     "secondaryCta": "Explore Services",
-    "imageAlt": "Red Power Garage reviews hero showing performance vehicles inside the workshop"
+    "imageAlt": "Red Power Garage reviews page hero showing performance cars inside the workshop"
   },
   "actions": {
-    "loadMore": "Show More Reviews"
+    "loadMore": "View more reviews"
   },
-  "overview": {
-    "eyebrow": "Performance • Precision • Trust",
-    "title": "Automotive service with a higher standard.",
-    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
-    "cta": "Explore",
-    "items": [
-      {
-        "title": "Customer Trust",
-        "body": "Trust grows through transparent diagnosis, consistent workshop execution, and communication that keeps the customer informed."
-      },
-      {
-        "title": "Professional Service",
-        "body": "Every interaction should reflect discipline, technical clarity, and a serious approach to vehicle care rather than generic garage messaging."
-      },
-      {
-        "title": "Quality Experience",
-        "body": "This page is prepared to present real reviews later, while already reinforcing the standards that shape a reliable service experience."
-      }
+  "stats": {
+    "averageLabel": "Average Rating",
+    "averageValue": "4.9",
+    "outOf": "out of 5",
+    "distribution": [
+      { "label": "5 Stars", "percentage": 92 },
+      { "label": "4 Stars", "percentage": 6 },
+      { "label": "3 Stars", "percentage": 1 }
+    ],
+    "statCards": [
+      { "value": "+250", "label": "Customer reviews" },
+      { "value": "+98%", "label": "Customers recommend us" }
     ]
   },
   "features": {
-    "eyebrow": "Red Power Garage",
-    "cta": "Contact Us",
     "items": [
       {
-        "title": "Customer Trust",
-        "description": "The design direction emphasizes confidence, transparency, and long-term relationships without fabricating testimonials that do not yet exist in the application.",
-        "imageAlt": "Technicians speaking beside a performance vehicle in Red Power Garage",
-        "imageSrc": "/images/red-power/reviews/technicians-with-dodge.png"
+        "title": "Certified Quality",
+        "body": "World-class standards in every service"
       },
       {
-        "title": "Professional Service",
-        "description": "The supporting layout keeps the focus on service quality and workshop discipline so real customer feedback can be added later without redesigning the page.",
-        "imageAlt": "Technician performing service work inside Red Power Garage",
-        "imageSrc": "/images/red-power/reviews/car-maintenance-workshop.png"
+        "title": "Specialist Team",
+        "body": "Expertise and passion in every detail"
+      },
+      {
+        "title": "Customer Satisfaction",
+        "body": "Always our number one priority"
+      },
+      {
+        "title": "Ongoing Support",
+        "body": "With you at every step"
+      }
+    ]
+  },
+  "testimonials": {
+    "items": [
+      {
+        "name": "Ahmad Alotaibi",
+        "time": "Two weeks ago",
+        "body": "Professional service and an excellent experience from reception to delivery. A knowledgeable team and very clean work.",
+        "vehicle": "Dodge Charger"
+      },
+      {
+        "name": "Mohammed Almutairi",
+        "time": "3 weeks ago",
+        "body": "The best workshop I have dealt with. Precise with appointments and transparent in explanations and pricing.",
+        "vehicle": "Dodge Challenger"
+      },
+      {
+        "name": "Abdullah Alsubaie",
+        "time": "A month ago",
+        "body": "Attention to detail and follow-up after the service. I recommend anyone who owns an American car to visit them.",
+        "vehicle": "Jeep Grand Cherokee"
+      },
+      {
+        "name": "Yousef Alharbi",
+        "time": "A month ago",
+        "body": "They know Mopar cars inside and out. My experience with them was above excellent.",
+        "vehicle": "Dodge Durango"
+      },
+      {
+        "name": "Salman Alqahtani",
+        "time": "Two months ago",
+        "body": "Fast completion and quality work. Truly impressive.",
+        "vehicle": "Dodge Challenger"
+      },
+      {
+        "name": "Fahad Alyami",
+        "time": "Two months ago",
+        "body": "A workshop with a high level of professionalism. Refined service and distinctive handling.",
+        "vehicle": "Chevrolet Camaro"
+      },
+      {
+        "name": "Turki Alshammari",
+        "time": "4 months ago",
+        "body": "Precise work and a clear diagnosis from the first visit. They became my first choice for any maintenance.",
+        "vehicle": "RAM 1500"
+      },
+      {
+        "name": "Nasser Aldosari",
+        "time": "5 months ago",
+        "body": "The result is excellent and the team is honest in their recommendations. That is the most important thing for me.",
+        "vehicle": "Ford Mustang"
       }
     ]
   },
   "cta": {
-    "eyebrow": "Start your Red Power experience",
-    "title": "Ready for the same level of professional care?",
-    "description": "Book your next appointment and let the Red Power team handle your vehicle with the same discipline and clarity that build customer trust."
+    "title": "Ready to experience the same level of professionalism?",
+    "description": "Book your appointment now and let the Red Power Garage team take care of your car.",
+    "secondaryCta": "Contact Us",
+    "imageAlt": "Red brake system detail inside Red Power Garage"
+  },
+  "summary": {
+    "title": "Your trust drives us to keep delivering the best",
+    "items": [
+      { "value": "+10", "label": "Years of experience" },
+      { "value": "+500", "label": "Happy customers" },
+      { "value": "+2000", "label": "Maintenance jobs" },
+      { "value": "100%", "label": "Commitment to quality" }
+    ]
   }
 }

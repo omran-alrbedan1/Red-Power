@@ -4,14 +4,15 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { buttonClassName } from "@/components/ui/button";
+import { FormStatus } from "@/components/forms/form-status";
 import { submitContactForm } from "@/lib/api/public-forms";
 import { validateContactForm } from "@/lib/forms/validation";
+import { cn } from "@/lib/utils";
 import type {
   ContactField,
   ContactFormValues,
   ValidationErrors,
 } from "@/types/forms";
-import { FormStatus } from "@/components/forms/form-status";
 
 const initialValues = (locale: ContactFormValues["locale"]): ContactFormValues => ({
   locale,
@@ -90,16 +91,11 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-5" noValidate>
-      <div className="space-y-2">
-        <p className="break-words text-sm uppercase tracking-[0.18em] text-red-400 sm:tracking-[0.32em]">
-          {t("eyebrow")}
-        </p>
-        <h2 className="max-w-full break-words text-3xl font-semibold text-white">
+      <div className="space-y-3 text-right">
+        <h2 className="max-w-full break-words text-4xl font-semibold tracking-[-0.04em] text-white">
           {t("title")}
         </h2>
-        <p className="max-w-full break-words text-sm leading-7 text-zinc-300">
-          {t("description")}
-        </p>
+        <span className="ms-auto block h-1 w-12 rounded-full bg-red-600" />
       </div>
 
       <label htmlFor="contact-name" className="grid gap-2">
@@ -113,7 +109,7 @@ export function ContactForm() {
           value={values.name}
           onChange={(event) => updateField("name", event.target.value)}
           aria-label={t("fields.name")}
-          className="min-w-0 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-red-500"
+          className="min-w-0 w-full rounded-[10px] border border-white/10 bg-black/35 px-4 py-3.5 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500"
           placeholder={t("placeholders.name")}
           autoComplete="name"
           aria-invalid={Boolean(fieldErrors.name)}
@@ -138,7 +134,7 @@ export function ContactForm() {
           onChange={(event) => updateField("phone", event.target.value)}
           type="tel"
           aria-label={t("fields.phone")}
-          className="min-w-0 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-red-500"
+          className="min-w-0 w-full rounded-[10px] border border-white/10 bg-black/35 px-4 py-3.5 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500"
           placeholder={t("placeholders.phone")}
           autoComplete="tel"
           aria-invalid={Boolean(fieldErrors.phone)}
@@ -162,7 +158,7 @@ export function ContactForm() {
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
           aria-label={t("fields.message")}
-          className="min-h-36 min-w-0 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-red-500"
+          className="min-h-48 min-w-0 w-full rounded-[10px] border border-white/10 bg-black/35 px-4 py-3.5 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500"
           placeholder={t("placeholders.message")}
           aria-invalid={Boolean(fieldErrors.message)}
           aria-describedby={
@@ -195,11 +191,16 @@ export function ContactForm() {
         aria-busy={isSubmitting}
         aria-disabled={isSubmitting}
         className={buttonClassName({
-          className: "w-full disabled:cursor-not-allowed disabled:opacity-60",
+          className:
+            "w-full rounded-[8px] py-3.5 text-base disabled:cursor-not-allowed disabled:opacity-60",
         })}
       >
         {isSubmitting ? t("submitting") : t("submit")}
       </button>
+
+      <p className={cn("text-xs text-zinc-500", locale === "ar" ? "text-right" : "text-left")}>
+        {t("description")}
+      </p>
     </form>
   );
 }

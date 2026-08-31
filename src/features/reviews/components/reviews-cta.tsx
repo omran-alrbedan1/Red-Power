@@ -1,82 +1,64 @@
 import Link from "next/link";
+import { CalendarDays, Phone } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { buttonClassName } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { RevealPanel } from "@/components/ui/reveal-panel";
+import { images } from "@/constants/image";
+import { cn } from "@/lib/utils";
 
-type ReviewsCtaProps = {
-  description: string;
-  eyebrow: string;
-  imageAlt: string;
-  imageSrc: string;
-  primaryCtaHref: string;
-  primaryCtaLabel: string;
-  secondaryCtaHref: string;
-  secondaryCtaLabel: string;
-  title: string;
-};
+export function ReviewsCta() {
+  const locale = useLocale();
+  const t = useTranslations("reviews");
+  const isArabic = locale === "ar";
 
-export function ReviewsCta({
-  description,
-  eyebrow,
-  imageAlt,
-  imageSrc,
-  primaryCtaHref,
-  primaryCtaLabel,
-  secondaryCtaHref,
-  secondaryCtaLabel,
-  title,
-}: ReviewsCtaProps) {
   return (
-    <Section className="bg-gallery-page pt-8">
+    <Section className="bg-gallery-page pb-8 pt-8">
       <Container>
-        <div className="overflow-hidden rounded-[20px] border border-red-700/35 bg-gallery-panel shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
-          <div className="grid items-stretch lg:grid-cols-[0.42fr_0.58fr]">
-            <RevealPanel direction="left" className="relative min-h-[220px]">
-              <OptimizedImage
-                src={imageSrc}
-                alt={imageAlt}
-                sizes="(min-width: 1024px) 35vw, 100vw"
-                className="h-full rounded-none border-0 bg-black shadow-none"
-                imageClassName="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,0.15),rgba(6,6,6,0.78))]" />
-            </RevealPanel>
+        <div className="grid overflow-hidden border border-red-700/35 bg-gallery-panel lg:grid-cols-[0.44fr_0.56fr]">
+          <RevealPanel direction={isArabic ? "right" : "left"} className="relative min-h-[260px]">
+            <OptimizedImage
+              src={images.services.brakeAndWheelDetail}
+              alt={t("cta.imageAlt")}
+              sizes="(min-width: 1024px) 44vw, 100vw"
+              className="h-full rounded-none border-0 bg-black shadow-none"
+              imageClassName="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,0.15),rgba(6,6,6,0.85))] lg:bg-[linear-gradient(90deg,rgba(6,6,6,0.12)_0%,rgba(6,6,6,0.55)_55%,rgba(6,6,6,0.9)_100%)]" />
+          </RevealPanel>
 
-            <RevealPanel className="space-y-6 px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
-              <p className="text-xs font-semibold tracking-[0.24em] text-red-500">
-                {eyebrow}
-              </p>
-              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-                {title}
+          <RevealPanel delay={120} className="flex items-center px-6 py-10 sm:px-10 lg:px-12 lg:py-12">
+            <div className={cn("w-full max-w-xl space-y-6", isArabic ? "text-right" : "text-left")}>
+              <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+                {t("cta.title")}
               </h2>
-              <p className="max-w-2xl text-base leading-8 text-zinc-400">
-                {description}
-              </p>
-              <div className="flex flex-wrap gap-4">
+              <p className="text-base leading-8 text-zinc-400">{t("cta.description")}</p>
+              <div className={cn("flex flex-wrap gap-4", isArabic && "flex-row-reverse")}>
                 <Link
-                  href={primaryCtaHref}
+                  href={`/${locale}/contact`}
                   className={buttonClassName({
-                    className: "rounded-[4px] px-6 py-3 text-xs tracking-[0.18em]",
+                    className: "rounded-[3px] px-6 py-3 text-xs tracking-[0.18em] uppercase",
                   })}
                 >
-                  {primaryCtaLabel}
+                  <CalendarDays className="size-4" />
+                  {t("hero.primaryCta")}
                 </Link>
                 <Link
-                  href={secondaryCtaHref}
+                  href={`/${locale}/contact`}
                   className={buttonClassName({
                     variant: "secondary",
-                    className:
-                      "rounded-[4px] border-white/15 px-6 py-3 text-xs tracking-[0.18em]",
+                    className: "rounded-[3px] px-6 py-3 text-xs tracking-[0.18em] uppercase",
                   })}
                 >
-                  {secondaryCtaLabel}
+                  <Phone className="size-4 text-red-500" />
+                  {t("cta.secondaryCta")}
                 </Link>
               </div>
-            </RevealPanel>
-          </div>
+            </div>
+          </RevealPanel>
         </div>
       </Container>
     </Section>

@@ -1,15 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { MediaPageHero } from "@/components/sections/media-page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
-import { images } from "@/constants/image";
-import { ContactHubSection } from "@/features/contact/components";
 import {
-  ServiceDetailFeatureGrid,
-  ServiceDetailProcessSection,
-  ServicesCtaStrip,
-} from "@/features/services/components";
+  ContactHero,
+  ContactHubSection,
+} from "@/features/contact/components";
 import { isValidLocale } from "@/lib/i18n";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSeoMessages } from "@/lib/seo-messages";
@@ -59,31 +55,8 @@ export default async function ContactPage({ params }: ContactPageProps) {
           description: t("metadata.description"),
         })}
       />
-      <MediaPageHero
-        eyebrow={t("hero.eyebrow")}
-        title={t("hero.title")}
-        description={t("hero.description")}
-        imageSrc={images.contact.hero}
-        imageAlt={t("hero.imageAlt")}
-        primaryCtaHref={`/${locale}/contact`}
-        primaryCtaLabel={t("hero.primaryCta")}
-        secondaryCtaHref={`/${locale}/services`}
-        secondaryCtaLabel={t("hero.secondaryCta")}
-      />
-      <ServiceDetailProcessSection
-        eyebrow={t("overview.eyebrow")}
-        title={t("overview.title")}
-        description={t("overview.description")}
-        ctaLabel={t("overview.cta")}
-        items={t.raw("overview.items")}
-      />
-      <ServiceDetailFeatureGrid
-        eyebrow={t("features.eyebrow")}
-        ctaLabel={t("features.cta")}
-        items={t.raw("features.items")}
-      />
+      <ContactHero />
       <ContactHubSection />
-      <ServicesCtaStrip />
     </>
   );
 }

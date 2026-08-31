@@ -1,5 +1,7 @@
+export { ReviewCard } from "./review-card";
+export { ReviewsBottomMetrics } from "./reviews-bottom-metrics";
 export { ReviewsCta } from "./reviews-cta";
-export { ReviewsEditorialGrid } from "./reviews-editorial-grid";
+export { ReviewsGrid } from "./reviews-grid";
 export { ReviewsHero } from "./reviews-hero";
-export { ReviewsShowcase } from "./reviews-showcase";
-export { ReviewsTrustPanel } from "./reviews-trust-panel";
+export { ReviewsSummary } from "./reviews-summary";
+export { ReviewsTrustStrip } from "./reviews-trust-strip";

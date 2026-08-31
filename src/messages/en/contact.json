@@ -1,84 +1,73 @@
 {
   "metadata": {
-    "title": "Book Car Service or Contact the Workshop",
-    "description": "Book vehicle service, request diagnostics, and contact Red Power Garage for maintenance, inspection, and performance support through the workshop inquiry form."
+    "title": "Contact Red Power and Book Your Visit",
+    "description": "Contact Red Power to book a visit, send a quick inquiry, or open the workshop location in Google Maps."
   },
   "hero": {
-    "eyebrow": "Red Power Garage",
-    "title": "Contact",
-    "description": "Let's get your vehicle ready.",
-    "primaryCta": "Book Appointment",
-    "secondaryCta": "Explore Services",
-    "imageAlt": "Red Power Garage contact page hero with Dodge workshop background"
-  },
-  "overview": {
-    "eyebrow": "Performance • Precision • Trust",
-    "title": "Automotive service with a higher standard.",
-    "description": "Professional maintenance, diagnostics, mechanical, electrical, and performance services with specialist knowledge of American and Mopar vehicles.",
-    "cta": "Explore",
-    "items": [
-      {
-        "title": "Book Service",
-        "body": "Use the live contact form to start a booking request, explain the vehicle issue, or prepare the next workshop step."
-      },
-      {
-        "title": "Ask a Question",
-        "body": "Send inspection questions, maintenance concerns, or service inquiries through a structured message flow built into the site."
-      },
-      {
-        "title": "Corporate & Fleet",
-        "body": "Business and fleet inquiries can use the same working contact channel while dedicated corporate details remain aligned to confirmed company data."
-      }
-    ]
-  },
-  "features": {
-    "eyebrow": "Red Power Garage",
-    "cta": "Contact Us",
-    "items": [
-      {
-        "title": "Book Service",
-        "description": "The contact experience now centers the working inquiry form, making it the primary entry point for appointments, repair requests, and maintenance planning.",
-        "imageAlt": "Red Power Garage workshop background representing booking and support",
-        "imageSrc": "/images/red-power/contact/garage-workshop-background.png"
-      },
-      {
-        "title": "Ask a Question",
-        "description": "The supporting section keeps the page visually aligned with the brand while directing service questions into a clean, validated contact flow.",
-        "imageAlt": "Red Power Garage technician working as part of the contact page support section",
-        "imageSrc": "/images/red-power/contact/technician-working.png"
-      }
+    "eyebrow": "Contact",
+    "title": "Red Power",
+    "description": "A specialized team, advanced tools, and results that meet high expectations. We are here to answer your questions and help you choose the best solution for your vehicle.",
+    "imageAlt": "Red Power contact hero with a vehicle inside the workshop",
+    "highlights": [
+      "Custom Solutions",
+      "Professional Support",
+      "Fast Response"
     ]
   },
   "hub": {
-    "eyebrow": "Contact Hub",
-    "title": "Reach Red Power Garage through the confirmed service channels.",
-    "description": "Use the booking form, direct phone lines, email, Instagram, and map location shown here for customer and company inquiries.",
-    "panelTitle": "Confirmed channels",
+    "infoTitle": "Contact Information",
+    "formTitle": "Send Us a Message",
     "items": [
       {
-        "title": "Individuals",
-        "value": "+966504773142"
-      },
-      {
-        "title": "Companies",
-        "value": "+9665011006551"
-      },
-      {
-        "title": "Email",
-        "value": "info@qamrah-pioneer.com"
-      },
-      {
-        "title": "Instagram",
-        "value": "@red_power_carage"
-      },
-      {
-        "title": "Location",
-        "value": "285, Asfan Industrial Area, Jeddah, Saudi Arabia"
+        "title": "Address",
+        "value": "285, Asfan Industrial Area, Jeddah, Saudi Arabia",
+        "note": "",
+        "kind": "location"
       },
       {
         "title": "Working Hours",
-        "value": "Sat-Wed: 9:00 AM - 7:00 PM | Thu: 9:00 AM - 4:00 PM | Fri: Closed"
+        "value": "Saturday - Thursday",
+        "note": "10:00 AM - 10:00 PM",
+        "kind": "hours"
+      },
+      {
+        "title": "Customer Support",
+        "value": "We are here to help and answer all your questions.",
+        "note": "",
+        "kind": "support"
       }
     ]
+  },
+  "location": {
+    "title": "Our Location",
+    "address": "285, Asfan Industrial Area, Jeddah, Saudi Arabia",
+    "buttonLabel": "Open in Google Maps",
+    "link": "https://maps.app.goo.gl/XzxTbW7bU86WPg679?g_st=ic"
+  },
+  "features": {
+    "title": "Why Choose Red Power?",
+    "items": [
+      {
+        "title": "Real Expertise",
+        "description": "Years of experience delivering professional automotive service with high standards."
+      },
+      {
+        "title": "Guaranteed Quality",
+        "description": "We use advanced equipment and genuine parts with confidence in our service."
+      },
+      {
+        "title": "Specialized Team",
+        "description": "Engineers and technicians trained to a high professional level."
+      },
+      {
+        "title": "Performance Beyond Expectations",
+        "description": "We focus on power, precision, and detail in every step."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to elevate your vehicle's performance?",
+    "description": "Contact Red Power today and leave the rest to us.",
+    "buttonLabel": "Contact Us"
   }
 }
